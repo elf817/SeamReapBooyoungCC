@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&amp;family=Noto+Sans+KR:wght@300;400;500;700&amp;display=swap" rel="stylesheet">
+<style>
+  html, body { margin:0; padding:0; background:#f6f4ee; }
+  * { box-sizing: border-box; }
+  a { color:#1e3a2b; text-decoration:none; cursor:pointer; }
+  a:hover { color:#a8823f; }
+  ::selection { background:#1e3a2b; color:#f6f4ee; }
+</style>
+</helmet>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><rect width="200" height="200" fill="#1e3a2b"></rect><text x="100" y="118" text-anchor="middle" font-family="Georgia,serif" font-size="62" fill="#c9b78c">BC</text></svg></template>
+<div style="font-family:'Noto Sans KR',sans-serif; color:#22261f; background:#f6f4ee; overflow-x:hidden">
+
+  <div style="display:flex; align-items:center; justify-content:center; gap:16px; padding:11px 24px; background:#16241b; color:#c9b78c; font-size:11.5px; letter-spacing:0.14em">
+    <span>코스 안 부영 골프텔 48실 운영 · 투숙객 그린피 15% 할인</span>
+    <a onClick="{{ goContact }}" style="color:#f6f4ee; border-bottom:1px solid rgba(246,244,238,0.45); padding-bottom:2px">문의하기</a>
+  </div>
+
+  <header style="position:sticky; top:0; z-index:50; display:flex; align-items:center; justify-content:space-between; gap:20px; padding:18px 28px; background:rgba(246,244,238,0.94); backdrop-filter:blur(12px); border-bottom:1px solid rgba(30,58,43,0.12)">
+    <a onClick="{{ goHome }}" style="display:flex; flex-direction:column; line-height:1; flex-shrink:0; white-space:nowrap">
+      <span style="font-family:'Cormorant Garamond',serif; font-size:20px; letter-spacing:0.06em; color:#1e3a2b; white-space:nowrap">BOOYOUNG COUNTRY CLUB</span>
+      <span style="font-size:9px; letter-spacing:0.26em; color:#8b8878; margin-top:7px; white-space:nowrap">SIEM REAP · CAMBODIA</span>
+    </a>
+    <nav style="display:flex; gap:20px; font-size:13.5px; color:#3d4438; flex-shrink:0">
+      <a onClick="{{ goHome }}" style="display:flex; flex-direction:column; gap:7px; white-space:nowrap">홈<span style="height:1px; background:{{ homeMark }}"></span></a>
+      <a onClick="{{ goCourse }}" style="display:flex; flex-direction:column; gap:7px; white-space:nowrap">코스<span style="height:1px; background:{{ courseMark }}"></span></a>
+      <a onClick="{{ goFacilities }}" style="display:flex; flex-direction:column; gap:7px; white-space:nowrap">시설소개<span style="height:1px; background:{{ facilityMark }}"></span></a>
+      <a onClick="{{ goBoard }}" style="display:flex; flex-direction:column; gap:7px; white-space:nowrap">게시판<span style="height:1px; background:{{ boardMark }}"></span></a>
+      <a onClick="{{ goContact }}" style="display:flex; flex-direction:column; gap:7px; white-space:nowrap">오시는 길<span style="height:1px; background:{{ contactMark }}"></span></a>
+    </nav>
+    <div style="display:flex; align-items:center; gap:14px; flex-shrink:0">
+      <span style="font-size:11px; letter-spacing:0.14em; color:#8b8878; white-space:nowrap">KR · EN</span>
+      
+    </div>
+  </header>
+
+  <sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+  <div>
+    <section style="position:relative; height:80vh; min-height:560px; display:flex; align-items:flex-end; background-color:#1e3a2b; background-image:repeating-linear-gradient(135deg,rgba(255,255,255,0.045) 0 2px,transparent 2px 11px); overflow:hidden">
+      <div style="position:absolute; inset:0; display:flex; align-items:flex-start; justify-content:flex-end; padding:28px 40px; font-family:ui-monospace,Menlo,monospace; font-size:11px; letter-spacing:0.24em; color:rgba(246,244,238,0.34); white-space:nowrap">HERO — 새벽 페어웨이 전경 (16:9)</div>
+      <div style="position:absolute; inset:0; background:linear-gradient(180deg,rgba(16,32,24,0.08) 0%,rgba(16,32,24,0.78) 100%)"></div>
+      <div style="position:relative; padding:0 48px 76px; max-width:1040px">
+        <p style="margin:0 0 22px; font-size:10.5px; letter-spacing:0.44em; color:#c9b78c">SIEM REAP · SINCE 2008</p>
+        <h1 style="margin:0; font-family:'Cormorant Garamond',serif; font-weight:400; font-size:74px; line-height:1.06; color:#f6f4ee; text-wrap:balance">사원의 나라에서<br>맞이하는 첫 티샷</h1>
+        <p style="margin:26px 0 0; max-width:520px; font-size:15.5px; line-height:1.95; color:rgba(246,244,238,0.78); font-weight:300; text-wrap:pretty">앙코르와트에서 차로 20분. 우기에도 마르는 배수 설계와 연중 22°C의 아침 공기 속에서, 하루 두 라운드가 무리 없는 18홀 챔피언십 코스입니다.</p>
+        <div style="display:flex; gap:14px; margin-top:38px">
+          <a onClick="{{ goCourse }}" style="padding:16px 34px; background:#c9b78c; color:#1b2a1f; font-size:14px; letter-spacing:0.06em">18홀 코스 보기</a>
+          <a onClick="{{ goFacilities }}" style="padding:16px 34px; border:1px solid rgba(246,244,238,0.45); color:#f6f4ee; font-size:14px; letter-spacing:0.06em">시설 안내</a>
+        </div>
+      </div>
+    </section>
+
+    <div style="display:grid; grid-template-columns:repeat(4,1fr); background:#1b2a1f; color:#f6f4ee">
+      <div style="padding:28px 32px; border-right:1px solid rgba(246,244,238,0.12)">
+        <div style="font-family:'Cormorant Garamond',serif; font-size:34px">18</div>
+        <div style="font-size:10.5px; letter-spacing:0.18em; color:rgba(246,244,238,0.55); margin-top:6px">HOLES · PAR 72</div>
+      </div>
+      <div style="padding:28px 32px; border-right:1px solid rgba(246,244,238,0.12)">
+        <div style="font-family:'Cormorant Garamond',serif; font-size:34px">7,214</div>
+        <div style="font-size:10.5px; letter-spacing:0.18em; color:rgba(246,244,238,0.55); margin-top:6px">YARDS · CHAMPION TEE</div>
+      </div>
+      <div style="padding:28px 32px; border-right:1px solid rgba(246,244,238,0.12)">
+        <div style="font-family:'Cormorant Garamond',serif; font-size:34px">20분</div>
+        <div style="font-size:10.5px; letter-spacing:0.18em; color:rgba(246,244,238,0.55); margin-top:6px">FROM SIEM REAP AIRPORT</div>
+      </div>
+      <div style="padding:28px 32px">
+        <div style="font-family:'Cormorant Garamond',serif; font-size:34px">365</div>
+        <div style="font-size:10.5px; letter-spacing:0.18em; color:rgba(246,244,238,0.55); margin-top:6px">DAYS OPEN · 연중무휴</div>
+      </div>
+    </div>
+
+    <section style="display:grid; grid-template-columns:1.05fr 1fr">
+      <div style="padding:112px 72px 112px 48px; display:flex; flex-direction:column; justify-content:center">
+        <p style="margin:0 0 22px; font-size:10.5px; letter-spacing:0.34em; color:#a8823f">THE CLUB</p>
+        <h2 style="margin:0 0 30px; font-family:'Cormorant Garamond',serif; font-weight:400; font-size:46px; line-height:1.2; color:#1e3a2b">라운드가 여행의<br>중심이 되는 곳</h2>
+        <p style="margin:0 0 20px; font-size:15px; line-height:2.05; color:#4a5145; font-weight:300; max-width:470px; text-wrap:pretty">부영 컨트리클럽은 원시림과 저수지 지형을 그대로 살린 18홀 챔피언십 코스입니다. 아웃코스는 넓은 페어웨이에서 스코어를 만들고, 인코스는 워터해저드와 고저차로 마지막까지 긴장을 놓지 못하게 합니다.</p>
+        <p style="margin:0; font-size:15px; line-height:2.05; color:#4a5145; font-weight:300; max-width:470px; text-wrap:pretty">코스 안에 48실 규모의 부영 골프텔이 함께 있어 이동 없이 연박 라운드가 가능하며, 한국어가 가능한 캐디가 상주합니다. 클럽하우스에서 라커·식사·스파까지 한 건물에서 해결됩니다.</p>
+        <div style="display:flex; gap:44px; margin-top:46px; padding-top:32px; border-top:1px solid rgba(30,58,43,0.15)">
+          <div><div style="font-family:'Cormorant Garamond',serif; font-size:27px; color:#1e3a2b">60명</div><div style="font-size:12px; color:#8b8878; margin-top:5px">한국어 캐디 상주</div></div>
+          <div><div style="font-family:'Cormorant Garamond',serif; font-size:27px; color:#1e3a2b">2008</div><div style="font-size:12px; color:#8b8878; margin-top:5px">개장</div></div>
+          <div><div style="font-family:'Cormorant Garamond',serif; font-size:27px; color:#1e3a2b">벤트그라스</div><div style="font-size:12px; color:#8b8878; margin-top:5px">전 홀 그린</div></div>
+        </div>
+      </div>
+      <div style="position:relative; min-height:580px; background-color:#e6e2d6; background-image:repeating-linear-gradient(135deg,rgba(30,58,43,0.07) 0 2px,transparent 2px 11px); display:flex; align-items:center; justify-content:center">
+        <span style="font-family:ui-monospace,Menlo,monospace; font-size:11.5px; letter-spacing:0.24em; color:#8b8878">클럽하우스 외관 (3:4)</span>
+      </div>
+    </section>
+
+    <section style="padding:104px 48px; background:#efece2">
+      <div style="display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:52px">
+        <div>
+          <p style="margin:0 0 18px; font-size:10.5px; letter-spacing:0.34em; color:#a8823f">SIGNATURE HOLES</p>
+          <h2 style="margin:0; font-family:'Cormorant Garamond',serif; font-weight:400; font-size:44px; line-height:1.15; color:#1e3a2b">기억에 남는 세 개의 홀</h2>
+        </div>
+        <a onClick="{{ goCourse }}" style="font-size:13.5px; letter-spacing:0.06em; border-bottom:1px solid rgba(30,58,43,0.35); padding-bottom:4px">18홀 전체 보기 →</a>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:28px">
+        <sc-for list="{{ signature }}" as="h" hint-placeholder-count="3">
+          <article style="background:#f6f4ee; border:1px solid rgba(30,58,43,0.12)">
+            <div style="height:220px; background-color:#dcd8ca; background-image:repeating-linear-gradient(135deg,rgba(30,58,43,0.08) 0 2px,transparent 2px 11px); display:flex; align-items:center; justify-content:center; font-family:ui-monospace,Menlo,monospace; font-size:11px; letter-spacing:0.2em; color:#8b8878">{{ h.photo }}</div>
+            <div style="padding:30px 30px 34px">
+              <div style="display:flex; flex-direction:column; align-items:flex-start; gap:7px">
+                <span style="font-size:11px; letter-spacing:0.16em; color:#a8823f; white-space:nowrap">{{ h.en }}</span>
+                <h3 style="margin:0; font-family:'Cormorant Garamond',serif; font-weight:500; font-size:28px; color:#1e3a2b; white-space:nowrap">{{ h.title }}</h3>
+              </div>
+              <p style="margin:16px 0 22px; font-size:14px; line-height:1.95; color:#4a5145; font-weight:300; text-wrap:pretty">{{ h.desc }}</p>
+              <div style="display:flex; flex-wrap:wrap; gap:10px 22px; padding-top:18px; border-top:1px solid rgba(30,58,43,0.12); font-size:12.5px; color:#6b7263">
+                <span style="white-space:nowrap">PAR {{ h.par }}</span><span style="white-space:nowrap">{{ h.yards }} yds</span><span style="white-space:nowrap">{{ h.trait }}</span>
+              </div>
+            </div>
+          </article>
+        </sc-for>
+      </div>
+    </section>
+
+    <section style="padding:104px 48px">
+      <p style="margin:0 0 18px; font-size:10.5px; letter-spacing:0.34em; color:#a8823f">FACILITIES</p>
+      <div style="display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:46px; gap:40px">
+        <h2 style="margin:0; font-family:'Cormorant Garamond',serif; font-weight:400; font-size:44px; color:#1e3a2b">숙박부터 연습까지, 코스 안에서</h2>
+        <a onClick="{{ goFacilities }}" style="font-size:13.5px; letter-spacing:0.06em; border-bottom:1px solid rgba(30,58,43,0.35); padding-bottom:4px; white-space:nowrap">시설소개 전체 보기 →</a>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:24px">
+        <sc-for list="{{ facilityTeasers }}" as="f" hint-placeholder-count="3">
+          <a onClick="{{ f.onClick }}" style="display:flex; flex-direction:column; border:1px solid rgba(30,58,43,0.14); background:#f6f4ee">
+            <div style="height:230px; background-color:#dcd8ca; background-image:repeating-linear-gradient(135deg,rgba(30,58,43,0.08) 0 2px,transparent 2px 11px); display:flex; align-items:center; justify-content:center; font-family:ui-monospace,Menlo,monospace; font-size:10.5px; letter-spacing:0.2em; color:#8b8878">{{ f.photo }}</div>
+            <div style="padding:30px 30px 34px">
+              <div style="display:flex; flex-direction:column; align-items:flex-start; gap:7px">
+                <span style="font-size:10.5px; letter-spacing:0.16em; color:#a8823f; white-space:nowrap">{{ f.en }}</span>
+                <h3 style="margin:0; font-family:'Cormorant Garamond',serif; font-weight:500; font-size:27px; color:#1e3a2b; white-space:nowrap">{{ f.name }}</h3>
+              </div>
+              <p style="margin:15px 0 20px; font-size:14px; line-height:1.95; color:#4a5145; font-weight:300; text-wrap:pretty">{{ f.desc }}</p>
+              <div style="padding-top:18px; border-top:1px solid rgba(30,58,43,0.12); font-size:12.5px; color:#6b7263">{{ f.meta }}</div>
+            </div>
+          </a>
+        </sc-for>
+      </div>
+    </section>
+
+    <section style="display:grid; grid-template-columns:1.15fr 1fr; background-color:#1e3a2b; background-image:repeating-linear-gradient(135deg,rgba(255,255,255,0.04) 0 2px,transparent 2px 11px); color:#f6f4ee">
+      <div style="position:relative; min-height:520px; background-color:#2a4634; background-image:repeating-linear-gradient(135deg,rgba(255,255,255,0.06) 0 2px,transparent 2px 11px); display:flex; align-items:center; justify-content:center">
+        <span style="font-family:ui-monospace,Menlo,monospace; font-size:11.5px; letter-spacing:0.24em; color:rgba(246,244,238,0.4)">약도 / 지도 이미지</span>
+      </div>
+      <div style="padding:90px 56px; display:flex; flex-direction:column; justify-content:center">
+        <p style="margin:0 0 20px; font-size:10.5px; letter-spacing:0.34em; color:#c9b78c">ACCESS</p>
+        <h2 style="margin:0 0 32px; font-family:'Cormorant Garamond',serif; font-weight:400; font-size:42px; line-height:1.2">오시는 길</h2>
+        <div style="display:flex; flex-direction:column; gap:26px">
+          <sc-for list="{{ accessRows }}" as="a" hint-placeholder-count="4">
+            <div style="padding-bottom:24px; border-bottom:1px solid rgba(246,244,238,0.18)">
+              <div style="font-size:10.5px; letter-spacing:0.26em; color:#c9b78c; margin-bottom:11px">{{ a.label }}</div>
+              <div style="font-size:14.5px; line-height:1.9; color:rgba(246,244,238,0.82); font-weight:300; text-wrap:pretty">{{ a.value }}</div>
+            </div>
+          </sc-for>
+        </div>
+        <a onClick="{{ goContact }}" style="margin-top:38px; align-self:flex-start; padding:15px 32px; background:#c9b78c; color:#1b2a1f; font-size:14px; letter-spacing:0.06em">상세 약도 보기</a>
+      </div>
+    </section>
+  </div>
+  </sc-if>
+
+  <sc-if value="{{ isCourse }}">
+  <div>
+    <section style="position:relative; padding:96px 48px 84px; background-color:#1e3a2b; background-image:repeating-linear-gradient(135deg,rgba(255,255,255,0.04) 0 2px,transparent 2px 11px); color:#f6f4ee">
+      <p style="margin:0 0 20px; font-size:10.5px; letter-spacing:0.44em; color:#c9b78c">THE COURSE · PAR 72 · 7,214 YARDS</p>
+      <h1 style="margin:0 0 20px; font-family:'Cormorant Garamond',serif; font-weight:400; font-size:60px; line-height:1.1">18홀 홀별 안내</h1>
+      <p style="margin:0; max-width:560px; font-size:15px; line-height:1.95; font-weight:300; color:rgba(246,244,238,0.75); text-wrap:pretty">각 홀의 거리는 챔피언 티 기준입니다. 공략법은 클럽 소속 프로가 정리했습니다.</p>
+    </section>
+
+    <div style="display:flex; align-items:center; gap:10px; padding:22px 48px; background:#efece2; border-bottom:1px solid rgba(30,58,43,0.12); position:sticky; top:81px; z-index:40">
+      <sc-for list="{{ nineTabs }}" as="t" hint-placeholder-count="2">
+        <a onClick="{{ t.onClick }}" style="padding:11px 26px; font-size:13px; letter-spacing:0.06em; background:{{ t.bg }}; color:{{ t.fg }}; border:1px solid rgba(30,58,43,0.2); white-space:nowrap; flex-shrink:0">{{ t.label }}</a>
+      </sc-for>
+      <span style="margin-left:auto; font-size:12.5px; color:#8b8878; white-space:nowrap">{{ nineSummary }}</span>
+    </div>
+
+    <section style="padding:56px 48px 104px">
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:24px">
+        <sc-for list="{{ visibleHoles }}" as="h" hint-placeholder-count="9">
+          <article style="border:1px solid rgba(30,58,43,0.14); background:#f6f4ee; display:flex; flex-direction:column">
+            <div style="position:relative; height:170px; background-color:#dcd8ca; background-image:repeating-linear-gradient(135deg,rgba(30,58,43,0.08) 0 2px,transparent 2px 11px); display:flex; align-items:center; justify-content:center">
+              <span style="font-family:ui-monospace,Menlo,monospace; font-size:10.5px; letter-spacing:0.2em; color:#8b8878">홀 레이아웃 {{ h.no }}</span>
+              <span style="position:absolute; top:0; left:0; padding:9px 16px; background:#1e3a2b; color:#f6f4ee; font-family:'Cormorant Garamond',serif; font-size:20px">{{ h.no }}</span>
+            </div>
+            <div style="padding:24px 26px 28px; display:flex; flex-direction:column; flex:1">
+              <div style="display:flex; align-items:baseline; justify-content:space-between; margin-bottom:14px">
+                <h3 style="margin:0; font-family:'Cormorant Garamond',serif; font-weight:500; font-size:24px; color:#1e3a2b">PAR {{ h.par }}</h3>
+                <span style="font-size:12.5px; color:#a8823f; letter-spacing:0.08em">HDCP {{ h.hdcp }}</span>
+              </div>
+              <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:8px; padding:14px 0; border-top:1px solid rgba(30,58,43,0.12); border-bottom:1px solid rgba(30,58,43,0.12); font-size:12px; color:#6b7263">
+                <div><div style="color:#a3a08f; font-size:10px; letter-spacing:0.14em; margin-bottom:5px">CHAMPION</div>{{ h.champion }}</div>
+                <div><div style="color:#a3a08f; font-size:10px; letter-spacing:0.14em; margin-bottom:5px">REGULAR</div>{{ h.regular }}</div>
+                <div><div style="color:#a3a08f; font-size:10px; letter-spacing:0.14em; margin-bottom:5px">LADIES</div>{{ h.ladies }}</div>
+              </div>
+              <p style="margin:16px 0 0; font-size:13.5px; line-height:1.9; color:#4a5145; font-weight:300; text-wrap:pretty">{{ h.tip }}</p>
+            </div>
+          </article>
+        </sc-for>
+      </div>
+    </section>
+  </div>
+  </sc-if>
+
+  <sc-if value="{{ isFacility }}">
+  <div>
+    <section style="position:relative; padding:96px 48px 84px; background-color:#1e3a2b; background-image:repeating-linear-gradient(135deg,rgba(255,255,255,0.04) 0 2px,transparent 2px 11px); color:#f6f4ee">
+      <p style="margin:0 0 20px; font-size:10.5px; letter-spacing:0.44em; color:#c9b78c">FACILITIES</p>
+      <h1 style="margin:0 0 20px; font-family:'Cormorant Garamond',serif; font-weight:400; font-size:60px; line-height:1.1">시설소개</h1>
+      <p style="margin:0; max-width:560px; font-size:15px; line-height:1.95; font-weight:300; color:rgba(246,244,238,0.75); text-wrap:pretty">골프텔·클럽하우스·연습장이 한 부지 안에 이어져 있어, 도착부터 마지막 라운드까지 이동 없이 지낼 수 있습니다.</p>
+    </section>
+
+    <div style="display:flex; align-items:center; gap:10px; padding:22px 48px; background:#efece2; border-bottom:1px solid rgba(30,58,43,0.12); position:sticky; top:81px; z-index:40">
+      <sc-for list="{{ facilityTabs }}" as="t" hint-placeholder-count="3">
+        <a onClick="{{ t.onClick }}" style="padding:11px 26px; font-size:13px; letter-spacing:0.06em; background:{{ t.bg }}; color:{{ t.fg }}; border:1px solid rgba(30,58,43,0.2); white-space:nowrap; flex-shrink:0">{{ t.label }}</a>
+      </sc-for>
+      <span style="margin-left:auto; font-size:12.5px; color:#8b8878; white-space:nowrap">{{ facilitySummary }}</span>
+    </div>
+
+    <sc-if value="{{ isGolftel }}">
+    <section style="padding:76px 48px 104px">
+      <div style="display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:46px; gap:40px">
+        <h2 style="margin:0; font-family:'Cormorant Garamond',serif; font-weight:400; font-size:42px; color:#1e3a2b">코스 안에서 자고, 아침에 바로 티오프</h2>
+        <p style="margin:0; max-width:380px; font-size:13.5px; line-height:1.9; color:#8b8878; text-wrap:pretty">클럽하우스와 이어진 부영 골프텔 48실. 첫 조 티타임 30분 전에 일어나도 충분합니다.</p>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); border:1px solid rgba(30,58,43,0.15)">
+        <sc-for list="{{ rooms }}" as="r" hint-placeholder-count="3">
+          <div style="border-right:1px solid rgba(30,58,43,0.15); background:{{ r.bg }}; color:{{ r.fg }}; display:flex; flex-direction:column">
+            <div style="height:230px; background-color:{{ r.photoBg }}; background-image:repeating-linear-gradient(135deg,{{ r.stripe }} 0 2px,transparent 2px 11px); display:flex; align-items:center; justify-content:center; font-family:ui-monospace,Menlo,monospace; font-size:10.5px; letter-spacing:0.2em; color:{{ r.muted }}">{{ r.photo }}</div>
+            <div style="padding:38px 38px 40px; display:flex; flex-direction:column; flex:1">
+              <div style="font-size:10.5px; letter-spacing:0.26em; color:{{ r.accent }}">{{ r.tag }}</div>
+              <h3 style="margin:16px 0 8px; font-family:'Cormorant Garamond',serif; font-weight:400; font-size:30px">{{ r.name }}</h3>
+              <p style="margin:0 0 22px; font-size:13px; color:{{ r.muted }}">{{ r.spec }}</p>
+              <p style="margin:0 0 24px; padding-bottom:24px; border-bottom:1px solid {{ r.rule }}; font-size:14px; line-height:1.9; font-weight:300; text-wrap:pretty">{{ r.desc }}</p>
+              <ul style="list-style:none; margin:24px 0 0; padding:0; display:flex; flex-direction:column; gap:12px; font-size:13.5px; font-weight:300; line-height:1.6">
+                <sc-for list="{{ r.items }}" as="it" hint-placeholder-count="4">
+                  <li style="display:flex; gap:12px"><span style="color:{{ r.accent }}">—</span><span>{{ it }}</span></li>
+                </sc-for>
+              </ul>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+      <div style="display:flex; gap:56px; margin-top:32px; padding:28px 38px; background:#efece2; font-size:13px; color:#6b7263; font-weight:300">
+        <span>체크인 14:00 · 체크아웃 12:00</span>
+        <span>전 객실 조식 포함 · 골프백 보관 무료</span>
+        <span>투숙객 그린피 15% 할인</span>
+      </div>
+    </section>
+    </sc-if>
+
+    <sc-if value="{{ isClubhouse }}">
+    <section style="padding:76px 48px 104px">
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center; margin-bottom:64px">
+        <div style="min-height:420px; background-color:#e6e2d6; background-image:repeating-linear-gradient(135deg,rgba(30,58,43,0.07) 0 2px,transparent 2px 11px); display:flex; align-items:center; justify-content:center; font-family:ui-monospace,Menlo,monospace; font-size:11.5px; letter-spacing:0.24em; color:#8b8878">클럽하우스 전경 (4:3)</div>
+        <div>
+          <h2 style="margin:0 0 26px; font-family:'Cormorant Garamond',serif; font-weight:400; font-size:42px; line-height:1.2; color:#1e3a2b">크메르 목조 양식의<br>2층 클럽하우스</h2>
+          <p style="margin:0 0 18px; font-size:15px; line-height:2.05; color:#4a5145; font-weight:300; text-wrap:pretty">1층은 프론트·프로샵·라커룸, 2층은 레스토랑과 라운지로 이어집니다. 18번 홀 그린이 내려다보이는 테라스석은 오후 늦은 시간 예약이 몰립니다.</p>
+          <p style="margin:0; font-size:15px; line-height:2.05; color:#4a5145; font-weight:300; text-wrap:pretty">라운드 전후 이용하는 사우나와 스파는 예약 없이 이용 가능하며, 라커와 샤워 시설은 그린피에 포함됩니다.</p>
+        </div>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:20px">
+        <sc-for list="{{ clubhouse }}" as="f" hint-placeholder-count="4">
+          <div>
+            <div style="height:200px; background-color:#e6e2d6; background-image:repeating-linear-gradient(135deg,rgba(30,58,43,0.07) 0 2px,transparent 2px 11px); display:flex; align-items:center; justify-content:center; font-family:ui-monospace,Menlo,monospace; font-size:10.5px; letter-spacing:0.2em; color:#8b8878">{{ f.photo }}</div>
+            <h4 style="margin:20px 0 8px; font-family:'Cormorant Garamond',serif; font-weight:500; font-size:22px; color:#1e3a2b">{{ f.name }}</h4>
+            <p style="margin:0 0 12px; font-size:13.5px; line-height:1.85; color:#6b7263; font-weight:300; text-wrap:pretty">{{ f.desc }}</p>
+            <div style="font-size:12px; color:#a8823f; letter-spacing:0.04em">{{ f.hours }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+    </sc-if>
+
+    <sc-if value="{{ isRange }}">
+    <section style="padding:76px 48px 104px">
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center; margin-bottom:64px">
+        <div>
+          <h2 style="margin:0 0 26px; font-family:'Cormorant Garamond',serif; font-weight:400; font-size:42px; line-height:1.2; color:#1e3a2b">라운드 전 30분,<br>몸을 깨우는 연습장</h2>
+          <p style="margin:0 0 18px; font-size:15px; line-height:2.05; color:#4a5145; font-weight:300; text-wrap:pretty">30타석 규모의 야간 조명 드라이빙 레인지와 별도의 쇼트게임 구역, 두 개의 퍼팅 그린을 갖췄습니다. 레인지 그린은 코스와 동일한 벤트그라스로 관리해 실제 라운드 감각을 그대로 옮겼습니다.</p>
+          <p style="margin:0; font-size:15px; line-height:2.05; color:#4a5145; font-weight:300; text-wrap:pretty">골프텔 투숙객은 연습 볼 1바구니가 매일 무료로 제공되며, 소속 프로의 1:1 레슨은 프론트에서 당일 신청할 수 있습니다.</p>
+        </div>
+        <div style="min-height:420px; background-color:#e6e2d6; background-image:repeating-linear-gradient(135deg,rgba(30,58,43,0.07) 0 2px,transparent 2px 11px); display:flex; align-items:center; justify-content:center; font-family:ui-monospace,Menlo,monospace; font-size:11.5px; letter-spacing:0.24em; color:#8b8878">드라이빙 레인지 (4:3)</div>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:20px">
+        <sc-for list="{{ rangeSpecs }}" as="f" hint-placeholder-count="4">
+          <div>
+            <div style="height:200px; background-color:#e6e2d6; background-image:repeating-linear-gradient(135deg,rgba(30,58,43,0.07) 0 2px,transparent 2px 11px); display:flex; align-items:center; justify-content:center; font-family:ui-monospace,Menlo,monospace; font-size:10.5px; letter-spacing:0.2em; color:#8b8878">{{ f.photo }}</div>
+            <h4 style="margin:20px 0 8px; font-family:'Cormorant Garamond',serif; font-weight:500; font-size:22px; color:#1e3a2b">{{ f.name }}</h4>
+            <p style="margin:0 0 12px; font-size:13.5px; line-height:1.85; color:#6b7263; font-weight:300; text-wrap:pretty">{{ f.desc }}</p>
+            <div style="font-size:12px; color:#a8823f; letter-spacing:0.04em">{{ f.hours }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+    </sc-if>
+  </div>
+  </sc-if>
+
+  <sc-if value="{{ isBoard }}">
+  <div>
+    <section style="position:relative; padding:96px 48px 84px; background-color:#1e3a2b; background-image:repeating-linear-gradient(135deg,rgba(255,255,255,0.04) 0 2px,transparent 2px 11px); color:#f6f4ee">
+      <p style="margin:0 0 20px; font-size:10.5px; letter-spacing:0.44em; color:#c9b78c">BOARD</p>
+      <h1 style="margin:0 0 20px; font-family:'Cormorant Garamond',serif; font-weight:400; font-size:60px; line-height:1.1">게시판</h1>
+      <p style="margin:0; max-width:560px; font-size:15px; line-height:1.95; font-weight:300; color:rgba(246,244,238,0.75); text-wrap:pretty">코스 운영과 요금 변경은 공지사항에서, 자주 묻는 내용은 FAQ에서 먼저 확인하실 수 있습니다.</p>
+    </section>
+
+    <div style="display:flex; align-items:center; gap:10px; padding:22px 48px; background:#efece2; border-bottom:1px solid rgba(30,58,43,0.12); position:sticky; top:81px; z-index:40">
+      <sc-for list="{{ boardTabs }}" as="t" hint-placeholder-count="3">
+        <a onClick="{{ t.onClick }}" style="padding:11px 26px; font-size:13px; letter-spacing:0.06em; background:{{ t.bg }}; color:{{ t.fg }}; border:1px solid rgba(30,58,43,0.2); white-space:nowrap; flex-shrink:0">{{ t.label }}</a>
+      </sc-for>
+      <span style="margin-left:auto; font-size:12.5px; color:#8b8878; white-space:nowrap">{{ boardCount }}</span>
+    </div>
+
+    <sc-if value="{{ isNotice }}">
+    <section style="padding:56px 48px 104px">
+      <div style="display:flex; gap:26px; padding:0 26px 16px; border-bottom:1px solid rgba(30,58,43,0.25); font-size:11px; letter-spacing:0.22em; color:#8b8878">
+        <span style="width:70px">NO</span><span style="flex:1">제목</span><span style="width:120px">구분</span><span style="width:110px">등록일</span>
+      </div>
+      <sc-for list="{{ notices }}" as="n" hint-placeholder-count="6">
+        <div style="display:flex; align-items:center; gap:26px; padding:24px 26px; border-bottom:1px solid rgba(30,58,43,0.12); background:{{ n.rowBg }}">
+          <span style="width:70px; font-family:'Cormorant Garamond',serif; font-size:18px; color:#8b8878">{{ n.no }}</span>
+          <span style="flex:1; display:flex; align-items:center; gap:14px; min-width:0">
+            <sc-if value="{{ n.pinned }}"><span style="padding:5px 10px; background:#1e3a2b; color:#f6f4ee; font-size:10px; letter-spacing:0.14em; flex-shrink:0">공지</span></sc-if>
+            <a style="font-size:15px; color:#22261f; overflow:hidden; text-overflow:ellipsis; white-space:nowrap">{{ n.title }}</a>
+          </span>
+          <span style="width:120px; font-size:12.5px; color:#a8823f; letter-spacing:0.06em">{{ n.cat }}</span>
+          <span style="width:110px; font-size:12.5px; color:#8b8878">{{ n.date }}</span>
+        </div>
+      </sc-for>
+    </section>
+    </sc-if>
+
+    <sc-if value="{{ isFaq }}">
+    <section style="padding:56px 48px 104px; display:grid; grid-template-columns:280px 1fr; gap:56px">
+      <div>
+        <p style="margin:0 0 16px; font-size:10.5px; letter-spacing:0.3em; color:#a8823f">CATEGORY</p>
+        <div style="display:flex; flex-direction:column; gap:12px; font-size:14px; color:#4a5145; font-weight:300">
+          <sc-for list="{{ faqCats }}" as="c" hint-placeholder-count="4">
+            <span>{{ c }}</span>
+          </sc-for>
+        </div>
+      </div>
+      <div style="border-top:1px solid rgba(30,58,43,0.2)">
+        <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="6">
+          <div style="border-bottom:1px solid rgba(30,58,43,0.12)">
+            <a onClick="{{ f.toggle }}" style="display:flex; align-items:center; gap:20px; padding:26px 8px">
+              <span style="font-family:'Cormorant Garamond',serif; font-size:20px; color:#a8823f; width:26px">Q</span>
+              <span style="flex:1; font-size:15.5px; color:#22261f">{{ f.q }}</span>
+              <span style="font-size:18px; color:#8b8878; width:20px; text-align:center">{{ f.sign }}</span>
+            </a>
+            <sc-if value="{{ f.open }}">
+              <div style="display:flex; gap:20px; padding:4px 8px 32px 8px">
+                <span style="font-family:'Cormorant Garamond',serif; font-size:20px; color:#8b8878; width:26px">A</span>
+                <p style="margin:0; flex:1; font-size:14.5px; line-height:2; color:#4a5145; font-weight:300; text-wrap:pretty">{{ f.a }}</p>
+              </div>
+            </sc-if>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+    </sc-if>
+
+    <sc-if value="{{ isInquiry }}">
+    <section style="padding:56px 48px 104px">
+      <div style="display:flex; gap:22px; margin-bottom:44px">
+        <sc-for list="{{ inquiryChannels }}" as="c" hint-placeholder-count="3">
+          <div style="flex:1; padding:32px 30px; border:1px solid rgba(30,58,43,0.15); background:#efece2">
+            <div style="font-size:10.5px; letter-spacing:0.26em; color:#a8823f; margin-bottom:14px">{{ c.label }}</div>
+            <div style="font-family:'Cormorant Garamond',serif; font-size:26px; color:#1e3a2b; margin-bottom:10px">{{ c.value }}</div>
+            <div style="font-size:13px; color:#6b7263; font-weight:300">{{ c.note }}</div>
+          </div>
+        </sc-for>
+      </div>
+      <div style="display:flex; gap:26px; padding:0 26px 16px; border-bottom:1px solid rgba(30,58,43,0.25); font-size:11px; letter-spacing:0.22em; color:#8b8878">
+        <span style="width:70px">NO</span><span style="flex:1">문의 내용</span><span style="width:110px">작성자</span><span style="width:110px">등록일</span><span style="width:100px">처리 상태</span>
+      </div>
+      <sc-for list="{{ inquiries }}" as="q" hint-placeholder-count="6">
+        <div style="display:flex; align-items:center; gap:26px; padding:24px 26px; border-bottom:1px solid rgba(30,58,43,0.12)">
+          <span style="width:70px; font-family:'Cormorant Garamond',serif; font-size:18px; color:#8b8878">{{ q.no }}</span>
+          <span style="flex:1; font-size:15px; color:#22261f; overflow:hidden; text-overflow:ellipsis; white-space:nowrap">{{ q.title }}</span>
+          <span style="width:110px; font-size:13px; color:#6b7263">{{ q.writer }}</span>
+          <span style="width:110px; font-size:12.5px; color:#8b8878">{{ q.date }}</span>
+          <span style="width:100px"><span style="padding:6px 12px; font-size:11.5px; letter-spacing:0.06em; background:{{ q.badgeBg }}; color:{{ q.badgeFg }}">{{ q.status }}</span></span>
+        </div>
+      </sc-for>
+      <p style="margin:34px 0 0; font-size:13px; color:#8b8878; font-weight:300">비공개로 등록된 문의는 목록에 제목만 표시되며, 답변은 작성 시 남기신 연락처로 개별 안내드립니다.</p>
+    </section>
+    </sc-if>
+  </div>
+  </sc-if>
+
+  <sc-if value="{{ isContact }}">
+  <div>
+    <section style="position:relative; padding:96px 48px 84px; background-color:#1e3a2b; background-image:repeating-linear-gradient(135deg,rgba(255,255,255,0.04) 0 2px,transparent 2px 11px); color:#f6f4ee">
+      <p style="margin:0 0 20px; font-size:10.5px; letter-spacing:0.44em; color:#c9b78c">ACCESS &amp; CONTACT</p>
+      <h1 style="margin:0; font-family:'Cormorant Garamond',serif; font-weight:400; font-size:60px; line-height:1.1">오시는 길</h1>
+    </section>
+    <section style="display:grid; grid-template-columns:1.2fr 1fr">
+      <div style="min-height:560px; background-color:#e6e2d6; background-image:repeating-linear-gradient(135deg,rgba(30,58,43,0.07) 0 2px,transparent 2px 11px); display:flex; align-items:center; justify-content:center">
+        <span style="font-family:ui-monospace,Menlo,monospace; font-size:11.5px; letter-spacing:0.24em; color:#8b8878">약도 / 지도 이미지</span>
+      </div>
+      <div style="padding:80px 48px; display:flex; flex-direction:column; gap:34px">
+        <sc-for list="{{ contactRows }}" as="c" hint-placeholder-count="4">
+          <div style="padding-bottom:30px; border-bottom:1px solid rgba(30,58,43,0.14)">
+            <div style="font-size:10.5px; letter-spacing:0.28em; color:#a8823f; margin-bottom:12px">{{ c.label }}</div>
+            <div style="font-size:15px; line-height:1.9; color:#3d4438; font-weight:300; text-wrap:pretty">{{ c.value }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+  </div>
+  </sc-if>
+
+  <footer style="background:#16241b; color:rgba(246,244,238,0.68); padding:72px 48px 40px">
+    <div style="display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:40px; padding-bottom:52px; border-bottom:1px solid rgba(246,244,238,0.14)">
+      <div>
+        <div style="font-family:'Cormorant Garamond',serif; font-size:24px; letter-spacing:0.13em; color:#f6f4ee">BOOYOUNG COUNTRY CLUB</div>
+        <div style="font-size:9.5px; letter-spacing:0.38em; color:#8b8878; margin-top:8px">SIEM REAP · CAMBODIA</div>
+        <p style="margin:26px 0 0; font-size:13px; line-height:1.9; font-weight:300; max-width:320px; text-wrap:pretty">National Road 6, Siem Reap, Kingdom of Cambodia<br>운영시간 05:30 – 18:30 (연중무휴)</p>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:12px; font-size:13px">
+        <div style="font-size:10.5px; letter-spacing:0.26em; color:#c9b78c; margin-bottom:6px">CLUB</div>
+        <a onClick="{{ goCourse }}" style="color:rgba(246,244,238,0.68)">코스 안내</a>
+        <a onClick="{{ goPackages }}" style="color:rgba(246,244,238,0.68)">골프텔</a>
+        <a onClick="{{ goClubhouse }}" style="color:rgba(246,244,238,0.68)">클럽하우스</a>
+        <a onClick="{{ goRange }}" style="color:rgba(246,244,238,0.68)">골프연습장</a>
+        <a onClick="{{ goBoard }}" style="color:rgba(246,244,238,0.68)">공지사항 · FAQ</a>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:12px; font-size:13px">
+        <div style="font-size:10.5px; letter-spacing:0.26em; color:#c9b78c; margin-bottom:6px">CONTACT</div>
+        <a href="tel:+85563900000" style="color:rgba(246,244,238,0.68)">+855 63 900 000</a>
+        <a href="mailto:golf@booyoungcc.com" style="color:rgba(246,244,238,0.68)">golf@booyoungcc.com</a>
+        <a onClick="{{ goContact }}" style="color:rgba(246,244,238,0.68)">오시는 길</a>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:12px; font-size:13px">
+        <div style="font-size:10.5px; letter-spacing:0.26em; color:#c9b78c; margin-bottom:6px">KOREA DESK</div>
+        <span>카카오톡 ID · booyoungcc</span>
+        <span>한국 사무소 02-000-0000</span>
+        <span>09:00 – 18:00 (KST)</span>
+      </div>
+    </div>
+    <div style="display:flex; justify-content:space-between; padding-top:26px; font-size:11.5px; color:rgba(246,244,238,0.4)">
+      <span>© 2026 Booyoung Country Club Siem Reap. All rights reserved.</span>
+      <span style="display:flex; gap:22px"><a style="color:rgba(246,244,238,0.4)">개인정보처리방침</a><a style="color:rgba(246,244,238,0.4)">이용약관</a></span>
+    </div>
+  </footer>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:900}}">
+const HOLES = [
+  {no:"01",par:4,hdcp:11,champion:410,regular:378,ladies:322,tip:"오프닝 홀. 페어웨이가 넓어 드라이버를 마음껏 쓸 수 있지만, 그린 우측 벙커가 깊어 두 번째 샷은 핀보다 왼쪽을 노리는 편이 안전합니다."},
+  {no:"02",par:5,hdcp:5,champion:548,regular:512,ladies:436,tip:"오르막 파5. 티샷 낙하 지점 좌측이 야자수 군락이라 2온 욕심보다 세 번의 샷으로 나누는 편이 스코어에 유리합니다."},
+  {no:"03",par:3,hdcp:17,champion:172,regular:154,ladies:126,tip:"바람이 뒤에서 부는 날이 많아 한 클럽 짧게. 그린이 앞뒤로 길어 핀 위치에 따라 두 클럽까지 차이가 납니다."},
+  {no:"04",par:4,hdcp:3,champion:441,regular:405,ladies:344,tip:"코스에서 가장 긴 파4. 페어웨이 중앙 크로스 벙커를 넘기지 못하면 레이업 후 3온 전략이 현실적입니다."},
+  {no:"05",par:4,hdcp:13,champion:389,regular:356,ladies:301,tip:"왼쪽 도그렉. 코너를 질러 치려면 230야드 캐리가 필요하며, 실패 시 정글로 들어가 벌타를 각오해야 합니다."},
+  {no:"06",par:3,hdcp:15,champion:196,regular:171,ladies:139,tip:"연못을 넘겨 치는 아일랜드형 파3. 그린 앞 에이프런이 넓어 짧게 떨어져도 굴려 올릴 수 있습니다."},
+  {no:"07",par:5,hdcp:7,champion:531,regular:498,ladies:428,tip:"내리막 파5. 티샷만 페어웨이에 세우면 롱히터는 2온이 충분히 가능한 버디 홀입니다."},
+  {no:"08",par:4,hdcp:9,champion:398,regular:366,ladies:310,tip:"그린이 3단으로 나뉘어 있습니다. 핀과 다른 단에 올리면 3퍼트가 쉽게 나오므로 거리 확인이 중요합니다."},
+  {no:"09",par:4,hdcp:1,champion:452,regular:418,ladies:352,tip:"클럽하우스를 바라보는 아웃코스 최난도 홀. 오른쪽 워터해저드를 피해 왼쪽 러프를 노리는 것이 정석입니다."},
+  {no:"10",par:4,hdcp:12,champion:404,regular:372,ladies:315,tip:"인코스 시작. 티잉 그라운드가 높아 실제보다 짧게 느껴지니 캐디의 거리 안내를 신뢰하세요."},
+  {no:"11",par:3,hdcp:18,champion:158,regular:141,ladies:118,tip:"코스에서 가장 짧은 홀이지만 그린 주변 벙커가 다섯 개. 정확한 거리감이 관건입니다."},
+  {no:"12",par:5,hdcp:6,champion:562,regular:524,ladies:447,tip:"우측 도그렉 파5. 세컨드 샷 지점부터 페어웨이가 좁아져 레이업 지점을 미리 정해두는 편이 좋습니다."},
+  {no:"13",par:4,hdcp:8,champion:415,regular:381,ladies:326,tip:"양쪽이 워터해저드인 좁은 홀. 드라이버 대신 3번 우드로 페어웨이를 지키는 선택이 유효합니다."},
+  {no:"14",par:4,hdcp:16,champion:362,regular:333,ladies:284,tip:"짧은 파4. 그린이 앞으로 기울어 있어 스핀이 걸린 샷은 앞쪽으로 흘러내립니다."},
+  {no:"15",par:3,hdcp:14,champion:184,regular:163,ladies:132,tip:"오후 역광이 심한 홀. 그린 뒤쪽은 급경사 내리막이라 절대 길게 치지 마세요."},
+  {no:"16",par:5,hdcp:4,champion:574,regular:536,ladies:459,tip:"코스에서 가장 긴 홀. 세 번째 샷을 짧은 웨지로 남기는 배분이 스코어를 지킵니다."},
+  {no:"17",par:4,hdcp:10,champion:426,regular:392,ladies:334,tip:"그린 앞을 개울이 가로지릅니다. 애매한 거리가 남으면 한 클럽 길게 잡아 그린 뒤를 노리는 편이 안전합니다."},
+  {no:"18",par:4,hdcp:2,champion:448,regular:412,ladies:349,tip:"클럽하우스 테라스가 내려다보는 마무리 홀. 우측 호수를 따라 페어웨이가 휘어지며, 그린은 좌우 폭이 좁습니다."}
+];
+
+class Component extends DCLogic {
+  state = { page: "home", nine: "out", board: "notice", faqOpen: 0, facility: "golftel" };
+
+  goFacility(id) {
+    return () => {
+      this.setState({ page: "facility", facility: id });
+      if (typeof window !== "undefined") window.scrollTo(0, 0);
+    };
+  }
+
+  go(page) {
+    return () => {
+      this.setState({ page });
+      if (typeof window !== "undefined") window.scrollTo(0, 0);
+    };
+  }
+
+  renderVals() {
+    const { page, nine, board, faqOpen, facility } = this.state;
+    const ftab = (id, label) => ({
+      label, onClick: () => this.setState({ facility: id }),
+      bg: facility === id ? "#1e3a2b" : "transparent",
+      fg: facility === id ? "#f6f4ee" : "#3d4438"
+    });
+    const btab = (id, label) => ({
+      label, onClick: () => this.setState({ board: id }),
+      bg: board === id ? "#1e3a2b" : "transparent",
+      fg: board === id ? "#f6f4ee" : "#3d4438"
+    });
+    const tab = (id, label) => ({
+      label, onClick: () => this.setState({ nine: id }),
+      bg: nine === id ? "#1e3a2b" : "transparent",
+      fg: nine === id ? "#f6f4ee" : "#3d4438"
+    });
+    const holes = nine === "out" ? HOLES.slice(0, 9) : HOLES.slice(9);
+    const par = holes.reduce((s, h) => s + h.par, 0);
+    const yds = holes.reduce((s, h) => s + h.champion, 0);
+
+    return {
+      isHome: page === "home",
+      isCourse: page === "course",
+      isContact: page === "contact",
+      homeMark: page === "home" ? "#a8823f" : "transparent",
+      courseMark: page === "course" ? "#a8823f" : "transparent",
+      goHome: this.go("home"),
+      goCourse: this.go("course"),
+      goContact: this.go("contact"),
+      goPackages: this.goFacility("golftel"),
+      goFacilities: this.goFacility("golftel"),
+      goClubhouse: this.goFacility("clubhouse"),
+      goRange: this.goFacility("range"),
+      isFacility: page === "facility",
+      facilityMark: page === "facility" ? "#a8823f" : "transparent",
+      isGolftel: facility === "golftel",
+      isClubhouse: facility === "clubhouse",
+      isRange: facility === "range",
+      facilityTabs: [ftab("golftel", "골프텔"), ftab("clubhouse", "클럽하우스"), ftab("range", "골프연습장")],
+      facilitySummary: facility === "golftel" ? "48실 · 3개 타입"
+        : facility === "clubhouse" ? "2층 · 레스토랑 · 프로샵 · 스파" : "30타석 · 야간 조명 운영",
+
+      facilityTeasers: [
+        {name:"골프텔", en:"GOLFTEL", photo:"골프텔 외관", meta:"48실 · 스탠다드 / 페어웨이 / 스위트", onClick: this.goFacility("golftel"),
+         desc:"클럽하우스와 이어진 48실 규모 숙소. 이동 없이 연박 라운드가 가능합니다."},
+        {name:"클럽하우스", en:"CLUBHOUSE", photo:"클럽하우스 로비", meta:"레스토랑 · 프로샵 · 라커 · 스파", onClick: this.goFacility("clubhouse"),
+         desc:"크메르 목조 양식을 현대적으로 해석한 2층 규모. 라운드 전후가 한 건물에서 끝납니다."},
+        {name:"골프연습장", en:"PRACTICE RANGE", photo:"드라이빙 레인지", meta:"30타석 · 쇼트게임 구역 · 퍼팅 그린 2면", onClick: this.goFacility("range"),
+         desc:"야간 조명 드라이빙 레인지와 쇼트게임 구역. 새벽 라운드 전에도 문을 엽니다."}
+      ],
+
+      clubhouse: [
+        {name:"레스토랑", photo:"레스토랑 홀", hours:"05:00 – 21:00", desc:"한식·크메르식·양식을 함께 냅니다. 18번 홀 그린이 보이는 테라스석이 인기입니다."},
+        {name:"프로샵", photo:"프로샵 진열대", hours:"05:30 – 18:30", desc:"클럽 대여와 소모품 판매, 간단한 그립 교체와 로프트 점검을 현장에서 처리합니다."},
+        {name:"라커 · 샤워", photo:"라커룸", hours:"05:00 – 19:00", desc:"남녀 각 120개 라커와 샤워 부스. 그린피에 이용료가 포함됩니다."},
+        {name:"스파 & 사우나", photo:"스파 트리트먼트 룸", hours:"11:00 – 21:00", desc:"크메르 전통 마사지와 건식 사우나. 예약 없이 이용 가능합니다."}
+      ],
+
+      rangeSpecs: [
+        {name:"드라이빙 레인지", photo:"30타석 전경", hours:"05:00 – 21:00", desc:"250야드 길이의 30타석. 8타석은 지붕과 선풍기를 갖춰 한낮에도 이용할 수 있습니다."},
+        {name:"쇼트게임 구역", photo:"어프로치 연습장", hours:"05:30 – 18:30", desc:"벙커 두 곳과 러프 구간을 갖춘 어프로치 전용 구역. 실제 코스와 같은 잔디를 씁니다."},
+        {name:"퍼팅 그린", photo:"퍼팅 그린", hours:"05:00 – 19:00", desc:"코스와 동일한 스피드로 관리하는 두 개의 퍼팅 그린. 첫 조 대기 중 이용하기 좋습니다."},
+        {name:"프로 레슨", photo:"레슨 스튜디오", hours:"예약제 · 09:00 – 17:00", desc:"소속 프로의 1:1 레슨 50분. 한국어 진행 가능하며 프론트에서 당일 신청됩니다."}
+      ],
+      goBoard: this.go("board"),
+      isBoard: page === "board",
+      boardMark: page === "board" ? "#a8823f" : "transparent",
+      contactMark: page === "contact" ? "#a8823f" : "transparent",
+      isNotice: board === "notice",
+      isFaq: board === "faq",
+      isInquiry: board === "inquiry",
+      boardTabs: [btab("notice", "공지사항"), btab("faq", "FAQ"), btab("inquiry", "문의사항")],
+      boardCount: board === "notice" ? "총 8건 · 최근 업데이트 2026.08.01"
+        : board === "faq" ? "자주 묻는 질문 8건" : "총 6건 · 평균 답변 소요 1일",
+
+      notices: [
+        {no:"08", pinned:true, cat:"요금", date:"2026.08.01", title:"2026년 하반기 그린피·카트비·캐디피 요금표 안내", rowBg:"#f2efe5"},
+        {no:"07", pinned:true, cat:"요금", date:"2026.07.20", title:"부영 골프텔 객실 요금 및 투숙객 그린피 할인율 변경 안내", rowBg:"#f2efe5"},
+        {no:"06", pinned:false, cat:"코스", date:"2026.07.11", title:"우기 집중호우에 따른 12~14번 홀 카트 진입 제한 안내", rowBg:"transparent"},
+        {no:"05", pinned:false, cat:"운영", date:"2026.06.28", title:"7월 그린 에어레이션 작업 일정 및 임시 그린 운영 안내", rowBg:"transparent"},
+        {no:"04", pinned:false, cat:"대회", date:"2026.06.02", title:"제9회 부영 클럽 챔피언십 참가자 모집 (8월 22~23일)", rowBg:"transparent"},
+        {no:"03", pinned:false, cat:"시설", date:"2026.05.15", title:"드라이빙 레인지 야간 조명 교체 공사에 따른 이용 시간 조정", rowBg:"transparent"},
+        {no:"02", pinned:false, cat:"운영", date:"2026.04.30", title:"크메르 신년 연휴 기간 셔틀 및 레스토랑 운영 시간 안내", rowBg:"transparent"},
+        {no:"01", pinned:false, cat:"시설", date:"2026.03.18", title:"클럽하우스 라커룸 및 사우나 리뉴얼 공사 완료 안내", rowBg:"transparent"}
+      ],
+
+      faqCats: ["라운드 · 코스", "골프텔 · 숙박", "교통 · 픽업", "시설 · 이용 안내"],
+      faqs: [
+        {q:"첫 조 티오프는 몇 시부터인가요?", a:"건기에는 오전 5시 40분, 우기에는 오전 6시부터 첫 조가 출발합니다. 골프텔 투숙객은 첫 조 배정을 우선 요청하실 수 있습니다."},
+        {q:"캐디와 카트는 필수인가요?", a:"전 홀 캐디 동반이 원칙이며, 카트는 4인 1대 기준으로 운영합니다. 2인 이하 라운드는 시간대에 따라 조인 라운드로 진행될 수 있습니다."},
+        {q:"한국어가 통하나요?", a:"한국어 가능 캐디 60명이 상주하며, 프론트와 레스토랑에는 한국인 매니저가 상주합니다. 사전 요청 시 한국어 캐디로 배정해 드립니다."},
+        {q:"클럽을 빌릴 수 있나요?", a:"프로샵에서 남녀 풀세트 대여가 가능합니다. 좌타 세트는 수량이 제한적이라 도착 3일 전까지 미리 알려주시는 편이 좋습니다."},
+        {q:"우기에도 라운드가 가능한가요?", a:"5~10월 우기에도 대부분 라운드가 가능합니다. 스콜은 보통 30분 내로 그치며, 전 홀 배수 설계로 비 직후에도 페어웨이 상태가 유지됩니다."},
+        {q:"골프텔 조식은 몇 시부터인가요?", a:"오전 4시 50분부터 오전 10시까지 운영합니다. 첫 조로 나가시는 분들을 위해 간편식 도시락도 준비해 드립니다."},
+        {q:"공항 픽업은 어떻게 신청하나요?", a:"도착 항공편과 인원을 전화 또는 카카오톡으로 알려주시면 도착 게이트에서 클럽 차량이 대기합니다. 골프텔 투숙객은 무료입니다."},
+        {q:"복장 규정이 있나요?", a:"칼라 있는 셔츠와 골프화를 착용해 주세요. 민소매·청바지·운동화 차림은 코스 입장이 제한됩니다."}
+      ].map((f, i) => ({
+        ...f, open: faqOpen === i, sign: faqOpen === i ? "−" : "+",
+        toggle: () => this.setState({ faqOpen: faqOpen === i ? -1 : i })
+      })),
+
+      inquiryChannels: [
+        {label:"TELEPHONE", value:"+855 63 900 000", note:"현지 05:30 – 18:30 (연중무휴)"},
+        {label:"KAKAOTALK", value:"booyoungcc", note:"한국어 상담 09:00 – 21:00 (KST)"},
+        {label:"EMAIL", value:"golf@booyoungcc.com", note:"영업일 기준 1일 이내 회신"}
+      ],
+      inquiries: [
+        {no:"06", title:"8인 단체 라운드 시 카트 배정 문의", writer:"김*수", date:"2026.08.05", status:"답변완료", badgeBg:"#1e3a2b", badgeFg:"#f6f4ee"},
+        {no:"05", title:"스위트 객실 4인 투숙 시 침구 추가 가능한가요", writer:"이*영", date:"2026.08.03", status:"답변완료", badgeBg:"#1e3a2b", badgeFg:"#f6f4ee"},
+        {no:"04", title:"단체 20인 라운드 시 클럽하우스 만찬 예약 가능한가요", writer:"박*환", date:"2026.08.02", status:"접수", badgeBg:"#e0dccd", badgeFg:"#4a5145"},
+        {no:"03", title:"공항 픽업 차량 골프백 4개 적재 가능 여부", writer:"정*미", date:"2026.07.30", status:"답변완료", badgeBg:"#1e3a2b", badgeFg:"#f6f4ee"},
+        {no:"02", title:"좌타 대여 클럽 재고 확인 부탁드립니다", writer:"최*호", date:"2026.07.28", status:"답변완료", badgeBg:"#1e3a2b", badgeFg:"#f6f4ee"},
+        {no:"01", title:"클럽 챔피언십 참가 자격 관련 문의", writer:"윤*진", date:"2026.07.25", status:"답변완료", badgeBg:"#1e3a2b", badgeFg:"#f6f4ee"}
+      ],
+
+      signature: [
+        {title:"6번 홀", en:"THE ISLAND", par:3, yards:196, trait:"워터해저드", photo:"6번 홀 (4:3)", desc:"연못을 넘겨 치는 아일랜드형 파3. 아침 안개가 걷히는 시간대의 풍경으로 잘 알려진 홀입니다."},
+        {title:"12번 홀", en:"THE BEND", par:5, yards:562, trait:"우측 도그렉", photo:"12번 홀 (4:3)", desc:"세컨드 샷 지점부터 페어웨이가 급격히 좁아지는 우측 도그렉. 레이업 지점 선택이 스코어를 가릅니다."},
+        {title:"18번 홀", en:"THE FINISH", par:4, yards:448, trait:"호수·좁은 그린", photo:"18번 홀 (4:3)", desc:"클럽하우스 테라스를 향해 호수를 끼고 휘어지는 마무리 홀. 갤러리 앞에서 치는 기분을 줍니다."}
+      ],
+
+      rooms: [
+        {tag:"STANDARD TWIN", name:"스탠다드", spec:"26㎡ · 트윈 · 24실",
+         desc:"연습장 쪽 저층동에 있어 새벽 라운드 전 몸을 풀기 좋은 객실입니다.",
+         items:["조식 포함 (한식·양식 뷔페)","골프백 보관 및 클럽 세척","클럽하우스 도보 1분","무료 Wi-Fi · 국제 채널 TV"],
+         bg:"#f6f4ee", fg:"#22261f", accent:"#a8823f", muted:"#8b8878", rule:"rgba(30,58,43,0.15)", photoBg:"#dcd8ca", stripe:"rgba(30,58,43,0.08)", photo:"스탠다드 객실"},
+        {tag:"FAIRWAY VIEW · 인기", name:"페어웨이", spec:"38㎡ · 트윈/더블 · 18실",
+         desc:"18번 홀과 호수를 정면으로 마주 보는 발코니. 해 질 무렵 풍경이 가장 좋습니다.",
+         items:["18번 홀 페어웨이 전망 발코니","조식 포함 · 미니바 무료","전용 라커 및 클럽 피팅 점검","레이트 체크아웃 14:00"],
+         bg:"#1e3a2b", fg:"#f6f4ee", accent:"#c9b78c", muted:"rgba(246,244,238,0.6)", rule:"rgba(246,244,238,0.2)", photoBg:"#2a4634", stripe:"rgba(255,255,255,0.06)", photo:"페어웨이뷰 객실"},
+        {tag:"SUITE", name:"스위트", spec:"64㎡ · 침실 2 · 6실",
+         desc:"침실 두 개와 거실·주방이 분리되어 가족 여행이나 4인 동반 라운드에 적합합니다.",
+         items:["거실·주방 분리형 · 4인 투숙 가능","조식 포함 · 전용 차량 픽업","클럽하우스 라운지 무료 이용","단체 라운드 시 티타임 우선 배정"],
+         bg:"#f6f4ee", fg:"#22261f", accent:"#a8823f", muted:"#8b8878", rule:"rgba(30,58,43,0.15)", photoBg:"#dcd8ca", stripe:"rgba(30,58,43,0.08)", photo:"스위트 거실"}
+      ],
+
+      accessRows: [
+        {label:"ADDRESS", value:"National Road 6, Krong Siem Reap, Siem Reap Province, Kingdom of Cambodia"},
+        {label:"공항에서", value:"시엠립 앙코르 국제공항(SAI)에서 차로 약 20분 · 사전 요청 시 도착 게이트에서 클럽 차량 대기"},
+        {label:"시내에서", value:"펍 스트리트 기준 차로 약 25분 · 오전 5시 30분부터 30분 간격 호텔 셔틀 운행"},
+        {label:"TEL", value:"+855 63 900 000 · 운영시간 05:30 – 18:30 (연중무휴)"}
+      ],
+      nineTabs: [tab("out", "OUT · 1–9홀"), tab("in", "IN · 10–18홀")],
+      nineSummary: "PAR " + par + " · " + yds.toLocaleString() + " yards (Champion)",
+      visibleHoles: holes,
+
+      contactRows: [
+        {label:"ADDRESS", value:"National Road 6, Siem Reap, Kingdom of Cambodia"},
+        {label:"공항에서", value:"시엠립 앙코르 국제공항(SAI)에서 차로 약 20분. 사전 요청 시 클럽 차량이 도착 게이트에서 대기합니다."},
+        {label:"시내에서", value:"펍 스트리트 기준 차로 약 25분. 오전 5시 30분부터 30분 간격으로 주요 호텔 셔틀이 운행합니다."},
+        {label:"전화 · 이메일", value:"+855 63 900 000 / golf@booyoungcc.com · 한국 사무소 02-000-0000 (09:00–18:00 KST)"}
+      ]
+    };
+  }
+}
+
+</script>
+</body>
+</html>
