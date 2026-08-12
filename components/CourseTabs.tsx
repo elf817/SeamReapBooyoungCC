@@ -8,8 +8,8 @@ interface CourseTabsProps {
 
 export default function CourseTabs({ nine, onChange, summary }: CourseTabsProps) {
   const tabs: { id: "out" | "in"; label: string }[] = [
-    { id: "out", label: "OUT · 1–9홀" },
-    { id: "in", label: "IN · 10–18홀" },
+    { id: "out", label: "우정코스 · 1–9홀" },
+    { id: "in", label: "사랑코스 · 10–18홀" },
   ];
 
   return (

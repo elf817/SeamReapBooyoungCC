@@ -1,3 +1,9 @@
+export interface HoleTee {
+  label: string;
+  color: string;
+  yards: number;
+}
+
 export interface Hole {
   no: string;
   par: number;
@@ -6,10 +12,23 @@ export interface Hole {
   regular: number;
   ladies: number;
   tip: string;
+  image?: string;
+  tees?: HoleTee[];
 }
 
 export const HOLES: Hole[] = [
-  { no: "01", par: 4, hdcp: 11, champion: 429, regular: 395, ladies: 337, tip: "오프닝 홀. 페어웨이가 넓어 드라이버를 마음껏 쓸 수 있지만, 그린 우측 벙커가 깊어 두 번째 샷은 핀보다 왼쪽을 노리는 편이 안전합니다." },
+  {
+    no: "01", par: 5, hdcp: 11, champion: 577, regular: 526, ladies: 457,
+    image: "/images/holes/hole1.jpg",
+    tees: [
+      { label: "블랙", color: "#1a1a1a", yards: 577 },
+      { label: "블루", color: "#1e3a8a", yards: 546 },
+      { label: "화이트", color: "#ffffff", yards: 526 },
+      { label: "실버", color: "#adb2ba", yards: 495 },
+      { label: "레드", color: "#c0392b", yards: 457 },
+    ],
+    tip: "옥색 레이크를 끼고 시작되는 1번 홀은 파5로 넓은 페어웨이는 시원한 청량감을 선사하고, 전면의 좌우 타겟 벙커가 골퍼를 유혹하지만 그다지 위협적이지 못하다. 장타자는 페어웨이 좌측 벙커 우측 끝을 공략한다면 확 트인 시야를 확보하고, 투온을 노려 볼만한 홀이다. 단, 우측으로 공이 밀리면 세컨샷 지점에서 그린이 보이지 않고 그린앞 가드벙커에 빠질 염려가 있으나, 욕심내 볼만한 홀이다. 조심할 점은 바람과 그린앞에 벙커가 항상 기다린다는 점만 유의하면, 약간 오르막인 그린공략이 무난하다.",
+  },
   { no: "02", par: 5, hdcp: 5, champion: 573, regular: 536, ladies: 456, tip: "오르막 파5. 티샷 낙하 지점 좌측이 야자수 군락이라 2온 욕심보다 세 번의 샷으로 나누는 편이 스코어에 유리합니다." },
   { no: "03", par: 3, hdcp: 17, champion: 180, regular: 161, ladies: 132, tip: "바람이 뒤에서 부는 날이 많아 한 클럽 짧게. 그린이 앞뒤로 길어 핀 위치에 따라 두 클럽까지 차이가 납니다." },
   { no: "04", par: 4, hdcp: 3, champion: 461, regular: 424, ladies: 360, tip: "코스에서 가장 긴 파4. 페어웨이 중앙 크로스 벙커를 넘기지 못하면 레이업 후 3온 전략이 현실적입니다." },
@@ -116,15 +135,8 @@ export const INQUIRIES = [
   { no: "01", title: "클럽 챔피언십 참가 자격 관련 문의", writer: "윤*진", date: "2026.07.25", status: "답변완료" },
 ];
 
-export const ACCESS_ROWS = [
-  { label: "ADDRESS", value: "Lolei Village, Bakong Commune, Bakong District, Siem Reap, Kingdom of Cambodia" },
-  { label: "공항에서", value: "시엠립 앙코르 국제공항(SAI)에서 차로 약 20분 · 사전 요청 시 도착 게이트에서 클럽 차량 대기" },
-  { label: "시내에서", value: "펍 스트리트 기준 차로 약 25분 · 오전 5시 30분부터 30분 간격 호텔 셔틀 운행" },
-  { label: "TEL", value: "+855 63 967 101 / 114 · 운영시간 05:30 – 18:30 (연중무휴)" },
-];
-
 export const CONTACT_ROWS = [
-  { label: "ADDRESS", value: "Lolei Village, Bakong Commune, Bakong District, Siem Reap, Kingdom of Cambodia" },
+  { label: "ADDRESS", value: "Tropaingrun Road, Krong Siem Reap, Kingdom of Cambodia" },
   { label: "공항에서", value: "시엠립 앙코르 국제공항(SAI)에서 37km 차로 약 40분" },
   { label: "시내에서", value: "펍 스트리트 기준 15km 차로 약 25분" },
   { label: "TEL · FAX", value: "+855 63 967 101 / 114 · FAX +855 63 967 133 · MOBILE +855 12 365 712" },

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import Placeholder from "@/components/Placeholder";
-import { ACCESS_ROWS, FACILITY_TEASERS, SIGNATURE_HOLES } from "@/lib/data";
+import GoogleMap from "@/components/GoogleMap";
+import { CONTACT_ROWS, FACILITY_TEASERS, SIGNATURE_HOLES } from "@/lib/data";
 
 const STATS = [
   { value: "18", caption: "HOLES · PAR 72" },
@@ -71,25 +71,23 @@ export default function HomePage() {
       <section className="grid grid-cols-1 md:grid-cols-[1.05fr_1fr]">
         <div className="px-5 sm:px-12 py-16 sm:py-[112px] sm:pr-[72px] flex flex-col justify-center order-2 md:order-1">
           <p className="mb-[22px] text-[10.5px] tracking-[0.34em] text-bronze">THE CLUB</p>
-          <h2 className="mb-[30px] font-serif font-normal text-[32px] sm:text-[46px] leading-[1.2] text-deep">
-            라운드가 여행의
-            <br />
-            중심이 되는 곳
+          <h2 className="mb-[30px] font-serif font-normal text-[28px] sm:text-[40px] leading-[1.2] text-deep break-keep sm:whitespace-nowrap">
+            라운드가 여행의 중심이 되는 곳
           </h2>
-          <p className="mb-5 text-[14.5px] sm:text-[15px] leading-[2.05] text-ink-soft font-light max-w-[470px]">
-            부영 컨트리클럽은 원시림과 저수지 지형을 그대로 살린 18홀 챔피언십 코스입니다. 아웃코스는 넓은 페어웨이에서 스코어를 만들고, 인코스는 워터해저드와 고저차로 마지막까지 긴장을 놓지 못하게 합니다.
+          <p className="mb-5 text-[14.5px] sm:text-[15px] leading-[2.05] text-ink-soft font-light">
+            씨엠립 부영 컨트리클럽은 원시림의 풍경과 자연 지형을 그대로 품은 18홀 챔피언십 골프장입니다.
+            <br />
+            넓고 편안한 페어웨이에서 시작해 워터해저드와 다양한 지형이 어우러진 코스는 라운드마다 새로운 즐거움을 선사합니다.
           </p>
-          <p className="text-[14.5px] sm:text-[15px] leading-[2.05] text-ink-soft font-light max-w-[470px]">
-            코스 안에 94실 규모의 부영 골프텔이 함께 있어 이동 없이 연박 라운드가 가능하며, 한국어가 가능한 캐디가 상주합니다. 클럽하우스에서 라커·식사·스파까지 한 건물에서 해결됩니다.
+          <p className="text-[14.5px] sm:text-[15px] leading-[2.05] text-ink-soft font-light">
+            코스 가까이에 자리한 94실 규모의 골프텔에서는 이동의 번거로움 없이 여유로운 연박과 라운드를 즐길 수 있습니다.
+            <br />
+            골프와 휴식, 식사, 연습장까지 한곳에서 누리며 라운드와 여행을 함께 즐기는 특별한 시간을 만나보세요.
           </p>
           <div className="flex flex-wrap gap-x-8 sm:gap-x-11 gap-y-6 mt-9 sm:mt-[46px] pt-7 sm:pt-8 border-t border-deep/15">
             <div>
               <div className="font-serif text-[24px] sm:text-[27px] text-deep">2009</div>
               <div className="text-[12px] text-muted-2 mt-1">개장</div>
-            </div>
-            <div>
-              <div className="font-serif text-[24px] sm:text-[27px] text-deep">벤트그라스</div>
-              <div className="text-[12px] text-muted-2 mt-1">전 홀 그린</div>
             </div>
             <div>
               <div className="font-serif text-[24px] sm:text-[27px] text-deep">Kentaro Sato</div>
@@ -140,7 +138,7 @@ export default function HomePage() {
       <section className="px-5 sm:px-12 py-16 sm:py-[104px]">
         <p className="mb-[18px] text-[10.5px] tracking-[0.34em] text-bronze">FACILITIES</p>
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-5 sm:gap-10 mb-9 sm:mb-[46px]">
-          <h2 className="font-serif font-normal text-[32px] sm:text-[44px] text-deep">숙박부터 연습까지, 코스 안에서</h2>
+          <h2 className="font-serif font-normal text-[32px] sm:text-[44px] text-deep break-keep">첫 걸음부터 마지막 라운드까지 한곳에서 여유롭게!</h2>
           <Link href="/facilities/golftel" className="text-[13.5px] tracking-[0.06em] border-b border-deep/35 pb-1 whitespace-nowrap self-start">
             시설안내 전체 보기 →
           </Link>
@@ -173,12 +171,12 @@ export default function HomePage() {
         className="grid grid-cols-1 md:grid-cols-[1.15fr_1fr] bg-deep text-bg"
         style={{ backgroundImage: "repeating-linear-gradient(135deg,rgba(255,255,255,0.04) 0 2px,transparent 2px 11px)" }}
       >
-        <Placeholder label="약도 / 지도 이미지" tone="dark" minHeight={280} className="items-center justify-center md:min-h-[520px]" />
+        <GoogleMap className="min-h-[280px] md:min-h-[520px]" />
         <div className="px-5 sm:px-14 py-14 sm:py-[90px] flex flex-col justify-center">
           <p className="mb-5 text-[10.5px] tracking-[0.34em] text-gold">ACCESS</p>
           <h2 className="mb-8 font-serif font-normal text-[30px] sm:text-[42px] leading-[1.2]">오시는 길</h2>
           <div className="flex flex-col gap-[26px]">
-            {ACCESS_ROWS.map((row) => (
+            {CONTACT_ROWS.map((row) => (
               <div key={row.label} className="pb-6 border-b border-bg/[0.18]">
                 <div className="text-[10.5px] tracking-[0.26em] text-gold mb-[11px]">{row.label}</div>
                 <div className="text-[14.5px] leading-[1.9] text-bg/82 font-light">{row.value}</div>

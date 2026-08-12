@@ -11,7 +11,7 @@ export default function Footer() {
             SIEM REAP BOOYOUNG COUNTRY CLUB
           </div>
           <div className="text-[13px] leading-[1.9] font-light">
-            Lolei Village, Bakong Commune, Bakong District, Siem Reap, Kingdom of Cambodia
+            Tropaingrun Road, Krong Siem Reap, Kingdom of Cambodia
           </div>
           <div className="text-[13px] leading-[1.9] font-light">
             CONTACT&nbsp; +855 63 967 101 / 114, FAX +855 63 967 133, M +855 12 365 712
