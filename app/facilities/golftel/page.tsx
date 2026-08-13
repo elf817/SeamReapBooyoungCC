@@ -1,3 +1,4 @@
+import Image from "next/image";
 import FacilityShell from "@/components/FacilityShell";
 import FacilityItemGrid from "@/components/FacilityItemGrid";
 import Placeholder from "@/components/Placeholder";
@@ -26,16 +27,22 @@ export default function GolftelPage() {
               className="border-b md:border-b-0 md:border-r border-deep/15 last:border-r-0 flex flex-col"
               style={{ background: r.dark ? "#1e3a2b" : "#f6f4ee", color: r.dark ? "#f6f4ee" : "#22261f" }}
             >
-              <Placeholder
-                label={r.photo}
-                tone={r.dark ? "dark" : "light"}
-                className="h-[230px] items-center justify-center"
-              />
-              <div className="px-8 pt-[38px] pb-10 flex flex-col flex-1">
-                <div className="text-[10.5px] tracking-[0.26em]" style={{ color: r.dark ? "#c9b78c" : "#a8823f" }}>
-                  {r.tag}
+              {r.image ? (
+                <div className="relative h-[calc(230px+2cm)]">
+                  <Image src={r.image} alt={r.name} fill sizes="(min-width: 768px) 50vw, 100vw" className="object-cover" />
                 </div>
-                <h3 className="mt-4 mb-2 font-serif font-normal text-[30px]">{r.name}</h3>
+              ) : (
+                <Placeholder
+                  label={r.photo}
+                  tone={r.dark ? "dark" : "light"}
+                  className="h-[calc(230px+2cm)] items-center justify-center"
+                />
+              )}
+              <div className="px-8 pt-[38px] pb-10 flex flex-col flex-1">
+                <h3 className="mt-4 mb-2 font-serif font-normal">
+                  <span className="text-[38px]">{r.name.split(" ")[0]}</span>{" "}
+                  <span className="text-[20px]">{r.name.split(" ")[1]}</span>
+                </h3>
                 <p className="mb-[22px] text-[13px]" style={{ color: r.dark ? "rgba(246,244,238,0.6)" : "#8b8878" }}>
                   {r.spec}
                 </p>
@@ -58,16 +65,10 @@ export default function GolftelPage() {
           ))}
         </div>
 
-        <div className="flex flex-col sm:flex-row gap-4 sm:gap-14 mt-7 px-6 sm:px-[38px] py-6 sm:py-7 bg-bg-contrast text-[13px] text-muted font-light">
-          <span>체크인 14:00 · 체크아웃 12:00</span>
-          <span>전 객실 조식 포함 · 골프백 보관 무료</span>
-          <span>투숙객 그린피 15% 할인</span>
-        </div>
-
         <h3 className="mt-16 sm:mt-20 mb-8 sm:mb-10 font-serif font-normal text-[26px] sm:text-[32px] text-deep">
           골프텔 부대시설
         </h3>
-        <FacilityItemGrid items={GOLFTEL_ITEMS} />
+        <FacilityItemGrid items={GOLFTEL_ITEMS} showHours={false} />
       </section>
     </FacilityShell>
   );

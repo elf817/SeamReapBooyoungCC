@@ -47,7 +47,7 @@ export default function CoursePage() {
               <div className="px-6 pt-6 pb-7 flex flex-col flex-1">
                 <div className="flex items-baseline justify-between mb-3.5">
                   <h3 className="font-serif font-medium text-[24px] text-deep">PAR {h.par}</h3>
-                  <span className="text-[12.5px] text-bronze tracking-[0.08em]">HDCP {h.hdcp}</span>
+                  {h.hdcp != null && <span className="text-[12.5px] text-bronze tracking-[0.08em]">HDCP {h.hdcp}</span>}
                 </div>
                 {h.tees ? (
                   <div className="grid grid-cols-5 gap-1.5 py-3.5 border-t border-b border-deep/[0.12] text-center">

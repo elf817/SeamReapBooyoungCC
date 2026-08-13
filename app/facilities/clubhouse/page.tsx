@@ -1,6 +1,6 @@
+import Image from "next/image";
 import FacilityShell from "@/components/FacilityShell";
 import FacilityItemGrid from "@/components/FacilityItemGrid";
-import Placeholder from "@/components/Placeholder";
 import { CLUBHOUSE_ITEMS } from "@/lib/data";
 
 export default function ClubhousePage() {
@@ -8,7 +8,9 @@ export default function ClubhousePage() {
     <FacilityShell summary="2층 · 레스토랑 · 프로샵 · 스파">
       <section className="px-5 sm:px-12 pt-10 sm:pt-[76px] pb-16 sm:pb-[104px]">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-14 items-center mb-14 sm:mb-16">
-          <Placeholder label="클럽하우스 전경 (4:3)" className="min-h-[280px] md:min-h-[420px] items-center justify-center" />
+          <div className="relative min-h-[280px] md:min-h-[420px]">
+            <Image src="/images/clubhouse1.jpg" alt="클럽하우스 전경" fill sizes="(min-width: 768px) 50vw, 100vw" className="object-cover" />
+          </div>
           <div>
             <h2 className="mb-6 font-serif font-normal text-[30px] sm:text-[42px] leading-[1.2] text-deep">
               라운드의 즐거움을 완성하는 공간
@@ -18,7 +20,7 @@ export default function ClubhousePage() {
             </p>
           </div>
         </div>
-        <FacilityItemGrid items={CLUBHOUSE_ITEMS} />
+        <FacilityItemGrid items={CLUBHOUSE_ITEMS} showHours={false} />
       </section>
     </FacilityShell>
   );

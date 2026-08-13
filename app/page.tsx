@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import GoogleMap from "@/components/GoogleMap";
+import HeroCarousel from "@/components/HeroCarousel";
 import { CONTACT_ROWS, FACILITY_TEASERS, SIGNATURE_HOLES } from "@/lib/data";
 
 const STATS = [
@@ -15,14 +16,7 @@ export default function HomePage() {
     <div>
       {/* Hero */}
       <section className="relative min-h-[560px] h-[80vh] flex items-end overflow-hidden bg-deep">
-        <Image
-          src="/images/main1.png"
-          alt="부영 컨트리클럽 코스 전경"
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover"
-        />
+        <HeroCarousel />
         <div
           className="absolute inset-0"
           style={{ background: "linear-gradient(180deg, rgba(16,32,24,0.18) 0%, rgba(16,32,24,0.82) 100%)" }}

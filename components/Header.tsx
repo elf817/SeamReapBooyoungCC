@@ -15,10 +15,10 @@ export default function Header() {
       <Link href="/" className="flex items-center shrink-0" onClick={() => setOpen(false)}>
         <span className="bg-bg flex items-center">
           <Image
-            src="/images/logo.png"
+            src="/images/logo.jpg"
             alt="시엠립 부영 컨트리클럽"
-            width={230}
-            height={84}
+            width={348}
+            height={136}
             priority
             className="h-[58px] sm:h-[79px] w-auto"
             style={{ mixBlendMode: "multiply" }}
