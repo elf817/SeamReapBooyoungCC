@@ -39,10 +39,7 @@ export default function GolftelPage() {
                 />
               )}
               <div className="px-8 pt-[38px] pb-10 flex flex-col flex-1">
-                <h3 className="mt-4 mb-2 font-serif font-normal">
-                  <span className="text-[38px]">{r.name.split(" ")[0]}</span>{" "}
-                  <span className="text-[20px]">{r.name.split(" ")[1]}</span>
-                </h3>
+                <h3 className="mt-4 mb-2 font-serif font-normal text-[30px]">{r.name}</h3>
                 <p className="mb-[22px] text-[13px]" style={{ color: r.dark ? "rgba(246,244,238,0.6)" : "#8b8878" }}>
                   {r.spec}
                 </p>

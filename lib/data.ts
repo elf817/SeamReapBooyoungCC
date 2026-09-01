@@ -144,7 +144,7 @@ export const SIGNATURE_HOLES = [
 ];
 
 export const FACILITY_TEASERS = [
-  { id: "golftel", name: "골프텔", en: "GOLFTEL", image: "/images/hotel1.png", meta: "94실 · 12PY / 14PY", desc: "클럽하우스와 이어진 94실 규모 숙소. 이동 없이 연박 라운드가 가능합니다." },
+  { id: "golftel", name: "골프텔", en: "GOLFTEL", image: "/images/hotel1.png", meta: "94실 · STANDARD · DELUXE", desc: "클럽하우스와 이어진 94실 규모 숙소. 이동 없이 연박 라운드가 가능합니다." },
   { id: "clubhouse", name: "클럽하우스", en: "CLUBHOUSE", image: "/images/clubhouse1.jpg", meta: "레스토랑 · 프로샵 · 라커 · 스파", desc: "크메르 목조 양식을 현대적으로 해석한 2층 규모. 라운드 전후가 한 건물에서 끝납니다." },
   { id: "range", name: "골프연습장", en: "PRACTICE RANGE", image: "/images/driving1.png", meta: "78타석 · 1층·2층 구조", desc: "넓고 쾌적한 1·2층 78타석 규모의 연습시설에서 스윙의 완성도를 높여보세요." },
 ];
@@ -172,16 +172,16 @@ export const RANGE_ITEMS = [
 
 export const ROOMS = [
   {
-    name: "12 PY", spec: "49실",
+    name: "STANDARD", spec: "39㎡ · 49실",
     desc: "합리적인 크기로 구성된 스탠다드 객실입니다. 클럽하우스와 가까워 이동이 편리합니다.",
     items: ["체크인 14:00 · 체크아웃 12:00", "무료 Wi-Fi", "골프백 보관", "클럽하우스 도보 이동", "투숙객 그린피 할인"],
-    dark: false, photo: "12 PY 객실", image: "/images/room_12py.png",
+    dark: false, photo: "STANDARD 객실 (39㎡)", image: "/images/room_12py.png",
   },
   {
-    name: "14 PY", spec: "45실",
+    name: "DELUXE", spec: "46㎡ · 45실",
     desc: "한층 여유로운 공간의 디럭스 객실입니다. 장기 투숙과 연박 라운드에 적합합니다.",
     items: ["체크인 14:00 · 체크아웃 12:00", "무료 Wi-Fi", "골프백 보관", "클럽하우스 도보 이동", "투숙객 그린피 할인"],
-    dark: true, photo: "14 PY 객실", image: "/images/room_14py.png",
+    dark: true, photo: "DELUXE 객실 (46㎡)", image: "/images/room_14py.png",
   },
 ];
 

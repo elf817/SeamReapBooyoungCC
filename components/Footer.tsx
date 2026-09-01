@@ -7,11 +7,8 @@ export default function Footer() {
     <footer className="bg-deep-deep text-bg/70">
       <div className="relative flex flex-col items-center gap-6 px-5 sm:px-12 py-[21px] sm:py-[29px]">
         <div className="text-center">
-          <div className="font-serif text-[18px] sm:text-[20px] tracking-[0.06em] text-bg mb-3">
-            SIEM REAP BOOYOUNG COUNTRY CLUB
-          </div>
           <div className="text-[13px] leading-[1.9] font-light">
-            Tropaingrun Road, Krong Siem Reap, Kingdom of Cambodia
+            SIEM REAP BOOYOUNG C.C.&nbsp; Tropaingrun Road, Krong Siem Reap, Kingdom of Cambodia
           </div>
           <div className="text-[13px] leading-[1.9] font-light">
             CONTACT&nbsp; +855 63 967 101 / 114, FAX +855 63 967 133, M +855 12 365 712
@@ -39,7 +36,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="flex items-center justify-center px-5 py-[5px] border-t border-bg/[0.14] text-[11.5px] text-bg/40 text-center">
+      <div className="flex items-center justify-center px-5 py-[16px] border-t border-bg/[0.14] text-[11.5px] text-bg/40 text-center">
         <span>© 2026 Siem Reap Booyoung Country Club. All rights reserved.</span>
       </div>
     </footer>
