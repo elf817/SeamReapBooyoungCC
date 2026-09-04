@@ -31,7 +31,7 @@ export default function FacilityItemGrid({
           )}
           {showText && (
             <>
-              <h4 className="mt-5 mb-2 font-serif font-medium text-[20px] sm:text-[22px] text-deep">{it.name}</h4>
+              <h4 className="mt-5 mb-2 font-kr-heading font-medium text-[20px] sm:text-[22px] text-deep">{it.name}</h4>
               <p className="mb-3 text-[13.5px] leading-[1.85] text-muted font-light">{it.desc}</p>
               {showHours && <div className="text-[12px] text-bronze tracking-[0.04em]">{it.hours}</div>}
             </>

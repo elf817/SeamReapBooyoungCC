@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Noto_Sans_KR } from "next/font/google";
+import { Cormorant_Garamond, Noto_Sans_KR, IBM_Plex_Sans_KR } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -19,6 +19,13 @@ const notoSansKr = Noto_Sans_KR({
   display: "swap",
 });
 
+const ibmPlexSansKr = IBM_Plex_Sans_KR({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  variable: "--font-ibm-plex-kr",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: "씨엠립 부영 컨트리클럽 | Siem Reap Booyoung Country Club",
   description:
@@ -27,7 +34,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="ko" className={`${cormorant.variable} ${notoSansKr.variable}`}>
+    <html lang="ko" className={`${cormorant.variable} ${notoSansKr.variable} ${ibmPlexSansKr.variable}`}>
       <body className="font-sans text-ink bg-bg overflow-x-hidden">
         <Header />
         {children}

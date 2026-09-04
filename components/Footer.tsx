@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="relative flex flex-col items-center gap-6 px-5 sm:px-12 py-[21px] sm:py-[29px]">
         <div className="text-center">
           <div className="text-[13px] leading-[1.9] font-light">
-            SIEM REAP BOOYOUNG C.C.&nbsp; Tropaingrun Road, Krong Siem Reap, Kingdom of Cambodia
+            SIEM REAP BOOYOUNG C.C.&nbsp; Lolei Village, Bakong Commune, Prasat Bakong, Siem Reap, Cambodia
           </div>
           <div className="text-[13px] leading-[1.9] font-light">
             CONTACT&nbsp; +855 63 967 101 / 114, FAX +855 63 967 133, M +855 12 365 712

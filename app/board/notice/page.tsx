@@ -4,7 +4,7 @@ import { NOTICES } from "@/lib/data";
 export default function NoticePage() {
   return (
     <BoardShell summary="총 8건 · 최근 업데이트 2026.08.01">
-      <section className="px-5 sm:px-12 pt-10 sm:pt-14 pb-16 sm:pb-[104px]">
+      <section className="px-6 sm:px-20 pt-10 sm:pt-14 pb-16 sm:pb-[104px]">
         <div className="hidden sm:flex gap-6 px-6 pb-4 border-b border-deep/25 text-[11px] tracking-[0.22em] text-muted-2">
           <span className="w-[70px]">NO</span>
           <span className="flex-1">제목</span>

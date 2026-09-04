@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import GoogleMap from "@/components/GoogleMap";
 import HeroCarousel from "@/components/HeroCarousel";
+import ClubGallery from "@/components/ClubGallery";
 import { CONTACT_ROWS, FACILITY_TEASERS, SIGNATURE_HOLES } from "@/lib/data";
 
 const STATS = [
@@ -65,7 +66,7 @@ export default function HomePage() {
       <section className="grid grid-cols-1 md:grid-cols-[1.05fr_1fr]">
         <div className="px-5 sm:px-12 py-16 sm:py-[112px] sm:pr-[72px] flex flex-col justify-center order-2 md:order-1">
           <p className="mb-[22px] text-[10.5px] tracking-[0.34em] text-bronze">THE CLUB</p>
-          <h2 className="mb-[30px] font-serif font-normal text-[28px] sm:text-[40px] leading-[1.2] text-deep break-keep sm:whitespace-nowrap">
+          <h2 className="mb-[30px] font-kr-heading font-normal text-[24px] sm:text-[34px] leading-[1.2] text-deep break-keep sm:whitespace-nowrap">
             라운드가 여행의 중심이 되는 곳
           </h2>
           <p className="mb-5 text-[14.5px] sm:text-[15px] leading-[2.05] text-ink-soft font-light">
@@ -90,7 +91,7 @@ export default function HomePage() {
           </div>
         </div>
         <div className="relative order-1 md:order-2 min-h-[320px] md:min-h-[580px]">
-          <Image src="/images/main_sub1.jpg" alt="클럽하우스 전경" fill sizes="(min-width: 768px) 50vw, 100vw" className="object-cover" />
+          <ClubGallery />
         </div>
       </section>
 
@@ -99,7 +100,7 @@ export default function HomePage() {
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10 sm:mb-[52px]">
           <div>
             <p className="mb-[18px] text-[10.5px] tracking-[0.34em] text-bronze">SIGNATURE HOLES</p>
-            <h2 className="font-serif font-normal text-[32px] sm:text-[44px] leading-[1.15] text-deep">특별한 순간을 위한 특별한 공간</h2>
+            <h2 className="font-kr-heading font-normal text-[26px] sm:text-[38px] leading-[1.15] text-deep">특별한 순간을 위한 특별한 공간</h2>
           </div>
           <Link href="/course" className="text-[13.5px] tracking-[0.06em] border-b border-deep/35 pb-1 self-start whitespace-nowrap">
             18홀 전체 보기 →
@@ -114,7 +115,7 @@ export default function HomePage() {
               <div className="px-6 sm:px-[30px] pt-[30px] pb-[34px]">
                 <div className="flex flex-col items-start gap-[7px]">
                   <span className="text-[11px] tracking-[0.16em] text-bronze whitespace-nowrap">{h.en}</span>
-                  <h3 className="font-serif font-medium text-[26px] sm:text-[28px] text-deep whitespace-nowrap">{h.title}</h3>
+                  <h3 className="font-kr-heading font-medium text-[26px] sm:text-[28px] text-deep whitespace-nowrap">{h.title}</h3>
                 </div>
                 <p className="my-4 text-[14px] leading-[1.95] text-ink-soft font-light">{h.desc}</p>
                 <div className="flex flex-wrap gap-x-[22px] gap-y-2.5 pt-[18px] border-t border-deep/[0.12] text-[12.5px] text-muted">
@@ -132,7 +133,7 @@ export default function HomePage() {
       <section className="px-5 sm:px-12 py-16 sm:py-[104px]">
         <p className="mb-[18px] text-[10.5px] tracking-[0.34em] text-bronze">FACILITIES</p>
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-5 sm:gap-10 mb-9 sm:mb-[46px]">
-          <h2 className="font-serif font-normal text-[32px] sm:text-[44px] text-deep break-keep">첫 걸음부터 마지막 라운드까지 한곳에서 여유롭게!</h2>
+          <h2 className="font-kr-heading font-normal text-[26px] sm:text-[38px] text-deep break-keep">첫 걸음부터 마지막 라운드까지 한곳에서 여유롭게!</h2>
           <Link href="/facilities/golftel" className="text-[13.5px] tracking-[0.06em] border-b border-deep/35 pb-1 whitespace-nowrap self-start">
             시설안내 전체 보기 →
           </Link>
@@ -150,7 +151,7 @@ export default function HomePage() {
               <div className="px-6 sm:px-[30px] pt-[30px] pb-[34px]">
                 <div className="flex flex-col items-start gap-[7px]">
                   <span className="text-[10.5px] tracking-[0.16em] text-bronze whitespace-nowrap">{f.en}</span>
-                  <h3 className="font-serif font-medium text-[25px] sm:text-[27px] text-deep whitespace-nowrap">{f.name}</h3>
+                  <h3 className="font-kr-heading font-medium text-[25px] sm:text-[27px] text-deep whitespace-nowrap">{f.name}</h3>
                 </div>
                 <p className="mt-[15px] mb-5 text-[14px] leading-[1.95] text-ink-soft font-light">{f.desc}</p>
                 <div className="pt-[18px] border-t border-deep/[0.12] text-[12.5px] text-muted">{f.meta}</div>
@@ -168,7 +169,7 @@ export default function HomePage() {
         <GoogleMap className="min-h-[280px] md:min-h-[520px]" />
         <div className="px-5 sm:px-14 py-14 sm:py-[90px] flex flex-col justify-center">
           <p className="mb-5 text-[10.5px] tracking-[0.34em] text-gold">ACCESS</p>
-          <h2 className="mb-8 font-serif font-normal text-[30px] sm:text-[42px] leading-[1.2]">오시는 길</h2>
+          <h2 className="mb-8 font-kr-heading font-normal text-[25px] sm:text-[36px] leading-[1.2]">오시는 길</h2>
           <div className="flex flex-col gap-[26px]">
             {CONTACT_ROWS.map((row) => (
               <div key={row.label} className="pb-6 border-b border-bg/[0.18]">

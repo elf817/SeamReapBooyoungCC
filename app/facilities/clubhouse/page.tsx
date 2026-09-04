@@ -12,7 +12,7 @@ export default function ClubhousePage() {
             <Image src="/images/clubhouse1.jpg" alt="클럽하우스 전경" fill sizes="(min-width: 768px) 50vw, 100vw" className="object-cover" />
           </div>
           <div>
-            <h2 className="mb-6 font-serif font-normal text-[30px] sm:text-[42px] leading-[1.2] text-deep">
+            <h2 className="mb-6 font-kr-heading font-normal text-[30px] sm:text-[42px] leading-[1.2] text-deep">
               라운드의 즐거움을 완성하는 공간
             </h2>
             <p className="text-[14.5px] sm:text-[15px] leading-[2.05] text-ink-soft font-light">

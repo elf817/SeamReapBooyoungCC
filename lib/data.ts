@@ -196,8 +196,6 @@ export const NOTICES = [
   { no: "01", pinned: false, cat: "시설", date: "2026.03.18", title: "클럽하우스 라커룸 및 사우나 리뉴얼 공사 완료 안내" },
 ];
 
-export const FAQ_CATS = ["라운드 · 코스", "골프텔 · 숙박", "교통 · 픽업", "시설 · 이용 안내"];
-
 export const FAQS = [
   { q: "첫 조 티오프는 몇 시부터인가요?", a: "건기에는 오전 5시 40분, 우기에는 오전 6시부터 첫 조가 출발합니다. 골프텔 투숙객은 첫 조 배정을 우선 요청하실 수 있습니다." },
   { q: "캐디와 카트는 필수인가요?", a: "전 홀 캐디 동반이 원칙이며, 카트는 4인 1대 기준으로 운영합니다. 2인 이하 라운드는 시간대에 따라 조인 라운드로 진행될 수 있습니다." },
@@ -225,7 +223,7 @@ export const INQUIRIES = [
 ];
 
 export const CONTACT_ROWS = [
-  { label: "ADDRESS", value: "Tropaingrun Road, Krong Siem Reap, Kingdom of Cambodia" },
+  { label: "ADDRESS", value: "Lolei Village, Bakong Commune, Prasat Bakong, Siem Reap, Cambodia" },
   { label: "공항에서", value: "시엠립 앙코르 국제공항(SAI)에서 37km 차로 약 40분" },
   { label: "시내에서", value: "펍 스트리트 기준 15km 차로 약 25분" },
   { label: "TEL · FAX", value: "+855 63 967 101 / 114 · FAX +855 63 967 133 · MOBILE +855 12 365 712" },
@@ -247,10 +245,37 @@ export const FAMILY_LINKS = [
   { name: "목동애시앙", url: "https://mokdong.aesiang.co.kr" },
 ];
 
-export const NAV_ITEMS = [
+export interface NavItem {
+  href: string;
+  label: string;
+  match: (p: string) => boolean;
+  children?: { href: string; label: string }[];
+}
+
+export const NAV_ITEMS: NavItem[] = [
   { href: "/", label: "홈", match: (p: string) => p === "/" },
-  { href: "/course", label: "코스", match: (p: string) => p.startsWith("/course") },
-  { href: "/facilities/golftel", label: "시설안내", match: (p: string) => p.startsWith("/facilities") },
-  { href: "/board/notice", label: "게시판", match: (p: string) => p.startsWith("/board") },
+  {
+    href: "/course", label: "코스", match: (p: string) => p.startsWith("/course"),
+    children: [
+      { href: "/course?nine=out", label: "우정코스" },
+      { href: "/course?nine=in", label: "사랑코스" },
+    ],
+  },
+  {
+    href: "/facilities/golftel", label: "시설안내", match: (p: string) => p.startsWith("/facilities"),
+    children: [
+      { href: "/facilities/golftel", label: "골프텔" },
+      { href: "/facilities/clubhouse", label: "클럽하우스" },
+      { href: "/facilities/range", label: "골프연습장" },
+    ],
+  },
+  {
+    href: "/board/notice", label: "게시판", match: (p: string) => p.startsWith("/board"),
+    children: [
+      { href: "/board/notice", label: "공지사항" },
+      { href: "/board/faq", label: "FAQ" },
+      { href: "/board/inquiry", label: "문의사항" },
+    ],
+  },
   { href: "/access", label: "오시는 길", match: (p: string) => p.startsWith("/access") },
 ];

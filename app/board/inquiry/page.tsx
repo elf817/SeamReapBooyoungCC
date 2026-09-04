@@ -4,7 +4,7 @@ import { INQUIRIES, INQUIRY_CHANNELS } from "@/lib/data";
 export default function InquiryPage() {
   return (
     <BoardShell summary="총 6건 · 평균 답변 소요 1일">
-      <section className="px-5 sm:px-12 pt-10 sm:pt-14 pb-16 sm:pb-[104px]">
+      <section className="px-6 sm:px-20 pt-10 sm:pt-14 pb-16 sm:pb-[104px]">
         <div className="flex flex-col sm:flex-row gap-4 sm:gap-[22px] mb-10 sm:mb-11">
           {INQUIRY_CHANNELS.map((c) => (
             <div key={c.label} className="flex-1 px-7 py-8 border border-deep/15 bg-bg-contrast">

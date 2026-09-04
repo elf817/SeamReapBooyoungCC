@@ -11,7 +11,7 @@ export default function GolftelPage() {
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-5 mb-9 sm:mb-[46px]">
           <div>
             <p className="mb-4 text-[10.5px] tracking-[0.26em] text-bronze">94 ROOMS · STAY & PLAY</p>
-            <h2 className="font-serif font-normal text-[30px] sm:text-[42px] text-deep max-w-[560px]">
+            <h2 className="font-kr-heading font-normal text-[30px] sm:text-[42px] text-deep max-w-[560px]">
               라운드의 여유가 머무는 곳
             </h2>
           </div>
@@ -25,24 +25,26 @@ export default function GolftelPage() {
             <div
               key={r.name}
               className="border-b md:border-b-0 md:border-r border-deep/15 last:border-r-0 flex flex-col"
-              style={{ background: r.dark ? "#1e3a2b" : "#f6f4ee", color: r.dark ? "#f6f4ee" : "#22261f" }}
+              style={{ background: r.dark ? "#1e3a2b" : "#efece2", color: r.dark ? "#f6f4ee" : "#22261f" }}
             >
               {r.image ? (
-                <div className="relative h-[calc(230px+2cm)]">
+                <div className="relative h-[calc(230px+4cm)]">
                   <Image src={r.image} alt={r.name} fill sizes="(min-width: 768px) 50vw, 100vw" className="object-cover" />
                 </div>
               ) : (
                 <Placeholder
                   label={r.photo}
                   tone={r.dark ? "dark" : "light"}
-                  className="h-[calc(230px+2cm)] items-center justify-center"
+                  className="h-[calc(230px+4cm)] items-center justify-center"
                 />
               )}
               <div className="px-8 pt-[38px] pb-10 flex flex-col flex-1">
-                <h3 className="mt-4 mb-2 font-serif font-normal text-[30px]">{r.name}</h3>
-                <p className="mb-[22px] text-[13px]" style={{ color: r.dark ? "rgba(246,244,238,0.6)" : "#8b8878" }}>
-                  {r.spec}
-                </p>
+                <div className="mt-4 mb-[22px] flex items-baseline gap-3 whitespace-nowrap">
+                  <h3 className="font-serif font-bold text-[30px]">{r.name}</h3>
+                  <p className="text-[13px]" style={{ color: r.dark ? "rgba(246,244,238,0.6)" : "#8b8878" }}>
+                    {r.spec}
+                  </p>
+                </div>
                 <p
                   className="mb-6 pb-6 text-[14px] leading-[1.9] font-light border-b"
                   style={{ borderColor: r.dark ? "rgba(246,244,238,0.2)" : "rgba(30,58,43,0.15)" }}
@@ -62,7 +64,7 @@ export default function GolftelPage() {
           ))}
         </div>
 
-        <h3 className="mt-16 sm:mt-20 mb-8 sm:mb-10 font-serif font-normal text-[26px] sm:text-[32px] text-deep">
+        <h3 className="mt-16 sm:mt-20 mb-8 sm:mb-10 font-kr-heading font-normal text-[26px] sm:text-[32px] text-deep">
           골프텔 부대시설
         </h3>
         <FacilityItemGrid items={GOLFTEL_ITEMS} showHours={false} />

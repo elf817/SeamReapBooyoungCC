@@ -9,7 +9,7 @@ export default function RangePage() {
       <section className="px-5 sm:px-12 pt-10 sm:pt-[76px] pb-16 sm:pb-[104px]">
         <div className="grid grid-cols-1 md:grid-cols-[1.5fr_1fr] gap-8 sm:gap-14 items-center mb-14 sm:mb-16">
           <div className="order-2 md:order-1">
-            <h2 className="mb-6 font-serif font-normal text-[28px] sm:text-[38px] leading-[1.2] text-deep break-keep">
+            <h2 className="mb-6 font-kr-heading font-normal text-[28px] sm:text-[38px] leading-[1.2] text-deep break-keep">
               실전 감각을 완성하는 78타석 골프연습장
             </h2>
             <p className="mb-1 text-[14.5px] sm:text-[15px] leading-[1.5] text-ink-soft font-light break-keep md:whitespace-nowrap">

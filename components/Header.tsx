@@ -11,7 +11,10 @@ export default function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 flex items-center gap-5 px-5 sm:px-7 py-0 bg-bg backdrop-blur-md border-b border-deep/[0.12]">
+    <header
+      className="sticky top-0 z-50 flex items-center gap-5 px-5 sm:px-7 py-0 bg-bg backdrop-blur-md border-b border-deep/[0.12]"
+      onMouseLeave={() => setOpen(false)}
+    >
       <Link href="/" className="flex items-center shrink-0" onClick={() => setOpen(false)}>
         <span className="bg-bg flex items-center">
           <Image
@@ -27,7 +30,10 @@ export default function Header() {
       </Link>
 
       <div className="flex items-center gap-8 ml-auto mr-16 sm:mr-24">
-        <nav className="hidden md:flex items-center gap-7 text-[16px] text-ink-soft2">
+        <nav
+          className="hidden md:flex items-center gap-7 text-[16px] text-ink-soft2"
+          onMouseEnter={() => setOpen(true)}
+        >
           {NAV_ITEMS.map((item) => {
             const active = item.match(pathname);
             return (
@@ -57,21 +63,39 @@ export default function Header() {
       </div>
 
       {open && (
-        <div className="absolute top-full left-0 right-0 bg-bg border-b border-deep/[0.12] flex flex-col">
-          {NAV_ITEMS.map((item) => {
-            const active = item.match(pathname);
-            return (
-              <Link
-                key={item.href}
-                href={item.href}
-                onClick={() => setOpen(false)}
-                className="px-6 py-4 text-[14px] border-b border-deep/[0.08] last:border-b-0"
-                style={{ color: active ? "#1e3a2b" : "#3d4438", background: active ? "#f2efe5" : "transparent" }}
-              >
-                {item.label}
-              </Link>
-            );
-          })}
+        <div className="absolute top-full left-0 right-0 bg-bg border-b border-deep/[0.12]">
+          <div className="grid grid-cols-2 sm:grid-cols-5 gap-x-6 gap-y-8 px-6 sm:px-12 py-8 sm:py-10">
+            {NAV_ITEMS.map((item) => {
+              const active = item.match(pathname);
+              return (
+                <div key={item.href}>
+                  <Link
+                    href={item.href}
+                    onClick={() => setOpen(false)}
+                    className="block mb-3 text-[15px] font-medium whitespace-nowrap"
+                    style={{ color: active ? "#1e3a2b" : "#3d4438" }}
+                  >
+                    {item.label}
+                  </Link>
+                  {item.children && (
+                    <ul className="flex flex-col gap-2.5">
+                      {item.children.map((c) => (
+                        <li key={c.href}>
+                          <Link
+                            href={c.href}
+                            onClick={() => setOpen(false)}
+                            className="text-[13px] text-muted whitespace-nowrap hover:text-bronze"
+                          >
+                            {c.label}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              );
+            })}
+          </div>
         </div>
       )}
     </header>

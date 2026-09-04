@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
-const IMAGES = ["/images/main1.png", "/images/main2.png"];
+const IMAGES = ["/images/main1.png", "/images/main2.png", "/images/main3.png"];
 
 export default function HeroCarousel() {
   const [index, setIndex] = useState(0);
