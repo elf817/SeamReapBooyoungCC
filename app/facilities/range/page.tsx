@@ -1,6 +1,6 @@
+import Image from "next/image";
 import FacilityShell from "@/components/FacilityShell";
 import FacilityItemGrid from "@/components/FacilityItemGrid";
-import Placeholder from "@/components/Placeholder";
 import { RANGE_ITEMS } from "@/lib/data";
 
 export default function RangePage() {
@@ -22,10 +22,15 @@ export default function RangePage() {
               라운드와 연습을 한 곳에서 편리하게 즐기며 더욱 만족스러운 골프를 경험해보세요.
             </p>
           </div>
-          <Placeholder
-            label="드라이빙 레인지 (4:3)"
-            className="order-1 md:order-2 min-h-[280px] md:min-h-[420px] items-center justify-center"
-          />
+          <div className="relative order-1 md:order-2 min-h-[280px] md:min-h-[420px]">
+            <Image
+              src="/images/drivingrange.jpg"
+              alt="골프연습장 전경"
+              fill
+              sizes="(min-width: 768px) 50vw, 100vw"
+              className="object-cover"
+            />
+          </div>
         </div>
         <FacilityItemGrid items={RANGE_ITEMS} showText={false} />
       </section>

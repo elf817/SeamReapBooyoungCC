@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Noto_Sans_KR, IBM_Plex_Sans_KR } from "next/font/google";
+import { Cormorant_Garamond, Noto_Sans_KR, IBM_Plex_Sans_KR, Nanum_Gothic } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import SiteChrome from "@/components/SiteChrome";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -26,6 +25,13 @@ const ibmPlexSansKr = IBM_Plex_Sans_KR({
   display: "swap",
 });
 
+const nanumGothic = Nanum_Gothic({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-nanum-gothic",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: "씨엠립 부영 컨트리클럽 | Siem Reap Booyoung Country Club",
   description:
@@ -34,11 +40,9 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="ko" className={`${cormorant.variable} ${notoSansKr.variable} ${ibmPlexSansKr.variable}`}>
+    <html lang="ko" className={`${cormorant.variable} ${notoSansKr.variable} ${ibmPlexSansKr.variable} ${nanumGothic.variable}`}>
       <body className="font-sans text-ink bg-bg overflow-x-hidden">
-        <Header />
-        {children}
-        <Footer />
+        <SiteChrome>{children}</SiteChrome>
       </body>
     </html>
   );

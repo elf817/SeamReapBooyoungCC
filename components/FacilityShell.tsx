@@ -6,6 +6,7 @@ const TABS = [
   { href: "/facilities/golftel", label: "골프텔" },
   { href: "/facilities/clubhouse", label: "클럽하우스" },
   { href: "/facilities/range", label: "골프연습장" },
+  { href: "/facilities/gallery", label: "갤러리" },
 ];
 
 export default function FacilityShell({ summary, children }: { summary: string; children: ReactNode }) {

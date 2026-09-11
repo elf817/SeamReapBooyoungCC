@@ -3,7 +3,8 @@ import Link from "next/link";
 import GoogleMap from "@/components/GoogleMap";
 import HeroCarousel from "@/components/HeroCarousel";
 import ClubGallery from "@/components/ClubGallery";
-import { CONTACT_ROWS, FACILITY_TEASERS, SIGNATURE_HOLES } from "@/lib/data";
+import HomeGalleryCarousel from "@/components/HomeGalleryCarousel";
+import { CONTACT_ROWS, FACILITY_TEASERS, GALLERY_IMAGES } from "@/lib/data";
 
 const STATS = [
   { value: "18", caption: "HOLES · PAR 72" },
@@ -36,7 +37,7 @@ export default function HomePage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-3.5 mt-8 sm:mt-[38px]">
             <Link href="/course" className="px-8 py-4 bg-gold text-deep-dark text-[14px] tracking-[0.06em] text-center">
-              18홀 코스 보기
+              코스 안내
             </Link>
             <Link
               href="/facilities/golftel"
@@ -95,37 +96,25 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* SIGNATURE HOLES */}
+      {/* CLUB GALLERY */}
       <section className="bg-bg-contrast px-5 sm:px-12 py-16 sm:py-[104px]">
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10 sm:mb-[52px]">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10 sm:mb-14">
           <div>
-            <p className="mb-[18px] text-[10.5px] tracking-[0.34em] text-bronze">SIGNATURE HOLES</p>
-            <h2 className="font-kr-heading font-normal text-[26px] sm:text-[38px] leading-[1.15] text-deep">특별한 순간을 위한 특별한 공간</h2>
+            <p className="mb-[18px] text-[10.5px] tracking-[0.34em] text-bronze">GALLERY</p>
+            <h2 className="font-kr-heading font-normal text-[26px] sm:text-[38px] leading-[1.15] text-deep">클럽의 풍경</h2>
           </div>
-          <Link href="/course" className="text-[13.5px] tracking-[0.06em] border-b border-deep/35 pb-1 self-start whitespace-nowrap">
-            18홀 전체 보기 →
+          <Link href="/facilities/gallery" className="text-[13.5px] tracking-[0.06em] border-b border-deep/35 pb-1 self-start whitespace-nowrap">
+            갤러리 바로가기 →
           </Link>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-7">
-          {SIGNATURE_HOLES.map((h) => (
-            <article key={h.title} className="bg-bg border border-deep/[0.12]">
-              <div className="relative h-[220px]">
-                <Image src={h.image} alt={h.title} fill sizes="(min-width: 768px) 33vw, 100vw" className="object-cover" />
-              </div>
-              <div className="px-6 sm:px-[30px] pt-[30px] pb-[34px]">
-                <div className="flex flex-col items-start gap-[7px]">
-                  <span className="text-[11px] tracking-[0.16em] text-bronze whitespace-nowrap">{h.en}</span>
-                  <h3 className="font-kr-heading font-medium text-[26px] sm:text-[28px] text-deep whitespace-nowrap">{h.title}</h3>
-                </div>
-                <p className="my-4 text-[14px] leading-[1.95] text-ink-soft font-light">{h.desc}</p>
-                <div className="flex flex-wrap gap-x-[22px] gap-y-2.5 pt-[18px] border-t border-deep/[0.12] text-[12.5px] text-muted">
-                  <span className="whitespace-nowrap">PAR {h.par}</span>
-                  <span className="whitespace-nowrap">{h.yards} yds</span>
-                  <span className="whitespace-nowrap">{h.trait}</span>
-                </div>
-              </div>
-            </article>
-          ))}
+        <HomeGalleryCarousel images={GALLERY_IMAGES} />
+        <div className="mt-12 sm:mt-16 flex flex-col items-center text-center">
+          <p className="text-[15px] sm:text-[16px] leading-[1.9] text-ink-soft font-light">
+            &ldquo;자연과 사람이 함께 빚어낸 최고의 필드,
+            <br />
+            진심을 담은 서비스로 여러분을 맞이합니다.&rdquo;
+          </p>
+          <div className="mt-6 w-10 h-[2px] bg-gold" />
         </div>
       </section>
 

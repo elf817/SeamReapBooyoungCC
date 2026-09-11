@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
-const IMAGES = ["/images/main1.png", "/images/main2.png", "/images/main3.png"];
+const IMAGES = ["/images/main1.jpg", "/images/main2.jpg", "/images/main3.jpg"];
 
 export default function HeroCarousel() {
   const [index, setIndex] = useState(0);
@@ -11,7 +11,7 @@ export default function HeroCarousel() {
   useEffect(() => {
     const id = setInterval(() => {
       setIndex((i) => (i + 1) % IMAGES.length);
-    }, 6000);
+    }, 4000);
     return () => clearInterval(id);
   }, []);
 

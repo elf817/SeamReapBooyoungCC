@@ -5,7 +5,7 @@ import RouteTabs from "@/components/RouteTabs";
 const TABS = [
   { href: "/board/notice", label: "공지사항" },
   { href: "/board/faq", label: "FAQ" },
-  { href: "/board/inquiry", label: "문의사항" },
+  { href: "/board/inquiry", label: "문의게시판" },
 ];
 
 export default function BoardShell({ summary, children }: { summary: string; children: ReactNode }) {

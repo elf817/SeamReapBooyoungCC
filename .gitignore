@@ -8,3 +8,8 @@ npm-debug.log*
 Thumbs.db
 photothumb.db
 .claude/settings.local.json
+.env.local
+.env.production
+backend/config.php
+backend/uploads/*
+!backend/uploads/.htaccess

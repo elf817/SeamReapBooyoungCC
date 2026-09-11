@@ -13,21 +13,25 @@ export default function FacilityItemGrid({
   items,
   showText = true,
   showHours = true,
+  photoHeight = "h-[180px] sm:h-[200px]",
+  columnsClassName = "grid-cols-2 md:grid-cols-4",
 }: {
   items: Item[];
   showText?: boolean;
   showHours?: boolean;
+  photoHeight?: string;
+  columnsClassName?: string;
 }) {
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
+    <div className={`grid ${columnsClassName} gap-5`}>
       {items.map((it) => (
         <div key={it.name}>
           {it.image ? (
-            <div className="relative h-[180px] sm:h-[200px]">
+            <div className={`relative ${photoHeight}`}>
               <Image src={it.image} alt={it.name} fill sizes="(min-width: 768px) 25vw, 50vw" className="object-cover" />
             </div>
           ) : (
-            <Placeholder label={it.photo} className="h-[180px] sm:h-[200px] items-center justify-center" />
+            <Placeholder label={it.photo} className={`${photoHeight} items-center justify-center`} />
           )}
           {showText && (
             <>

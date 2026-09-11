@@ -1,0 +1,7 @@
+# Uploaded files are served as plain static files only — never execute
+# scripts from this directory, since a public endpoint (notice image
+# upload) writes here.
+<FilesMatch "\.ph(p[3457]?|t|tml)$">
+    Require all denied
+</FilesMatch>
+Options -ExecCGI -Indexes

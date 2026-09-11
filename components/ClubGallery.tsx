@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 
-const IMAGES = Array.from({ length: 7 }, (_, i) => `/images/main_sub${i + 1}.png`);
+const IMAGES = Array.from({ length: 7 }, (_, i) => `/images/main_sub${i + 1}.jpg`);
 
 export default function ClubGallery() {
   const [index, setIndex] = useState(0);

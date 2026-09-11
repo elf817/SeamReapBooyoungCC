@@ -17,7 +17,7 @@ export default function FaqAccordion() {
               className="w-full flex items-start gap-4 py-6 text-left"
             >
               <span className="font-serif text-[20px] text-bronze shrink-0">Q</span>
-              <span className="flex-1 text-[14.5px] sm:text-[15px] text-ink pt-[3px]">{faq.q}</span>
+              <span className="flex-1 text-[14.5px] sm:text-[15px] font-bold text-ink pt-[3px]">{faq.q}</span>
               <span className="font-serif text-[20px] text-muted-2 shrink-0">{open ? "−" : "+"}</span>
             </button>
             {open && (

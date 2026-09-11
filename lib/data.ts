@@ -137,28 +137,22 @@ export const HOLES: Hole[] = [
   },
 ];
 
-export const SIGNATURE_HOLES = [
-  { title: "9번 홀", en: "THE CHALLENGE", par: 5, yards: 542, trait: "레이크·크릭", image: "/images/hole9.jpg", desc: "클럽하우스를 보며 티샷하는 확 트인 파5. 우측 레이크를 따라 호쾌한 드라이버 샷이 가능하지만, 그린 주변 가드벙커는 정확한 온그린을 요구합니다." },
-  { title: "11번 홀", en: "THE PRECISION", par: 4, yards: 379, trait: "레이크·벙커", image: "/images/hole11.jpg", desc: "좌측 레이크와 중앙 벙커가 공략의 관건인 파4. 티샷 랜딩이 좋다면 버디도 노려볼 만한 유일한 홀입니다." },
-  { title: "18번 홀", en: "THE FINISH", par: 4, yards: 469, trait: "호수·좁은 그린", image: "/images/hole18.jpg", desc: "좌우로 호수가 펼쳐진 마무리 홀. 페어웨이 중앙에 정확히 안착시키는 것이 파를 지키는 열쇠입니다." },
-];
 
 export const FACILITY_TEASERS = [
-  { id: "golftel", name: "골프텔", en: "GOLFTEL", image: "/images/hotel1.png", meta: "94실 · STANDARD · DELUXE", desc: "클럽하우스와 이어진 94실 규모 숙소. 이동 없이 연박 라운드가 가능합니다." },
+  { id: "golftel", name: "골프텔", en: "GOLFTEL", image: "/images/hotel1.jpg", meta: "94실 · STANDARD · DELUXE", desc: "클럽하우스와 이어진 94실 규모 숙소. 이동 없이 연박 라운드가 가능합니다." },
   { id: "clubhouse", name: "클럽하우스", en: "CLUBHOUSE", image: "/images/clubhouse1.jpg", meta: "레스토랑 · 프로샵 · 라커 · 스파", desc: "크메르 목조 양식을 현대적으로 해석한 2층 규모. 라운드 전후가 한 건물에서 끝납니다." },
-  { id: "range", name: "골프연습장", en: "PRACTICE RANGE", image: "/images/driving1.png", meta: "78타석 · 1층·2층 구조", desc: "넓고 쾌적한 1·2층 78타석 규모의 연습시설에서 스윙의 완성도를 높여보세요." },
+  { id: "range", name: "골프연습장", en: "PRACTICE RANGE", image: "/images/drivingrange.jpg", meta: "78타석 · 1층·2층 구조", desc: "넓고 쾌적한 1·2층 78타석 규모의 연습시설에서 스윙의 완성도를 높여보세요." },
 ];
 
 export const CLUBHOUSE_ITEMS = [
-  { name: "레스토랑", photo: "레스토랑 홀", image: "/images/restaurant.png", hours: "05:00 – 21:00", desc: "한식·크메르식·양식을 함께 냅니다. 18번 홀 그린이 보이는 테라스석이 인기입니다." },
-  { name: "프로샵", photo: "프로샵 진열대", image: "/images/proshop.png", hours: "05:30 – 18:30", desc: "클럽 대여와 소모품 판매, 간단한 그립 교체와 로프트 점검을 현장에서 처리합니다." },
-  { name: "라커 · 샤워", photo: "라커룸", image: "/images/locker.png", hours: "05:00 – 19:00", desc: "남녀 각 120개 라커와 샤워 부스. 그린피에 이용료가 포함됩니다." },
-  { name: "스파 & 사우나", photo: "스파 트리트먼트 룸", hours: "11:00 – 21:00", desc: "크메르 전통 마사지와 건식 사우나. 예약 없이 이용 가능합니다." },
+  { name: "레스토랑", photo: "레스토랑 홀", image: "/images/restaurant.jpg", hours: "05:00 – 21:00", desc: "클럽하우스 내 레스토랑에서는 서양식과 아시아 요리, 특히 정통 한국 음식을 다양하게 즐기실 수 있습니다. 아름다운 정원과 고급스러운 분위기 속에서 특별한 식사를 경험해 보세요." },
+  { name: "프로샵", photo: "프로샵 진열대", image: "/images/proshop.jpg", hours: "05:30 – 18:30", desc: "클럽하우스 내 프로샵에서 골프 클럽부터 골프웨어, 다양한 골프용품까지 라운딩에 필요한 상품을 편리하게 만나보실 수 있습니다." },
+  { name: "라커 · 샤워", photo: "라커룸", image: "/images/locker.jpg", hours: "05:00 – 19:00", desc: "쾌적하고 편안한 샤워시설을 갖춘 럭셔리 락커룸에서 라운딩 후 상쾌한 휴식을 즐겨보세요. 개인 락커를 제공하여 더욱 편리하게 이용하실 수 있습니다." },
 ];
 
 export const GOLFTEL_ITEMS = [
-  { name: "호텔 전경", photo: "호텔 전경", image: "/images/hotel1.png", hours: "상시 이용", desc: "야자수와 정원이 어우러진 골프텔 전경. 체크인 전후로 편안하게 머물 수 있는 공간입니다." },
-  { name: "수영장", photo: "수영장", image: "/images/pool.png", hours: "07:00 – 19:00", desc: "라운드 후 피로를 풀 수 있는 야외 수영장. 투숙객은 자유롭게 이용하실 수 있습니다." },
+  { name: "호텔 전경", photo: "호텔 전경", image: "/images/hotel1.jpg", hours: "상시 이용", desc: "야자수와 정원이 어우러진 골프텔 전경. 체크인 전후로 편안하게 머물 수 있는 공간입니다." },
+  { name: "수영장", photo: "수영장", image: "/images/pool.jpg", hours: "07:00 – 19:00", desc: "라운드 후 피로를 풀 수 있는 야외 수영장. 투숙객은 자유롭게 이용하실 수 있습니다." },
   { name: "피트니스", photo: "피트니스 센터", hours: "05:00 – 21:00", desc: "기본 유산소·웨이트 기구를 갖춘 피트니스 센터. 이른 아침에도 이용 가능합니다." },
   { name: "매점", photo: "매점", hours: "06:00 – 22:00", desc: "생수·스낵·골프용품을 갖춘 매점. 라운드 전후 간단한 요기에 편리합니다." },
 ];
@@ -175,51 +169,23 @@ export const ROOMS = [
     name: "STANDARD", spec: "39㎡ · 49실",
     desc: "합리적인 크기로 구성된 스탠다드 객실입니다. 클럽하우스와 가까워 이동이 편리합니다.",
     items: ["체크인 14:00 · 체크아웃 12:00", "무료 Wi-Fi", "골프백 보관", "클럽하우스 도보 이동", "투숙객 그린피 할인"],
-    dark: false, photo: "STANDARD 객실 (39㎡)", image: "/images/room_12py.png",
+    dark: false, photo: "STANDARD 객실 (39㎡)", image: "/images/room_12py.jpg",
   },
   {
     name: "DELUXE", spec: "46㎡ · 45실",
     desc: "한층 여유로운 공간의 디럭스 객실입니다. 장기 투숙과 연박 라운드에 적합합니다.",
     items: ["체크인 14:00 · 체크아웃 12:00", "무료 Wi-Fi", "골프백 보관", "클럽하우스 도보 이동", "투숙객 그린피 할인"],
-    dark: true, photo: "DELUXE 객실 (46㎡)", image: "/images/room_14py.png",
+    dark: true, photo: "DELUXE 객실 (46㎡)", image: "/images/room_14py.jpg",
   },
 ];
 
-export const NOTICES = [
-  { no: "08", pinned: true, cat: "요금", date: "2026.08.01", title: "2026년 하반기 그린피·카트비·캐디피 요금표 안내" },
-  { no: "07", pinned: true, cat: "요금", date: "2026.07.20", title: "부영 골프텔 객실 요금 및 투숙객 그린피 할인율 변경 안내" },
-  { no: "06", pinned: false, cat: "코스", date: "2026.07.11", title: "우기 집중호우에 따른 12~14번 홀 카트 진입 제한 안내" },
-  { no: "05", pinned: false, cat: "운영", date: "2026.06.28", title: "7월 그린 에어레이션 작업 일정 및 임시 그린 운영 안내" },
-  { no: "04", pinned: false, cat: "대회", date: "2026.06.02", title: "제9회 부영 클럽 챔피언십 참가자 모집 (8월 22~23일)" },
-  { no: "03", pinned: false, cat: "시설", date: "2026.05.15", title: "드라이빙 레인지 야간 조명 교체 공사에 따른 이용 시간 조정" },
-  { no: "02", pinned: false, cat: "운영", date: "2026.04.30", title: "크메르 신년 연휴 기간 셔틀 및 레스토랑 운영 시간 안내" },
-  { no: "01", pinned: false, cat: "시설", date: "2026.03.18", title: "클럽하우스 라커룸 및 사우나 리뉴얼 공사 완료 안내" },
-];
-
 export const FAQS = [
-  { q: "첫 조 티오프는 몇 시부터인가요?", a: "건기에는 오전 5시 40분, 우기에는 오전 6시부터 첫 조가 출발합니다. 골프텔 투숙객은 첫 조 배정을 우선 요청하실 수 있습니다." },
-  { q: "캐디와 카트는 필수인가요?", a: "전 홀 캐디 동반이 원칙이며, 카트는 4인 1대 기준으로 운영합니다. 2인 이하 라운드는 시간대에 따라 조인 라운드로 진행될 수 있습니다." },
-  { q: "한국어가 통하나요?", a: "한국어 가능 캐디 60명이 상주하며, 프론트와 레스토랑에는 한국인 매니저가 상주합니다. 사전 요청 시 한국어 캐디로 배정해 드립니다." },
-  { q: "클럽을 빌릴 수 있나요?", a: "프로샵에서 남녀 풀세트 대여가 가능합니다. 좌타 세트는 수량이 제한적이라 도착 3일 전까지 미리 알려주시는 편이 좋습니다." },
-  { q: "우기에도 라운드가 가능한가요?", a: "5~10월 우기에도 대부분 라운드가 가능합니다. 스콜은 보통 30분 내로 그치며, 전 홀 배수 설계로 비 직후에도 페어웨이 상태가 유지됩니다." },
-  { q: "골프텔 조식은 몇 시부터인가요?", a: "오전 4시 50분부터 오전 10시까지 운영합니다. 첫 조로 나가시는 분들을 위해 간편식 도시락도 준비해 드립니다." },
-  { q: "공항 픽업은 어떻게 신청하나요?", a: "도착 항공편과 인원을 전화 또는 카카오톡으로 알려주시면 도착 게이트에서 클럽 차량이 대기합니다. 골프텔 투숙객은 무료입니다." },
-  { q: "복장 규정이 있나요?", a: "칼라 있는 셔츠와 골프화를 착용해 주세요. 민소매·청바지·운동화 차림은 코스 입장이 제한됩니다." },
-];
-
-export const INQUIRY_CHANNELS = [
-  { label: "TELEPHONE", value: "+855 63 967 101 / 114", note: "현지 05:30 – 18:30 (연중무휴)" },
-  { label: "KAKAOTALK", value: "booyoungcc", note: "한국어 상담 09:00 – 21:00 (KST)" },
-  { label: "EMAIL", value: "golf@booyoungcc.com", note: "영업일 기준 1일 이내 회신" },
-];
-
-export const INQUIRIES = [
-  { no: "06", title: "8인 단체 라운드 시 카트 배정 문의", writer: "김*수", date: "2026.08.05", status: "답변완료" },
-  { no: "05", title: "스위트 객실 4인 투숙 시 침구 추가 가능한가요", writer: "이*영", date: "2026.08.03", status: "답변완료" },
-  { no: "04", title: "단체 20인 라운드 시 클럽하우스 만찬 예약 가능한가요", writer: "박*환", date: "2026.08.02", status: "접수" },
-  { no: "03", title: "공항 픽업 차량 골프백 4개 적재 가능 여부", writer: "정*미", date: "2026.07.30", status: "답변완료" },
-  { no: "02", title: "좌타 대여 클럽 재고 확인 부탁드립니다", writer: "최*호", date: "2026.07.28", status: "답변완료" },
-  { no: "01", title: "클럽 챔피언십 참가 자격 관련 문의", writer: "윤*진", date: "2026.07.25", status: "답변완료" },
+  { q: "티오프 가능시간은 어떻게 되나요?", a: "오전 6시부터 가능하며 마지막 티오프 시간은 16:30입니다." },
+  { q: "캐디는 필수인가요?", a: "전 홀 캐디 동반이 원칙이며, 2인 1캐디 기준으로 운영합니다. 당일 손님 수요에 따라 1인 1캐디 배정 가능합니다." },
+  { q: "카트를 혼자 사용 가능한가요?", a: "1인 1카트로 사용하실 수 있습니다. 당일 손님 수요에 따라 모든 카트가 사용 될 경우에는 불가피하게 1인1카트로 제공해 드릴 수 없으나, 그렇지 않은 경우에는 얼마든지 이용하실 수 있습니다." },
+  { q: "클럽을 빌릴 수 있나요?", a: "남녀 풀세트 대여가 가능합니다." },
+  { q: "우기에도 라운드가 가능한가요?", a: "우기에도 대부분 라운드가 가능합니다. 스콜은 보통 30분 내로 그치며, 전 홀 배수 설계로 비 직후에도 페어웨이 상태가 유지됩니다." },
+  { q: "공항 픽업은 어떻게 신청하나요?", a: "도착 항공편과 인원을 미리 연락주시면 도착 게이트에서 클럽 차량이 대기합니다. 골프텔 투숙객은 무료입니다." },
 ];
 
 export const CONTACT_ROWS = [
@@ -245,6 +211,30 @@ export const FAMILY_LINKS = [
   { name: "목동애시앙", url: "https://mokdong.aesiang.co.kr" },
 ];
 
+export const GALLERY_IMAGES: string[] = [
+  "/images/gallery/main3.jpg",
+  "/images/gallery/main_sub1.jpg",
+  "/images/gallery/main_sub2.jpg",
+  "/images/gallery/main_sub3.jpg",
+  "/images/gallery/main_sub4.jpg",
+  "/images/gallery/main_sub5.jpg",
+  "/images/gallery/main_sub6.jpg",
+  "/images/gallery/main_sub7.jpg",
+  "/images/gallery/clubhouse1.jpg",
+  "/images/gallery/hotel1.jpg",
+  "/images/gallery/room_12py.jpg",
+  "/images/gallery/room_14py.jpg",
+  "/images/gallery/restaurant.jpg",
+  "/images/gallery/proshop.jpg",
+  "/images/gallery/locker.jpg",
+  "/images/gallery/pool.jpg",
+  "/images/gallery/drivingrange.jpg",
+  "/images/gallery/hole9.jpg",
+  "/images/gallery/hole11.jpg",
+  "/images/gallery/hole18.jpg",
+  "/images/gallery/img_3159.jpg",
+];
+
 export interface NavItem {
   href: string;
   label: string;
@@ -267,6 +257,7 @@ export const NAV_ITEMS: NavItem[] = [
       { href: "/facilities/golftel", label: "골프텔" },
       { href: "/facilities/clubhouse", label: "클럽하우스" },
       { href: "/facilities/range", label: "골프연습장" },
+      { href: "/facilities/gallery", label: "갤러리" },
     ],
   },
   {
@@ -274,7 +265,7 @@ export const NAV_ITEMS: NavItem[] = [
     children: [
       { href: "/board/notice", label: "공지사항" },
       { href: "/board/faq", label: "FAQ" },
-      { href: "/board/inquiry", label: "문의사항" },
+      { href: "/board/inquiry", label: "문의게시판" },
     ],
   },
   { href: "/access", label: "오시는 길", match: (p: string) => p.startsWith("/access") },

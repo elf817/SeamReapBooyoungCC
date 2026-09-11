@@ -25,7 +25,7 @@ const config: Config = {
       },
       fontFamily: {
         serif: ["var(--font-cormorant)", "Georgia", "serif"],
-        sans: ["var(--font-noto-kr)", "-apple-system", "sans-serif"],
+        sans: ["var(--font-nanum-gothic)", "Segoe UI", "Malgun Gothic", "sans-serif"],
         "kr-heading": ["var(--font-ibm-plex-kr)", "var(--font-noto-kr)", "sans-serif"],
         mono: ["ui-monospace", "Menlo", "monospace"],
       },
