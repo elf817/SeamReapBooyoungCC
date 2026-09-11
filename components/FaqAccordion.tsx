@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { FAQS } from "@/lib/data";
+import RevealBelowTabs from "@/components/RevealBelowTabs";
 
 export default function FaqAccordion() {
   const [openIndex, setOpenIndex] = useState(0);
@@ -10,8 +11,8 @@ export default function FaqAccordion() {
     <div className="flex flex-col">
       {FAQS.map((faq, i) => {
         const open = openIndex === i;
-        return (
-          <div key={faq.q} className="border-b border-deep/[0.15]">
+        const item = (
+          <div className="border-b border-deep/[0.15]">
             <button
               onClick={() => setOpenIndex(open ? -1 : i)}
               className="w-full flex items-start gap-4 py-6 text-left"
@@ -28,6 +29,7 @@ export default function FaqAccordion() {
             )}
           </div>
         );
+        return i === 0 ? <RevealBelowTabs key={faq.q}>{item}</RevealBelowTabs> : <div key={faq.q}>{item}</div>;
       })}
     </div>
   );

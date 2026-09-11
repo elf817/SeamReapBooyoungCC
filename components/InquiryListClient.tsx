@@ -5,6 +5,7 @@ import { deleteInquiry, listInquiries, replyInquiry, verifyInquiry, type Inquiry
 import { useAdminAuth } from "@/components/AdminAuthContext";
 import Modal from "@/components/Modal";
 import InquiryWriteForm from "@/components/InquiryWriteForm";
+import RevealBelowTabs from "@/components/RevealBelowTabs";
 
 const inputClass =
   "w-full px-4 py-3 bg-bg border border-deep/20 text-[14px] text-ink placeholder:text-muted-3 focus:outline-none focus:border-deep transition-colors";
@@ -117,14 +118,14 @@ export default function InquiryListClient() {
 
       {inquiries && inquiries.length > 0 && (
         <>
-          <div className="hidden sm:flex gap-6 px-6 pb-4 border-b-2 border-deep/60 text-[12.5px] font-bold tracking-[0.22em] text-ink-soft2">
+          <RevealBelowTabs className="hidden sm:flex gap-6 px-6 pb-4 border-b-2 border-deep/60 text-[12.5px] font-bold tracking-[0.22em] text-ink-soft2">
             <span className="w-[70px]">NO</span>
             <span className="flex-1">제목</span>
             <span className="w-[110px]">작성자</span>
             <span className="w-[110px]">등록일</span>
             <span className="w-[100px]">처리 상태</span>
             {isAdmin && <span className="w-[50px]">관리</span>}
-          </div>
+          </RevealBelowTabs>
 
           {inquiries.map((q, i) => (
             <div key={q.id} className="border-b border-deep/[0.12]">

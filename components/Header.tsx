@@ -12,7 +12,7 @@ export default function Header() {
 
   return (
     <header
-      className="sticky top-0 z-50 flex items-center gap-5 px-5 sm:px-7 py-0 bg-bg backdrop-blur-md border-b border-deep/[0.12]"
+      className="sticky top-0 z-50 flex items-center gap-5 px-5 sm:px-7 py-0 bg-bg border-b border-deep/[0.12] [will-change:transform] [transform:translateZ(0)]"
       onMouseLeave={() => setOpen(false)}
     >
       <Link href="/" className="flex items-center shrink-0" onClick={() => setOpen(false)}>

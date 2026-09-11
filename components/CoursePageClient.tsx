@@ -33,7 +33,7 @@ export default function CoursePageClient() {
       />
       <CourseTabs nine={nine} onChange={setNine} summary={summary} />
 
-      <section className="px-5 sm:px-12 pt-10 sm:pt-14 pb-16 sm:pb-[104px]">
+      <section className="px-[60px] sm:px-36 pt-10 sm:pt-14 pb-16 sm:pb-[104px]">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {holes.map((h) => (
             <article key={h.no} className="border border-deep/[0.14] bg-bg flex flex-col">

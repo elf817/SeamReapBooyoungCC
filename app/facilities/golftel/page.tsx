@@ -2,13 +2,14 @@ import Image from "next/image";
 import FacilityShell from "@/components/FacilityShell";
 import FacilityItemGrid from "@/components/FacilityItemGrid";
 import Placeholder from "@/components/Placeholder";
+import RevealBelowTabs from "@/components/RevealBelowTabs";
 import { GOLFTEL_ITEMS, ROOMS } from "@/lib/data";
 
 export default function GolftelPage() {
   return (
     <FacilityShell summary="94실 · 2개 타입">
-      <section className="px-5 sm:px-12 pt-10 sm:pt-[76px] pb-16 sm:pb-[104px]">
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-5 mb-9 sm:mb-[46px]">
+      <section className="px-[60px] sm:px-36 pt-10 sm:pt-[76px] pb-16 sm:pb-[104px]">
+        <RevealBelowTabs className="flex flex-col sm:flex-row sm:items-end justify-between gap-5 mb-9 sm:mb-[46px]">
           <div>
             <p className="mb-4 text-[10.5px] tracking-[0.26em] text-bronze">94 ROOMS · STAY & PLAY</p>
             <h2 className="font-kr-heading font-normal text-[30px] sm:text-[42px] text-deep max-w-[560px]">
@@ -18,7 +19,7 @@ export default function GolftelPage() {
           <p className="max-w-[600px] text-[15px] leading-[1.9] text-muted-2 font-light">
             골프코스와 가까운 편안한 객실에서 라운드의 여운을 이어가십시오. 94실 규모의 골프텔과 수영장, 레스토랑 등 다양한 편의시설을 갖추어 편안한 골프 여행을 완성합니다.
           </p>
-        </div>
+        </RevealBelowTabs>
 
         <div className="grid grid-cols-1 md:grid-cols-2 border border-deep/15">
           {ROOMS.map((r) => (

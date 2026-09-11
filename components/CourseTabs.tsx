@@ -13,7 +13,10 @@ export default function CourseTabs({ nine, onChange, summary }: CourseTabsProps)
   ];
 
   return (
-    <div className="sticky top-[65px] sm:top-[89px] z-40 bg-bg border-b border-deep/[0.12]">
+    <div
+      data-route-tabs
+      className="sticky top-[59px] sm:top-[80px] z-40 bg-bg border-b border-deep/[0.12] [will-change:transform] [transform:translateZ(0)]"
+    >
       <div className="flex flex-wrap items-center justify-between gap-4 px-5 sm:px-12 py-4">
         <div className="flex gap-2.5">
           {tabs.map((tab) => {

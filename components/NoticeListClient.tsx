@@ -5,6 +5,7 @@ import { deleteNotice, getNotice, listNotices, type Notice, type NoticeDetail } 
 import { useAdminAuth } from "@/components/AdminAuthContext";
 import Modal from "@/components/Modal";
 import NoticeForm from "@/components/admin/NoticeForm";
+import RevealBelowTabs from "@/components/RevealBelowTabs";
 
 export default function NoticeListClient() {
   const { isAdmin } = useAdminAuth();
@@ -74,12 +75,12 @@ export default function NoticeListClient() {
 
       {notices && notices.length > 0 && (
         <>
-          <div className="hidden sm:flex gap-6 px-6 pb-4 border-b-2 border-deep/60 text-[12.5px] font-bold tracking-[0.22em] text-ink-soft2">
+          <RevealBelowTabs className="hidden sm:flex gap-6 px-6 pb-4 border-b-2 border-deep/60 text-[12.5px] font-bold tracking-[0.22em] text-ink-soft2">
             <span className="w-[70px]">NO</span>
             <span className="flex-1">제목</span>
             <span className="w-[110px]">등록일</span>
             {isAdmin && <span className="w-[50px]">관리</span>}
-          </div>
+          </RevealBelowTabs>
           {notices.map((n, i) => (
             <div key={n.id} className="border-b border-deep/[0.12]">
               <button
