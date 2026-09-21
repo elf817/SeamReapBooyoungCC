@@ -1,8 +1,6 @@
 import Image from "next/image";
 import FacilityShell from "@/components/FacilityShell";
-import FacilityItemGrid from "@/components/FacilityItemGrid";
 import RevealBelowTabs from "@/components/RevealBelowTabs";
-import { RANGE_ITEMS } from "@/lib/data";
 
 export default function RangePage() {
   return (
@@ -33,7 +31,6 @@ export default function RangePage() {
             />
           </div>
         </div>
-        <FacilityItemGrid items={RANGE_ITEMS} showText={false} />
       </section>
     </FacilityShell>
   );

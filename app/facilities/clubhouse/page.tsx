@@ -10,7 +10,7 @@ export default function ClubhousePage() {
       <section className="px-[60px] sm:px-36 pt-10 sm:pt-[76px] pb-16 sm:pb-[104px]">
         <div className="grid grid-cols-1 md:grid-cols-[1fr_1.3fr] gap-8 sm:gap-14 items-center mb-14 sm:mb-16">
           <div className="relative min-h-[280px] md:min-h-[420px]">
-            <Image src="/images/clubhouse1.jpg" alt="클럽하우스 전경" fill sizes="(min-width: 768px) 50vw, 100vw" className="object-cover" />
+            <Image src="/images/lobby.png" alt="클럽하우스 전경" fill sizes="(min-width: 768px) 50vw, 100vw" className="object-cover" />
           </div>
           <RevealBelowTabs>
             <h2 className="mb-6 font-kr-heading font-normal text-[30px] sm:text-[42px] leading-[1.2] text-deep">

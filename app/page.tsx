@@ -23,13 +23,14 @@ export default function HomePage() {
           className="absolute inset-0"
           style={{ background: "linear-gradient(180deg, rgba(16,32,24,0.18) 0%, rgba(16,32,24,0.82) 100%)" }}
         />
-        <div className="relative pl-[58px] pr-5 sm:pl-[86px] sm:pr-12 pb-14 sm:pb-[76px] max-w-[1080px]">
+        <div className="relative w-full min-w-0 pl-[58px] pr-5 sm:pl-[86px] sm:pr-12 pb-14 sm:pb-[76px] max-w-[1080px]">
           <p className="mb-4 sm:mb-[22px] text-[10.5px] tracking-[0.44em] text-gold">GOLF · STAY · PRACTICE · RELAX</p>
-          <h1 className="font-serif font-medium text-[38px] sm:text-[52px] md:text-[66px] leading-[1.12] sm:leading-[1.1] text-bg">
-            Experience
-            <br />
-            Golf, <span className="text-gold">Stay</span> &amp; Relax
+          <h1 className="font-serif font-medium text-[22px] sm:text-[30px] md:text-[38px] leading-[1.3] text-bg">
+            Experience Golf, <span className="text-gold">Stay</span> &amp; Relax
           </h1>
+          <p className="font-serif font-medium text-[13px] sm:text-[26px] md:text-[32px] lg:text-[46px] leading-[1.2] text-bg whitespace-nowrap">
+            SIEM REAP BOOYOUNG COUNTRY CLUB
+          </p>
           <p className="mt-5 sm:mt-[26px] max-w-[660px] text-[15.5px] sm:text-[17px] leading-[1.9] sm:leading-[1.95] text-bg/78 font-light">
             7,396야드 18홀 챔피언십 코스와 94실의 골프텔, 78타석의 골프연습장까지.
             <br />

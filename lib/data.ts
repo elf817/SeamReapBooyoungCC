@@ -29,109 +29,109 @@ function makeTees(black: number, blue: number, white: number, silver: number, re
 export const HOLES: Hole[] = [
   {
     no: "01", par: 5, champion: 577, regular: 526, ladies: 457,
-    image: "/images/holes/hole1.jpg",
+    image: "/images/holes/Hole_01.png",
     tees: makeTees(577, 546, 526, 495, 457),
     tip: "옥색 레이크를 끼고 시작되는 1번 홀은 파5로 넓은 페어웨이는 시원한 청량감을 선사하고, 전면의 좌우 타겟 벙커가 골퍼를 유혹하지만 그다지 위협적이지 못하다. 장타자는 페어웨이 좌측 벙커 우측 끝을 공략한다면 확 트인 시야를 확보하고, 투온을 노려 볼만한 홀이다. 단, 우측으로 공이 밀리면 세컨샷 지점에서 그린이 보이지 않고 그린앞 가드벙커에 빠질 염려가 있으나, 욕심내 볼만한 홀이다. 조심할 점은 바람과 그린앞에 벙커가 항상 기다린다는 점만 유의하면, 약간 오르막인 그린공략이 무난하다.",
   },
   {
     no: "02", par: 4, champion: 386, regular: 342, ladies: 285,
-    image: "/images/holes/2.png",
+    image: "/images/holes/Hole_02.png",
     tees: makeTees(386, 366, 342, 323, 285),
     tip: "물과 벙커가 없는 유일한 홀로서 그린을 직접 공략할 수 있는 18개 홀 중 가장 편안한 홀이다. 페어웨이와 그린 우측엔 길게 grass 벙커가 도사리고 있다. 그린은 중앙부분이 높아 전면과 후면은 약간의 경사를 봐야 한다.",
   },
   {
     no: "03", par: 3, champion: 206, regular: 160, ladies: 124,
-    image: "/images/holes/3.png",
+    image: "/images/holes/Hole_03.png",
     tees: makeTees(206, 182, 160, 145, 124),
     tip: "호수를 낀 파3 홀이다. 시원한 청량감을 맛볼 수 있는 씨엠립 레이크 리조트 골프코스의 서막을 알리는 홀이기도 하다. 확 트인 시야와 그린을 감싸 안은 야자수와 짬빠이나무 아래에 2단 그린이 골퍼를 기다린다. 좌측의 레이크가 부담감이 있으나, 어렵지 않은 홀이다.",
   },
   {
     no: "04", par: 4, champion: 406, regular: 367, ladies: 304,
-    image: "/images/holes/4.png",
+    image: "/images/holes/Hole_04.png",
     tees: makeTees(406, 389, 367, 339, 304),
     tip: "파4홀로서 좌우의 시원한 레이크와 폭이 160야드가 넘는 넓은 페어웨이는 드라이버 샷을 맘껏 날릴 수 있는 홀이다. 세컨샷에서는 정확한 아이언 샷이 요구되는 홀이다.",
   },
   {
     no: "05", par: 4, hdcp: 1, champion: 434, regular: 387, ladies: 323,
-    image: "/images/holes/5.png",
+    image: "/images/holes/Hole_05.png",
     tees: makeTees(434, 410, 387, 366, 323),
     tip: "넓은 레이크가 홀을 따라 좌측으로 길게 늘어서 있으며 4번 페어웨이가 호수를 사이에 두고 정원같이 펼쳐져 있다. 핸디캡 1번 홀로서 페어웨이 중앙좌측 벙커가 공략의 포인트고, 충분한 드라이버 샷과 정확한 아이언 샷이 요구된다. 그린 주변의 벙커와 세컨샷 위치가 승부의 관건이다.",
   },
   {
     no: "06", par: 4, champion: 430, regular: 381, ladies: 309,
-    image: "/images/holes/6.png",
+    image: "/images/holes/Hole_06.png",
     tees: makeTees(430, 404, 381, 359, 309),
     tip: "완만한 도그렉 홀로서 페어웨이 중앙의 벙커가 잘 다듬어진 넓은 페어웨이와 조화롭다. 벙커 좌측엔 코코넛 트리가 그린을 감추고 있으며, 이 코코넛 트리가 지름길이긴 하나 충분한 드라이버 거리가 요구된다.",
   },
   {
     no: "07", par: 3, champion: 252, regular: 200, ladies: 149,
-    image: "/images/holes/7.png",
+    image: "/images/holes/Hole_07.png",
     tees: makeTees(252, 223, 200, 178, 149),
     tip: "숏홀 중 가장 어려운 홀이다. 경우에 따라 드라이버로 공략해야 될 홀이다. 밭 밑의 쪽빛 레이크와 좌우 그린을 떠받들고 있는 벙커와의 조화는 더욱 신중한 플레이를 요구한다. 그린은 이단과 웨이브가 퍼팅에 긴장을 배가한다.",
   },
   {
     no: "08", par: 4, champion: 454, regular: 381, ladies: 311,
-    image: "/images/holes/8.png",
+    image: "/images/holes/Hole_08.png",
     tees: makeTees(454, 419, 381, 358, 311),
     tip: "완만한 오르막과 좌우로 늘어선 코코넛과 짬빠이, 팜트리 나무들로 둘러싸인 아늑한 홀이다. 전면의 좌측 타겟 벙커를 공략하면 드넓은 그린과 페어웨이가 펼쳐진다. 그린은 뒷부분이 오르막 경사로 어렵지않게 공략할 수있다.",
   },
   {
     no: "09", par: 5, champion: 542, regular: 489, ladies: 424,
-    image: "/images/holes/9.png",
+    image: "/images/holes/Hole_09.png",
     tees: makeTees(542, 517, 489, 459, 424),
     tip: "마지막 파5 홀인 이 홀은 확 트인 홀답게 멀리 클럽하우스를 보면서 공을 친다. 홀 중간에 크릭크가 파여 있어 주의가 필요한 홀이기도 하다. 홀 우측으로 내려다보는 파란 레이크가 호수같이 펼쳐져 있어 호쾌한 드라이버 샷이 절로 나온다. 그린 주변엔 가드 벙커가 도사리고 있어 투온을 노리기엔 정확한 샷이 요구되고 그린은 완만한 오르막이다.",
   },
   {
     no: "10", par: 4, champion: 417, regular: 367, ladies: 311,
-    image: "/images/holes/10.png",
+    image: "/images/holes/Hole_10.jpg",
     tees: makeTees(417, 397, 367, 344, 311),
     tip: "우측에 길게 늘어선 호수와 좌측의 이엉트리, 트농, 팜트리 군식들 그리고 그린을 감싸고 있는 꽃나무들이 아름다운 홀이다. 호수방향의 가드 벙커를 피한다면 무난히 공략할 수 있는 편안한 홀이다.",
   },
   {
     no: "11", par: 4, champion: 379, regular: 334, ladies: 284,
-    image: "/images/holes/11.png",
+    image: "/images/holes/Hole_11.png",
     tees: makeTees(379, 358, 334, 318, 284),
     tip: "좌측의 레이크와 중앙의 벙커가 공략의 관건이다. IP지점이 벙커로 위험하는 홀로서, 레이크의 바람도 영향을 받는 홀이다. 티샷의 랜딩이 좋다면 버디도 노려 볼만한 유일한 홀이다.",
   },
   {
     no: "12", par: 5, champion: 556, regular: 501, ladies: 441,
-    image: "/images/holes/12.png",
+    image: "/images/holes/Hole_12.jpg",
     tees: makeTees(556, 531, 501, 475, 441),
     tip: "그린을 향해 맘껏 티샷을 날릴수 있는 파5 홀이다. 충분히 확보된 시야와 야자수 사이의 그린은 손에 잡힐듯 하다. 티샷이 훌륭하다면 장타자는 그린 우측의 호수를 건너 투온을 시도해 봄직한 홀이다. 전체적으로 에스자 코스인 이 홀은 도전심이 솟구치는 홀이다. 그린은 2단 그린이고 뒤가 높다.",
   },
   {
     no: "13", par: 3, champion: 221, regular: 186, ladies: 133,
-    image: "/images/holes/13.png",
+    image: "/images/holes/Hole_13.jpg",
     tees: makeTees(221, 202, 186, 160, 133),
     tip: "파3홀인 이 홀은 좌측 레이크와 가드 벙커가 티샷에 신중함을 배가 시킨다. 그린 주변의 슬라나무와 야자수 그리고 꽃 단장한 주변 조경은 파란 잔디 만큼이나 아름다운 홀이다.",
   },
   {
     no: "14", par: 4, champion: 430, regular: 379, ladies: 320,
-    image: "/images/holes/14.png",
+    image: "/images/holes/Hole_14.jpg",
     tees: makeTees(430, 408, 379, 353, 320),
     tip: "좌측 레이크와 코스를 가로지르는 레이크는 티샷을 신중하게 한다. 페어웨이 우측 300야드 지점의 사타반 나무가 샷의 목표가 되며 레이크를 넘기는데는 180야드면 충분하나 가끔 실수 할 수도 있다. 잘 다듬어진 잔디 만큼이나 아름다운 홀이다.",
   },
   {
     no: "15", par: 4, champion: 446, regular: 390, ladies: 328,
-    image: "/images/holes/15.png",
+    image: "/images/holes/Hole_15.jpg",
     tees: makeTees(446, 411, 390, 370, 328),
     tip: "그린이 보이는 좌측 도그렉 홀이다. 티샷이 정교하다면 좌측의 코코넛 트리군식지점이 1차 목표가 될 수 있고, 2차는 우측 끝 팜트리 군식이 목표가 될 수 있다. 비교적 긴 파4홀로 IP지점에서 그린앞의 벙커를 조심해야할 홀이다.",
   },
   {
     no: "16", par: 3, champion: 187, regular: 153, ladies: 115,
-    image: "/images/holes/16.png",
+    image: "/images/holes/Hole_16.jpg",
     tees: makeTees(187, 173, 153, 136, 115),
     tip: "그린의 언듀레이션은 그린을 감싸고 있는 벙커들과 레이크가 조화를 이루는 가장 아름다운 홀이다. 그린 주변의 코코넛 트리가 목표가 될 수도 있겠다.",
   },
   {
     no: "17", par: 5, champion: 604, regular: 560, ladies: 493,
-    image: "/images/holes/17.png",
+    image: "/images/holes/Hole_17.jpg",
     tees: makeTees(604, 582, 560, 537, 493),
     tip: "좌측으로 길게 펼쳐진 호수와 녹음진 코코넛, 팜트리 나무가 긴장된 전 홀의 스트레스를 풀어 주기에 충분한 604야드 파5 홀이다. 정확한 티샷으로 250야드 지점의 좌우 벙커를 피한다면 350야드 지점의 코스를 가로지르는 크릭크는 문제가 없다. 그린을 오버하지 않도록 조심해야한다.",
   },
   {
     no: "18", par: 4, champion: 469, regular: 414, ladies: 343,
-    image: "/images/holes/18.png",
+    image: "/images/holes/Hole_18.jpg",
     tees: makeTees(469, 445, 414, 388, 343),
     tip: "마지막의 대미를 장식할 수 있는 티샷이 가장 좋아야 할 홀이다. 좌우측으로 펼쳐진 호수와 IP 우측지점에 길게 자리잡은 가드 벙커가 한껏 모양을 내고 있고, 그린주변은 호수가 감싸고 있다. IP지점에 늘어선 팜트리와 코코넛 트리는 낭만적이기도 하다. 파를 잡기 위해서는 페어웨이 중앙에 정확한 안착이 중요하다.",
   },
@@ -140,28 +140,20 @@ export const HOLES: Hole[] = [
 
 export const FACILITY_TEASERS = [
   { id: "golftel", name: "골프텔", en: "GOLFTEL", image: "/images/hotel1.jpg", meta: "94실 · STANDARD · DELUXE", desc: "클럽하우스와 이어진 94실 규모 숙소. 이동 없이 연박 라운드가 가능합니다." },
-  { id: "clubhouse", name: "클럽하우스", en: "CLUBHOUSE", image: "/images/clubhouse1.jpg", meta: "레스토랑 · 프로샵 · 라커 · 스파", desc: "크메르 목조 양식을 현대적으로 해석한 2층 규모. 라운드 전후가 한 건물에서 끝납니다." },
+  { id: "clubhouse", name: "클럽하우스", en: "CLUBHOUSE", image: "/images/lobby.png", meta: "레스토랑 · 프로샵 · 라커 · 스파", desc: "크메르 목조 양식을 현대적으로 해석한 2층 규모. 라운드 전후가 한 건물에서 끝납니다." },
   { id: "range", name: "골프연습장", en: "PRACTICE RANGE", image: "/images/drivingrange.jpg", meta: "78타석 · 1층·2층 구조", desc: "넓고 쾌적한 1·2층 78타석 규모의 연습시설에서 스윙의 완성도를 높여보세요." },
 ];
 
 export const CLUBHOUSE_ITEMS = [
   { name: "레스토랑", photo: "레스토랑 홀", image: "/images/restaurant.jpg", hours: "05:00 – 21:00", desc: "클럽하우스 내 레스토랑에서는 서양식과 아시아 요리, 특히 정통 한국 음식을 다양하게 즐기실 수 있습니다. 아름다운 정원과 고급스러운 분위기 속에서 특별한 식사를 경험해 보세요." },
   { name: "프로샵", photo: "프로샵 진열대", image: "/images/proshop.jpg", hours: "05:30 – 18:30", desc: "클럽하우스 내 프로샵에서 골프 클럽부터 골프웨어, 다양한 골프용품까지 라운딩에 필요한 상품을 편리하게 만나보실 수 있습니다." },
-  { name: "라커 · 샤워", photo: "라커룸", image: "/images/locker.jpg", hours: "05:00 – 19:00", desc: "쾌적하고 편안한 샤워시설을 갖춘 럭셔리 락커룸에서 라운딩 후 상쾌한 휴식을 즐겨보세요. 개인 락커를 제공하여 더욱 편리하게 이용하실 수 있습니다." },
+  { name: "라커 · 샤워", photo: "라커룸", image: "/images/sauna.png", hours: "05:00 – 19:00", desc: "쾌적하고 편안한 샤워시설을 갖춘 럭셔리 락커룸에서 라운딩 후 상쾌한 휴식을 즐겨보세요. 개인 락커를 제공하여 더욱 편리하게 이용하실 수 있습니다." },
 ];
 
 export const GOLFTEL_ITEMS = [
   { name: "호텔 전경", photo: "호텔 전경", image: "/images/hotel1.jpg", hours: "상시 이용", desc: "야자수와 정원이 어우러진 골프텔 전경. 체크인 전후로 편안하게 머물 수 있는 공간입니다." },
   { name: "수영장", photo: "수영장", image: "/images/pool.jpg", hours: "07:00 – 19:00", desc: "라운드 후 피로를 풀 수 있는 야외 수영장. 투숙객은 자유롭게 이용하실 수 있습니다." },
-  { name: "피트니스", photo: "피트니스 센터", hours: "05:00 – 21:00", desc: "기본 유산소·웨이트 기구를 갖춘 피트니스 센터. 이른 아침에도 이용 가능합니다." },
-  { name: "매점", photo: "매점", hours: "06:00 – 22:00", desc: "생수·스낵·골프용품을 갖춘 매점. 라운드 전후 간단한 요기에 편리합니다." },
-];
-
-export const RANGE_ITEMS = [
-  { name: "드라이빙 레인지", photo: "78타석 전경", hours: "05:00 – 21:00", desc: "1층과 2층으로 나뉜 78타석 규모의 최첨단 자동화 드라이빙 레인지입니다." },
-  { name: "쇼트게임 구역", photo: "어프로치 연습장", hours: "05:30 – 18:30", desc: "벙커 두 곳과 러프 구간을 갖춘 어프로치 전용 구역. 실제 코스와 같은 잔디를 씁니다." },
-  { name: "퍼팅 그린", photo: "퍼팅 그린", hours: "05:00 – 19:00", desc: "코스와 동일한 스피드로 관리하는 두 개의 퍼팅 그린. 첫 조 대기 중 이용하기 좋습니다." },
-  { name: "프로 레슨", photo: "레슨 스튜디오", hours: "예약제 · 09:00 – 17:00", desc: "소속 프로의 1:1 레슨 50분. 한국어 진행 가능하며 프론트에서 당일 신청됩니다." },
+  { name: "피트니스", photo: "피트니스 센터", image: "/images/fitness.png", hours: "05:00 – 21:00", desc: "기본 유산소·웨이트 기구를 갖춘 피트니스 센터. 이른 아침에도 이용 가능합니다." },
 ];
 
 export const ROOMS = [
@@ -220,14 +212,16 @@ export const GALLERY_IMAGES: string[] = [
   "/images/gallery/main_sub5.jpg",
   "/images/gallery/main_sub6.jpg",
   "/images/gallery/main_sub7.jpg",
-  "/images/gallery/clubhouse1.jpg",
+  "/images/gallery/lobby.png",
   "/images/gallery/hotel1.jpg",
   "/images/gallery/room_12py.jpg",
   "/images/gallery/room_14py.jpg",
   "/images/gallery/restaurant.jpg",
   "/images/gallery/proshop.jpg",
-  "/images/gallery/locker.jpg",
+  "/images/gallery/sauna.png",
+  "/images/gallery/sauna2.png",
   "/images/gallery/pool.jpg",
+  "/images/gallery/fitness.png",
   "/images/gallery/drivingrange.jpg",
   "/images/gallery/hole9.jpg",
   "/images/gallery/hole11.jpg",

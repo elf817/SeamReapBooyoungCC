@@ -7,18 +7,20 @@ export default function Modal({
   onClose,
   title,
   children,
+  className = "",
 }: {
   open: boolean;
   onClose: () => void;
   title?: string;
   children: ReactNode;
+  className?: string;
 }) {
   if (!open) return null;
 
   return (
     <div className="fixed inset-0 z-[200] bg-deep-deep/70 flex items-center justify-center p-5" onClick={onClose}>
       <div
-        className="bg-bg max-w-[560px] w-full max-h-[90vh] overflow-y-auto p-8"
+        className={`relative bg-bg max-w-[560px] w-full max-h-[90vh] overflow-y-auto p-8 ${className}`}
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex items-center justify-between mb-6">

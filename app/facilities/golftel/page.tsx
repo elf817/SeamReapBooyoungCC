@@ -68,7 +68,12 @@ export default function GolftelPage() {
         <h3 className="mt-16 sm:mt-20 mb-8 sm:mb-10 font-kr-heading font-normal text-[26px] sm:text-[32px] text-deep">
           골프텔 부대시설
         </h3>
-        <FacilityItemGrid items={GOLFTEL_ITEMS} showHours={false} />
+        <FacilityItemGrid
+          items={GOLFTEL_ITEMS}
+          showHours={false}
+          photoHeight="h-[220px] sm:h-[280px]"
+          columnsClassName="grid-cols-1 sm:grid-cols-3"
+        />
       </section>
     </FacilityShell>
   );
