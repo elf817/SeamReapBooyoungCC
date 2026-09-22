@@ -5,7 +5,7 @@ import { CONTACT_ROWS } from "@/lib/data";
 export default function AccessPage() {
   return (
     <div>
-      <SubpageHero kicker="ACCESS & CONTACT" title="오시는 길" />
+      <SubpageHero kicker="ACCESS & CONTACT" title="오시는 길" backgroundImage="/images/gallery/gellery05.jpg" />
       <section className="grid grid-cols-1 md:grid-cols-[1.2fr_1fr]">
         <GoogleMap className="min-h-[320px] md:min-h-[560px]" />
         <div className="px-[60px] sm:px-36 py-12 sm:py-20 flex flex-col gap-8">

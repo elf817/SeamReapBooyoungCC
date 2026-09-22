@@ -15,6 +15,7 @@ export default function FacilityShell({ summary, children }: { summary: string; 
       <SubpageHero
         kicker="FACILITIES"
         title="시설안내"
+        backgroundImage="/images/gallery/gellery02.jpg"
         description={
           <>
             첫 걸음부터 마지막 라운드까지 한곳에서 여유롭게!

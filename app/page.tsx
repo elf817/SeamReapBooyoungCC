@@ -135,7 +135,7 @@ export default function HomePage() {
               href={`/facilities/${f.id}`}
               className="flex flex-col border border-deep/[0.14] bg-bg"
             >
-              <div className="relative h-[230px]">
+              <div className="relative h-[calc(230px+1cm)]">
                 <Image src={f.image} alt={f.name} fill sizes="(min-width: 768px) 33vw, 100vw" className="object-cover" />
               </div>
               <div className="px-6 sm:px-[30px] pt-[30px] pb-[34px]">

@@ -14,6 +14,7 @@ export default function BoardShell({ summary, children }: { summary: string; chi
       <SubpageHero
         kicker="BOARD"
         title="게시판"
+        backgroundImage="/images/gallery/gellery06.jpg"
         description="코스 운영과 요금 변경은 공지사항에서, 자주 묻는 내용은 FAQ에서 먼저 확인하실 수 있습니다."
         descriptionNoWrap
       />

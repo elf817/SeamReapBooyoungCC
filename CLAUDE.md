@@ -36,13 +36,13 @@ Sections that look like they'd be one dynamic route are actually separate static
 
 `<RouteTabs>` highlights the active tab by comparing `usePathname()` to each tab's `href` — it's real navigation (`next/link`), not client state.
 
-The one exception is the course page (`app/course/page.tsx`): OUT/IN (우정코스/사랑코스, holes 1–9 vs 10–18) is a single route with local `useState`, toggled by `<CourseTabs>`, because it's a view filter over one dataset rather than separate content.
+The one exception is the course page (`app/course/page.tsx`): OUT/IN (우정코스/사랑코스, holes 1–9 vs 10–18) is a single route with local `useState`, toggled by the 우정코스/사랑코스 selector inside `CoursePageClient`, because it's a view filter over one dataset rather than separate content.
 
 ### Photo pattern: `image` optional field + `<Placeholder>` fallback
 
 Data items that can have a real photo declare an optional `image?: string` field (see `Hole`, `ROOMS`, `FACILITY_TEASERS`, `CLUBHOUSE_ITEMS`, `GOLFTEL_ITEMS` in `lib/data.ts`). Rendering code checks `item.image` and renders a real `next/image` when present, otherwise falls back to `<Placeholder label="..." />` (a striped placeholder box used throughout the design). When real photos are dropped into `public/images/`, wire them in by setting the `image` field — don't restructure the conditional rendering, it's the same pattern in every list (`FacilityItemGrid`, course page hole cards, home page signature holes/facility teasers, golftel room cards).
 
-`Hole` also has an optional `tees?: HoleTee[]` (5-tee color-coded yardages: 블랙/블루/화이트/실버/레드, built via the `makeTees()` helper) that supersedes the legacy `champion/regular/ladies` 3-tee fields when present — new holes should use `tees`, not the legacy fields (kept only for holes without real scorecard data yet, and for the `OUT`/`IN` yardage-sum math in `CourseTabs`).
+`Hole` also has an optional `tees?: HoleTee[]` (5-tee color-coded yardages: 블랙/블루/화이트/실버/레드, built via the `makeTees()` helper) that supersedes the legacy `champion/regular/ladies` 3-tee fields when present — new holes should use `tees`, not the legacy fields (kept only for holes without real scorecard data yet).
 
 ### Design tokens
 
