@@ -3,7 +3,15 @@
 import Image from "next/image";
 import { useState } from "react";
 
-const IMAGES = Array.from({ length: 7 }, (_, i) => `/images/main_sub${i + 1}.jpg`);
+const IMAGES = [
+  "/images/main_sub1.png",
+  "/images/main_sub2.jpg",
+  "/images/main_sub3.jpg",
+  "/images/main_sub4.jpg",
+  "/images/main_sub5.jpg",
+  "/images/main_sub6.jpg",
+  "/images/main_sub7.jpg",
+];
 
 export default function ClubGallery() {
   const [index, setIndex] = useState(0);
