@@ -3,6 +3,7 @@
 import { FormEvent, useState } from "react";
 import { FAMILY_LINKS } from "@/lib/data";
 import { useAdminAuth } from "@/components/AdminAuthContext";
+import { useLanguage } from "@/components/LanguageContext";
 import Modal from "@/components/Modal";
 
 const inputClass =
@@ -10,6 +11,7 @@ const inputClass =
 
 function AdminLoginModal({ open, onClose }: { open: boolean; onClose: () => void }) {
   const { login } = useAdminAuth();
+  const { lang } = useLanguage();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState<string | null>(null);
@@ -25,21 +27,27 @@ function AdminLoginModal({ open, onClose }: { open: boolean; onClose: () => void
       setPassword("");
       onClose();
     } catch (err) {
-      setError(err instanceof Error ? err.message : "로그인에 실패했습니다.");
+      setError(err instanceof Error ? err.message : lang === "en" ? "Login failed." : "로그인에 실패했습니다.");
     } finally {
       setSubmitting(false);
     }
   };
 
   return (
-    <Modal open={open} onClose={onClose} title="관리자 로그인">
+    <Modal open={open} onClose={onClose} title={lang === "en" ? "Admin Login" : "관리자 로그인"}>
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-        <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} placeholder="아이디" className={inputClass} />
+        <input
+          type="text"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+          placeholder={lang === "en" ? "Username" : "아이디"}
+          className={inputClass}
+        />
         <input
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          placeholder="비밀번호"
+          placeholder={lang === "en" ? "Password" : "비밀번호"}
           className={inputClass}
         />
         {error && <p className="text-[13px] text-[#b23b3b]">{error}</p>}
@@ -48,7 +56,7 @@ function AdminLoginModal({ open, onClose }: { open: boolean; onClose: () => void
           disabled={submitting}
           className="px-6 py-3 bg-deep text-bg text-[13.5px] tracking-[0.06em] hover:bg-deep-dark transition-colors disabled:opacity-50"
         >
-          {submitting ? "로그인 중…" : "로그인"}
+          {submitting ? (lang === "en" ? "Signing in…" : "로그인 중…") : lang === "en" ? "Login" : "로그인"}
         </button>
       </form>
     </Modal>
@@ -57,6 +65,7 @@ function AdminLoginModal({ open, onClose }: { open: boolean; onClose: () => void
 
 export default function Footer() {
   const { isAdmin, checking, logout } = useAdminAuth();
+  const { lang } = useLanguage();
   const [loginOpen, setLoginOpen] = useState(false);
 
   return (
@@ -97,11 +106,11 @@ export default function Footer() {
         <span className="text-bg/20">|</span>
         {!checking && isAdmin ? (
           <button onClick={() => logout()} className="hover:text-bg/70 transition-colors">
-            로그아웃
+            {lang === "en" ? "Logout" : "로그아웃"}
           </button>
         ) : (
           <button onClick={() => setLoginOpen(true)} className="hover:text-bg/70 transition-colors">
-            관리자
+            {lang === "en" ? "Admin" : "관리자"}
           </button>
         )}
       </div>

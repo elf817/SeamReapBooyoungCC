@@ -5,9 +5,11 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { NAV_ITEMS } from "@/lib/data";
+import { useLanguage } from "@/components/LanguageContext";
 
 export default function Header() {
   const pathname = usePathname();
+  const { lang, setLang } = useLanguage();
   const [open, setOpen] = useState(false);
 
   return (
@@ -38,7 +40,7 @@ export default function Header() {
             const active = item.match(pathname);
             return (
               <Link key={item.href} href={item.href} className="flex flex-col gap-[7px] whitespace-nowrap text-ink-soft2 hover:text-bronze">
-                {item.label}
+                {lang === "en" ? item.labelEn : item.label}
                 <span className="h-px" style={{ background: active ? "#a8823f" : "transparent" }} />
               </Link>
             );
@@ -46,8 +48,20 @@ export default function Header() {
         </nav>
 
         <div className="hidden md:flex items-center shrink-0 border border-deep/25 text-[11px] tracking-[0.1em] overflow-hidden">
-          <span className="px-3 py-[7px] bg-deep text-bg">KR</span>
-          <span className="px-3 py-[7px] text-muted-2">EN</span>
+          <button
+            onClick={() => setLang("ko")}
+            className="px-3 py-[7px] transition-colors"
+            style={{ background: lang === "ko" ? "#1e3a2b" : "transparent", color: lang === "ko" ? "#f6f4ee" : "#8b8878" }}
+          >
+            KR
+          </button>
+          <button
+            onClick={() => setLang("en")}
+            className="px-3 py-[7px] transition-colors"
+            style={{ background: lang === "en" ? "#1e3a2b" : "transparent", color: lang === "en" ? "#f6f4ee" : "#8b8878" }}
+          >
+            EN
+          </button>
         </div>
 
         <button
@@ -64,6 +78,24 @@ export default function Header() {
 
       {open && (
         <div className="absolute top-full left-0 right-0 bg-bg border-b border-deep/[0.12]">
+          <div className="flex md:hidden items-center gap-0 px-6 pt-8 -mb-2">
+            <div className="flex items-center border border-deep/25 text-[11px] tracking-[0.1em] overflow-hidden">
+              <button
+                onClick={() => setLang("ko")}
+                className="px-3 py-[7px] transition-colors"
+                style={{ background: lang === "ko" ? "#1e3a2b" : "transparent", color: lang === "ko" ? "#f6f4ee" : "#8b8878" }}
+              >
+                KR
+              </button>
+              <button
+                onClick={() => setLang("en")}
+                className="px-3 py-[7px] transition-colors"
+                style={{ background: lang === "en" ? "#1e3a2b" : "transparent", color: lang === "en" ? "#f6f4ee" : "#8b8878" }}
+              >
+                EN
+              </button>
+            </div>
+          </div>
           <div className="grid grid-cols-2 sm:grid-cols-5 gap-x-6 gap-y-8 px-6 sm:px-12 py-8 sm:py-10">
             {NAV_ITEMS.map((item) => {
               const active = item.match(pathname);
@@ -75,7 +107,7 @@ export default function Header() {
                     className="block mb-3 text-[15px] font-medium whitespace-nowrap"
                     style={{ color: active ? "#1e3a2b" : "#3d4438" }}
                   >
-                    {item.label}
+                    {lang === "en" ? item.labelEn : item.label}
                   </Link>
                   {item.children && (
                     <ul className="flex flex-col gap-2.5">
@@ -86,7 +118,7 @@ export default function Header() {
                             onClick={() => setOpen(false)}
                             className="text-[13px] text-muted whitespace-nowrap hover:text-bronze"
                           >
-                            {c.label}
+                            {lang === "en" ? c.labelEn : c.label}
                           </Link>
                         </li>
                       ))}

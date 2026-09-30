@@ -3,12 +3,14 @@
 import { useEffect, useState } from "react";
 import { deleteNotice, getNotice, listNotices, type Notice, type NoticeDetail } from "@/lib/api";
 import { useAdminAuth } from "@/components/AdminAuthContext";
+import { useLanguage } from "@/components/LanguageContext";
 import Modal from "@/components/Modal";
 import NoticeForm from "@/components/admin/NoticeForm";
 import RevealBelowTabs from "@/components/RevealBelowTabs";
 
 export default function NoticeListClient() {
   const { isAdmin } = useAdminAuth();
+  const { lang } = useLanguage();
   const [notices, setNotices] = useState<Notice[] | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [createOpen, setCreateOpen] = useState(false);
@@ -21,7 +23,7 @@ export default function NoticeListClient() {
   const load = () => {
     listNotices()
       .then(setNotices)
-      .catch((err) => setError(err instanceof Error ? err.message : "공지사항을 불러오지 못했습니다."));
+      .catch((err) => setError(err instanceof Error ? err.message : lang === "en" ? "Failed to load notices." : "공지사항을 불러오지 못했습니다."));
   };
 
   useEffect(load, []);
@@ -36,19 +38,19 @@ export default function NoticeListClient() {
     if (!detailCache[id]) {
       getNotice(id)
         .then((detail) => setDetailCache((c) => ({ ...c, [id]: detail })))
-        .catch((err) => setDetailError(err instanceof Error ? err.message : "불러오지 못했습니다."));
+        .catch((err) => setDetailError(err instanceof Error ? err.message : lang === "en" ? "Failed to load." : "불러오지 못했습니다."));
     }
   };
 
   const handleDelete = async (id: number, e: React.MouseEvent) => {
     e.stopPropagation();
-    if (!confirm("이 공지사항을 삭제할까요?")) return;
+    if (!confirm(lang === "en" ? "Delete this notice?" : "이 공지사항을 삭제할까요?")) return;
     try {
       await deleteNotice(id);
       setOpenId(null);
       load();
     } catch (err) {
-      alert(err instanceof Error ? err.message : "삭제에 실패했습니다.");
+      alert(err instanceof Error ? err.message : lang === "en" ? "Failed to delete." : "삭제에 실패했습니다.");
     }
   };
 
@@ -62,24 +64,28 @@ export default function NoticeListClient() {
             onClick={() => setCreateOpen(true)}
             className="px-5 py-2.5 bg-deep text-bg text-[13.5px] tracking-[0.06em] hover:bg-deep-dark transition-colors"
           >
-            글쓰기
+            {lang === "en" ? "Write" : "글쓰기"}
           </button>
         </div>
       )}
 
       {error && <p className="px-6 py-16 text-center text-[14px] text-muted-2">{error}</p>}
-      {!error && !notices && <p className="px-6 py-16 text-center text-[14px] text-muted-2">불러오는 중…</p>}
+      {!error && !notices && (
+        <p className="px-6 py-16 text-center text-[14px] text-muted-2">{lang === "en" ? "Loading…" : "불러오는 중…"}</p>
+      )}
       {notices && notices.length === 0 && (
-        <p className="px-6 py-16 text-center text-[14px] text-muted-2">등록된 공지사항이 없습니다.</p>
+        <p className="px-6 py-16 text-center text-[14px] text-muted-2">
+          {lang === "en" ? "No notices yet." : "등록된 공지사항이 없습니다."}
+        </p>
       )}
 
       {notices && notices.length > 0 && (
         <>
-          <RevealBelowTabs className="hidden sm:flex gap-6 px-6 pb-4 border-b-2 border-deep/60 text-[12.5px] font-bold tracking-[0.22em] text-ink-soft2">
+          <RevealBelowTabs className="hidden sm:flex items-center gap-6 px-6 py-3.5 bg-bg-contrast border-b border-deep/15 text-[11.5px] font-semibold tracking-[0.16em] text-muted-2">
             <span className="w-[70px]">NO</span>
-            <span className="flex-1">제목</span>
-            <span className="w-[110px]">등록일</span>
-            {isAdmin && <span className="w-[50px]">관리</span>}
+            <span className="flex-1">{lang === "en" ? "TITLE" : "제목"}</span>
+            <span className="w-[110px]">{lang === "en" ? "DATE" : "등록일"}</span>
+            {isAdmin && <span className="w-[50px]">{lang === "en" ? "MANAGE" : "관리"}</span>}
           </RevealBelowTabs>
           {notices.map((n, i) => (
             <div key={n.id} className="border-b border-deep/[0.12]">
@@ -93,7 +99,9 @@ export default function NoticeListClient() {
                 </span>
                 <span className="flex-1 flex items-center gap-3.5 min-w-0">
                   {n.pinned && (
-                    <span className="px-2.5 py-[5px] bg-deep text-bg text-[10px] tracking-[0.14em] shrink-0">공지</span>
+                    <span className="px-2.5 py-[5px] bg-deep text-bg text-[10px] tracking-[0.14em] shrink-0">
+                      {lang === "en" ? "Pinned" : "공지"}
+                    </span>
                   )}
                   <span className="text-[14px] sm:text-[15px] text-ink overflow-hidden text-ellipsis whitespace-nowrap">
                     {n.title}
@@ -106,7 +114,7 @@ export default function NoticeListClient() {
                       onClick={(e) => handleDelete(n.id, e)}
                       className="sm:w-[50px] text-[13px] text-[#b23b3b] border-b border-[#b23b3b]/40"
                     >
-                      삭제
+                      {lang === "en" ? "Delete" : "삭제"}
                     </span>
                   )}
                 </span>
@@ -115,13 +123,15 @@ export default function NoticeListClient() {
               {openId === n.id && (
                 <div className="px-6 sm:px-10 pb-8">
                   {detailError && <p className="text-[13px] text-muted-2">{detailError}</p>}
-                  {!detailError && !currentDetail && <p className="text-[13px] text-muted-2">불러오는 중…</p>}
+                  {!detailError && !currentDetail && (
+                    <p className="text-[13px] text-muted-2">{lang === "en" ? "Loading…" : "불러오는 중…"}</p>
+                  )}
                   {currentDetail && (
                     <div>
                       {isAdmin && (
                         <div className="flex justify-end mb-4">
                           <button onClick={() => setEditOpen(true)} className="text-[13px] text-ink-soft border-b border-muted-3">
-                            수정
+                            {lang === "en" ? "Edit" : "수정"}
                           </button>
                         </div>
                       )}
@@ -150,7 +160,7 @@ export default function NoticeListClient() {
         </>
       )}
 
-      <Modal open={createOpen} onClose={() => setCreateOpen(false)} title="공지사항 작성">
+      <Modal open={createOpen} onClose={() => setCreateOpen(false)} title={lang === "en" ? "Write Notice" : "공지사항 작성"}>
         <NoticeForm
           onSuccess={() => {
             setCreateOpen(false);
@@ -159,7 +169,7 @@ export default function NoticeListClient() {
         />
       </Modal>
 
-      <Modal open={editOpen} onClose={() => setEditOpen(false)} title="공지사항 수정">
+      <Modal open={editOpen} onClose={() => setEditOpen(false)} title={lang === "en" ? "Edit Notice" : "공지사항 수정"}>
         {currentDetail && (
           <NoticeForm
             initial={currentDetail}

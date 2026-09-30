@@ -3,6 +3,7 @@
 import { FormEvent, useEffect, useState } from "react";
 import { deleteInquiry, listInquiries, replyInquiry, verifyInquiry, type InquiryDetail, type InquiryListItem } from "@/lib/api";
 import { useAdminAuth } from "@/components/AdminAuthContext";
+import { useLanguage } from "@/components/LanguageContext";
 import Modal from "@/components/Modal";
 import InquiryWriteForm from "@/components/InquiryWriteForm";
 import RevealBelowTabs from "@/components/RevealBelowTabs";
@@ -12,6 +13,7 @@ const inputClass =
 
 export default function InquiryListClient() {
   const { isAdmin } = useAdminAuth();
+  const { lang } = useLanguage();
   const [inquiries, setInquiries] = useState<InquiryListItem[] | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [writeOpen, setWriteOpen] = useState(false);
@@ -29,7 +31,7 @@ export default function InquiryListClient() {
   const load = () => {
     listInquiries()
       .then(setInquiries)
-      .catch((err) => setError(err instanceof Error ? err.message : "문의사항을 불러오지 못했습니다."));
+      .catch((err) => setError(err instanceof Error ? err.message : lang === "en" ? "Failed to load inquiries." : "문의사항을 불러오지 못했습니다."));
   };
 
   useEffect(load, []);
@@ -50,7 +52,7 @@ export default function InquiryListClient() {
           setDetailCache((c) => ({ ...c, [id]: detail }));
           setReplyDraft(detail.reply ?? "");
         })
-        .catch((err) => setVerifyError(err instanceof Error ? err.message : "불러오지 못했습니다."));
+        .catch((err) => setVerifyError(err instanceof Error ? err.message : lang === "en" ? "Failed to load." : "불러오지 못했습니다."));
     }
   };
 
@@ -63,7 +65,7 @@ export default function InquiryListClient() {
       const detail = await verifyInquiry(openId, password);
       setDetailCache((c) => ({ ...c, [openId]: detail }));
     } catch (err) {
-      setVerifyError(err instanceof Error ? err.message : "비밀번호가 일치하지 않습니다.");
+      setVerifyError(err instanceof Error ? err.message : lang === "en" ? "Incorrect password." : "비밀번호가 일치하지 않습니다.");
     } finally {
       setVerifying(false);
     }
@@ -79,7 +81,7 @@ export default function InquiryListClient() {
       setOpenId(null);
       load();
     } catch (err) {
-      setReplyError(err instanceof Error ? err.message : "답변 등록에 실패했습니다.");
+      setReplyError(err instanceof Error ? err.message : lang === "en" ? "Failed to submit reply." : "답변 등록에 실패했습니다.");
     } finally {
       setReplySubmitting(false);
     }
@@ -87,13 +89,13 @@ export default function InquiryListClient() {
 
   const handleDelete = async (id: number, e: React.MouseEvent) => {
     e.stopPropagation();
-    if (!confirm("이 문의를 삭제할까요?")) return;
+    if (!confirm(lang === "en" ? "Delete this inquiry?" : "이 문의를 삭제할까요?")) return;
     try {
       await deleteInquiry(id);
       if (openId === id) setOpenId(null);
       load();
     } catch (err) {
-      alert(err instanceof Error ? err.message : "삭제에 실패했습니다.");
+      alert(err instanceof Error ? err.message : lang === "en" ? "Failed to delete." : "삭제에 실패했습니다.");
     }
   };
 
@@ -106,25 +108,29 @@ export default function InquiryListClient() {
           onClick={() => setWriteOpen(true)}
           className="px-6 py-3 bg-deep text-bg text-[13.5px] tracking-[0.06em] hover:bg-deep-dark transition-colors"
         >
-          문의 등록
+          {lang === "en" ? "New Inquiry" : "문의 등록"}
         </button>
       </div>
 
       {error && <p className="py-16 text-center text-[14px] text-muted-2">{error}</p>}
-      {!error && !inquiries && <p className="py-16 text-center text-[14px] text-muted-2">불러오는 중…</p>}
+      {!error && !inquiries && (
+        <p className="py-16 text-center text-[14px] text-muted-2">{lang === "en" ? "Loading…" : "불러오는 중…"}</p>
+      )}
       {inquiries && inquiries.length === 0 && (
-        <p className="py-16 text-center text-[14px] text-muted-2">등록된 문의가 없습니다.</p>
+        <p className="py-16 text-center text-[14px] text-muted-2">
+          {lang === "en" ? "No inquiries yet." : "등록된 문의가 없습니다."}
+        </p>
       )}
 
       {inquiries && inquiries.length > 0 && (
         <>
-          <RevealBelowTabs className="hidden sm:flex gap-6 px-6 pb-4 border-b-2 border-deep/60 text-[12.5px] font-bold tracking-[0.22em] text-ink-soft2">
+          <RevealBelowTabs className="hidden sm:flex items-center gap-6 px-6 py-3.5 bg-bg-contrast border-b border-deep/15 text-[11.5px] font-semibold tracking-[0.16em] text-muted-2">
             <span className="w-[70px]">NO</span>
-            <span className="flex-1">제목</span>
-            <span className="w-[110px]">작성자</span>
-            <span className="w-[110px]">등록일</span>
-            <span className="w-[100px]">처리 상태</span>
-            {isAdmin && <span className="w-[50px]">관리</span>}
+            <span className="flex-1">{lang === "en" ? "TITLE" : "제목"}</span>
+            <span className="w-[110px]">{lang === "en" ? "WRITER" : "작성자"}</span>
+            <span className="w-[110px]">{lang === "en" ? "DATE" : "등록일"}</span>
+            <span className="w-[100px]">{lang === "en" ? "STATUS" : "처리 상태"}</span>
+            {isAdmin && <span className="w-[50px]">{lang === "en" ? "MANAGE" : "관리"}</span>}
           </RevealBelowTabs>
 
           {inquiries.map((q, i) => (
@@ -153,7 +159,9 @@ export default function InquiryListClient() {
                       className="inline-block px-3 py-[6px] text-[11.5px] tracking-[0.06em]"
                       style={{ background: q.hasReply ? "#1e3a2b" : "#e0dccd", color: q.hasReply ? "#f6f4ee" : "#4a5145" }}
                     >
-                      {q.hasReply ? "답변완료" : "접수"}
+                      {lang === "en"
+                        ? q.hasReply ? "Answered" : "Received"
+                        : q.hasReply ? "답변완료" : "접수"}
                     </span>
                   </span>
                   {isAdmin && (
@@ -161,7 +169,7 @@ export default function InquiryListClient() {
                       onClick={(e) => handleDelete(q.id, e)}
                       className="sm:w-[50px] text-[13px] text-[#b23b3b] border-b border-[#b23b3b]/40"
                     >
-                      삭제
+                      {lang === "en" ? "Delete" : "삭제"}
                     </span>
                   )}
                 </span>
@@ -171,16 +179,18 @@ export default function InquiryListClient() {
                 <div className="px-6 sm:px-10 pb-8">
                   {!currentDetail ? (
                     isAdmin ? (
-                      <p className="text-[13px] text-muted-2">{verifyError || "불러오는 중…"}</p>
+                      <p className="text-[13px] text-muted-2">{verifyError || (lang === "en" ? "Loading…" : "불러오는 중…")}</p>
                     ) : (
                       <form onSubmit={handleVerify} className="flex flex-col gap-4 py-4">
-                        <p className="text-[14px] text-ink-soft">작성 시 입력한 비밀번호를 입력해 주세요.</p>
+                        <p className="text-[14px] text-ink-soft">
+                          {lang === "en" ? "Please enter the password you used when writing this inquiry." : "작성 시 입력한 비밀번호를 입력해 주세요."}
+                        </p>
                         <div className="flex flex-col sm:flex-row gap-3">
                           <input
                             type="password"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
-                            placeholder="비밀번호"
+                            placeholder={lang === "en" ? "Password" : "비밀번호"}
                             className={`${inputClass} sm:max-w-[260px]`}
                           />
                           <button
@@ -188,7 +198,7 @@ export default function InquiryListClient() {
                             disabled={verifying}
                             className="px-8 py-3 bg-deep text-bg text-[13.5px] tracking-[0.06em] hover:bg-deep-dark transition-colors disabled:opacity-50"
                           >
-                            {verifying ? "확인 중…" : "확인"}
+                            {verifying ? (lang === "en" ? "Checking…" : "확인 중…") : lang === "en" ? "Confirm" : "확인"}
                           </button>
                         </div>
                         {verifyError && <p className="text-[13px] text-[#b23b3b]">{verifyError}</p>}
@@ -202,7 +212,9 @@ export default function InquiryListClient() {
 
                       {!isAdmin && currentDetail.reply && (
                         <div className="mb-4 p-6 bg-bg-contrast border-l-2 border-deep">
-                          <div className="mb-3 text-[11px] tracking-[0.22em] text-bronze">답변</div>
+                          <div className="mb-3 text-[11px] tracking-[0.22em] text-bronze">
+                            {lang === "en" ? "Reply" : "답변"}
+                          </div>
                           <p className="text-[14.5px] leading-[1.9] text-ink-soft font-light whitespace-pre-wrap">
                             {currentDetail.reply}
                           </p>
@@ -212,12 +224,16 @@ export default function InquiryListClient() {
                         </div>
                       )}
                       {!isAdmin && !currentDetail.reply && (
-                        <p className="text-[13.5px] text-muted-2">아직 답변이 등록되지 않았습니다.</p>
+                        <p className="text-[13.5px] text-muted-2">
+                          {lang === "en" ? "No reply has been posted yet." : "아직 답변이 등록되지 않았습니다."}
+                        </p>
                       )}
 
                       {isAdmin && (
                         <form onSubmit={handleReply} className="flex flex-col gap-4 p-6 bg-bg-contrast">
-                          <label className="text-[11px] tracking-[0.22em] text-bronze">답변</label>
+                          <label className="text-[11px] tracking-[0.22em] text-bronze">
+                            {lang === "en" ? "Reply" : "답변"}
+                          </label>
                           <textarea
                             value={replyDraft}
                             onChange={(e) => setReplyDraft(e.target.value)}
@@ -230,7 +246,9 @@ export default function InquiryListClient() {
                             disabled={replySubmitting}
                             className="self-start px-8 py-3 bg-deep text-bg text-[13.5px] tracking-[0.06em] hover:bg-deep-dark transition-colors disabled:opacity-50"
                           >
-                            {replySubmitting ? "저장 중…" : currentDetail.reply ? "답변 수정" : "답변 등록"}
+                            {lang === "en"
+                              ? replySubmitting ? "Saving…" : currentDetail.reply ? "Update Reply" : "Post Reply"
+                              : replySubmitting ? "저장 중…" : currentDetail.reply ? "답변 수정" : "답변 등록"}
                           </button>
                         </form>
                       )}
@@ -243,7 +261,7 @@ export default function InquiryListClient() {
         </>
       )}
 
-      <Modal open={writeOpen} onClose={() => setWriteOpen(false)} title="문의게시판 작성">
+      <Modal open={writeOpen} onClose={() => setWriteOpen(false)} title={lang === "en" ? "Write an Inquiry" : "문의게시판 작성"}>
         <InquiryWriteForm
           onSuccess={() => {
             setWriteOpen(false);

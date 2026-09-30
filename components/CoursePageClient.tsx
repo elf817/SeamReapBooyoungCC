@@ -6,15 +6,17 @@ import { useSearchParams } from "next/navigation";
 import SubpageHero from "@/components/SubpageHero";
 import Placeholder from "@/components/Placeholder";
 import RevealBelowTabs from "@/components/RevealBelowTabs";
+import { useLanguage } from "@/components/LanguageContext";
 import { HOLES } from "@/lib/data";
 
-const NINES: { id: "out" | "in"; label: string }[] = [
-  { id: "out", label: "우정코스" },
-  { id: "in", label: "사랑코스" },
+const NINES: { id: "out" | "in"; label: string; labelEn: string }[] = [
+  { id: "out", label: "우정코스", labelEn: "Friendship Course" },
+  { id: "in", label: "사랑코스", labelEn: "Love Course" },
 ];
 
 export default function CoursePageClient() {
   const searchParams = useSearchParams();
+  const { lang } = useLanguage();
   const [nine, setNine] = useState<"out" | "in">(searchParams.get("nine") === "in" ? "in" : "out");
   const holes = nine === "out" ? HOLES.slice(0, 9) : HOLES.slice(9);
 
@@ -29,30 +31,45 @@ export default function CoursePageClient() {
   }, [nine]);
 
   const selectedDetail = holes.find((h) => h.no === selectedHole) ?? holes[0];
-  const nineLabel = NINES.find((n) => n.id === nine)?.label ?? "";
+  const nineLabel = (lang === "en"
+    ? NINES.find((n) => n.id === nine)?.labelEn
+    : NINES.find((n) => n.id === nine)?.label) ?? "";
 
   return (
     <div>
       <SubpageHero
         kicker="THE COURSE · 18 HOLES · PAR 72 · 7,396 YARDS"
-        title="자연과 함께하는 18홀 챔피언십 코스"
+        title={lang === "en" ? "An 18-Hole Championship Course Amid Nature" : "자연과 함께하는 18홀 챔피언십 코스"}
         backgroundImage="/images/gallery/gellery01.jpg"
         descriptionMaxWidth={720}
         description={
-          <>
-            캄보디아의 아름다운 자연 속에서 만나는 7,396야드 규모의 18홀 챔피언십 골프코스. 호수와 수로,
-            <br />
-            열대수림이 어우러진 자연친화적인 코스에서 여유롭고 특별한 라운드를 경험해 보십시오.
-          </>
+          lang === "en" ? (
+            <>
+              A 7,396-yard, 18-hole championship golf course set amid the beautiful nature of Cambodia. Lakes,
+              waterways,
+              <br />
+              and tropical forest come together for a relaxed, extraordinary round on this nature-friendly course.
+            </>
+          ) : (
+            <>
+              캄보디아의 아름다운 자연 속에서 만나는 7,396야드 규모의 18홀 챔피언십 골프코스. 호수와 수로,
+              <br />
+              열대수림이 어우러진 자연친화적인 코스에서 여유롭고 특별한 라운드를 경험해 보십시오.
+            </>
+          )
         }
       />
       <section className="px-[60px] sm:px-36 pt-10 sm:pt-14 pb-16 sm:pb-[104px]">
         <RevealBelowTabs className="mb-10 sm:mb-12 flex flex-col items-center text-center">
           <p className="mb-4 text-[11px] tracking-[0.34em]" style={{ color: "#d8642a" }}>COURSE GUIDE</p>
-          <h2 className="mb-5 font-kr-heading font-bold text-[28px] sm:text-[36px]" style={{ color: "#0b4b8c" }}>코스소개</h2>
+          <h2 className="mb-5 font-kr-heading font-bold text-[28px] sm:text-[36px]" style={{ color: "#0b4b8c" }}>
+            {lang === "en" ? "Course Guide" : "코스소개"}
+          </h2>
           <div className="mb-6 w-10 h-[2px]" style={{ background: "#d8642a" }} />
           <p className="text-[16px] sm:text-[17px] font-medium" style={{ color: "#666666" }}>
-            자연의 아름다움과 정교한 설계가 어우러진 차별화된 코스를 소개합니다.
+            {lang === "en"
+              ? "Discover a distinctive course shaped by natural beauty and refined design."
+              : "자연의 아름다움과 정교한 설계가 어우러진 차별화된 코스를 소개합니다."}
           </p>
         </RevealBelowTabs>
 
@@ -69,7 +86,7 @@ export default function CoursePageClient() {
                   color: "#ffffff",
                 }}
               >
-                {n.label}
+                {lang === "en" ? n.labelEn : n.label}
               </button>
             );
           })}
@@ -96,7 +113,7 @@ export default function CoursePageClient() {
           })}
         </div>
 
-        <div className="max-w-[900px] mx-auto border border-deep/15 bg-white">
+        <div className="max-w-[900px] -mx-11 sm:mx-auto border border-deep/15 bg-white">
           <div className="px-6 sm:px-8 pt-6 sm:pt-8 pb-3 sm:pb-4">
             <div className="flex items-baseline gap-3 mb-5">
               <h3 className="font-kr-heading font-bold text-[32px] sm:text-[40px]" style={{ color: "#2d7a4a" }}>
@@ -110,8 +127,8 @@ export default function CoursePageClient() {
                 selectedDetail.tees.map((t) => (
                   <span key={t.label} className="flex items-center gap-2 text-[16px] sm:text-[17px] font-medium text-ink-soft">
                     <span
-                      title={t.label}
-                      aria-label={t.label}
+                      title={lang === "en" ? t.labelEn : t.label}
+                      aria-label={lang === "en" ? t.labelEn : t.label}
                       className="w-4 h-4 rounded-full border border-deep/20 shrink-0"
                       style={{ background: t.color }}
                     />
@@ -137,24 +154,29 @@ export default function CoursePageClient() {
 
             <div className="flex items-center gap-2 mb-3">
               <span className="w-2.5 h-2.5 bg-deep shrink-0" />
-              <span className="font-bold text-[15px] text-deep">공략법</span>
+              <span className="font-bold text-[15px] text-deep">{lang === "en" ? "Strategy" : "공략법"}</span>
             </div>
-            <p className="mb-3 text-[14px] leading-[1.9] text-ink-soft font-light">{selectedDetail.tip}</p>
+            <p className="mb-3 text-[14px] leading-[1.9] text-ink-soft font-light">
+              {lang === "en" ? selectedDetail.tipEn : selectedDetail.tip}
+            </p>
           </div>
 
-          <div className="px-[2cm] pb-[1cm]">
+          <div className="px-4 sm:px-[2cm] pb-[1cm]">
             {selectedDetail.image ? (
-              <div className="relative w-full overflow-hidden" style={{ paddingTop: "calc(75% - 1cm)" }}>
+              <div className="relative w-full overflow-hidden pt-[75%] sm:pt-[calc(75%_-_1cm)]">
                 <Image
                   src={selectedDetail.image}
-                  alt={`${selectedDetail.no}번 홀 전경`}
+                  alt={lang === "en" ? `Hole ${selectedDetail.no} view` : `${selectedDetail.no}번 홀 전경`}
                   fill
                   sizes="(min-width: 900px) 750px, 100vw"
                   className="object-cover object-bottom"
                 />
               </div>
             ) : (
-              <Placeholder label={`홀 레이아웃 ${selectedDetail.no}`} className="aspect-[4/3] items-center justify-center" />
+              <Placeholder
+                label={lang === "en" ? `Hole ${selectedDetail.no} Layout` : `홀 레이아웃 ${selectedDetail.no}`}
+                className="aspect-[4/3] items-center justify-center"
+              />
             )}
           </div>
         </div>
