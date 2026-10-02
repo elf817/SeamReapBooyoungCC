@@ -278,9 +278,9 @@ export const CONTACT_ROWS = [
     valueEn: "15km, about a 25-minute drive from Pub Street",
   },
   {
-    label: "TEL · FAX", labelEn: "TEL · FAX",
-    value: "+855 63 967 101 / 114 · FAX +855 63 967 133 · MOBILE +855 12 365 712",
-    valueEn: "+855 63 967 101 / 114 · FAX +855 63 967 133 · MOBILE +855 12 365 712",
+    label: "TEL", labelEn: "TEL",
+    value: "+855 92 635 765",
+    valueEn: "+855 92 635 765",
   },
 ];
 
@@ -325,11 +325,14 @@ export const GALLERY_IMAGES: string[] = [
   "/images/gallery/gellery22.png",
   "/images/gallery/gellery23.png",
   "/images/gallery/gellery24.png",
-  "/images/gallery/gellery31.jpg",
-  "/images/gallery/gellery32.jpg",
+  "/images/gallery/gellery25.png",
+  "/images/gallery/gellery31.png",
+  "/images/gallery/gellery32.png",
   "/images/gallery/gellery33.jpg",
-  "/images/gallery/gellery34.jpg",
-  "/images/gallery/gellery35.png",
+  "/images/gallery/gellery34.png",
+  "/images/gallery/gellery36.jpg",
+  "/images/gallery/gellery37.jpg",
+  "/images/gallery/gellery38.png",
   "/images/gallery/gellery41.png",
   "/images/gallery/gellery42.jpg",
   "/images/gallery/gellery43.jpg",
@@ -337,6 +340,9 @@ export const GALLERY_IMAGES: string[] = [
   "/images/gallery/gellery45.png",
   "/images/gallery/gellery46.png",
   "/images/gallery/gellery51.jpg",
+  "/images/gallery/gellery52.png",
+  "/images/gallery/gellery53.png",
+  "/images/gallery/gellery54.png",
 ];
 
 export interface NavItem {

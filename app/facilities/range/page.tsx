@@ -2,8 +2,15 @@
 
 import Image from "next/image";
 import FacilityShell from "@/components/FacilityShell";
+import FacilityItemGrid from "@/components/FacilityItemGrid";
 import RevealBelowTabs from "@/components/RevealBelowTabs";
 import { useLanguage } from "@/components/LanguageContext";
+
+const RANGE_PHOTOS = [
+  { name: "drivingrange_sub1", photo: "", image: "/images/drivingrange_sub1.jpg", hours: "", desc: "" },
+  { name: "drivingrange_sub2", photo: "", image: "/images/drivingrange_sub2.png", hours: "", desc: "" },
+  { name: "drivingrange_sub3", photo: "", image: "/images/drivingrange_sub3.png", hours: "", desc: "" },
+];
 
 export default function RangePage() {
   const { lang } = useLanguage();
@@ -52,6 +59,12 @@ export default function RangePage() {
             />
           </div>
         </div>
+        <FacilityItemGrid
+          items={RANGE_PHOTOS}
+          showText={false}
+          photoHeight="h-[220px] sm:h-[280px]"
+          columnsClassName="grid-cols-1 sm:grid-cols-3"
+        />
       </section>
     </FacilityShell>
   );

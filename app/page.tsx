@@ -61,9 +61,12 @@ const TEXT = {
   en: {
     heroDesc: (
       <>
-        From a 7,396-yard, 18-hole championship course to a 94-room golftel and a 78-bay driving range.
-        <br />
-        Set the everyday aside and experience an extraordinary round amid the natural beauty of Siem Reap.
+        <span className="block lg:whitespace-nowrap">
+          From a 7,396-yard, 18-hole championship course to a 94-room golftel and a 78-bay driving range.
+        </span>
+        <span className="block lg:whitespace-nowrap">
+          Set the everyday aside and experience an extraordinary round amid the natural beauty of Siem Reap.
+        </span>
       </>
     ),
     heroCourseBtn: "The Course",
@@ -125,7 +128,11 @@ export default function HomePage() {
           <p className="font-serif font-medium text-[13px] sm:text-[26px] md:text-[32px] lg:text-[46px] leading-[1.2] text-bg whitespace-nowrap">
             SIEM REAP BOOYOUNG COUNTRY CLUB
           </p>
-          <p className="mt-5 sm:mt-[26px] max-w-[660px] text-[15.5px] sm:text-[17px] leading-[1.9] sm:leading-[1.95] text-bg/78 font-light">
+          <p
+            className={`mt-5 sm:mt-[26px] max-w-[660px] ${
+              lang === "en" ? "lg:max-w-none" : ""
+            } text-[15.5px] sm:text-[17px] leading-[1.9] sm:leading-[1.95] text-bg/78 font-light`}
+          >
             {t.heroDesc}
           </p>
           <div className="flex flex-col sm:flex-row gap-3.5 mt-8 sm:mt-[38px]">

@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent, useState } from "react";
+import Image from "next/image";
 import { FAMILY_LINKS } from "@/lib/data";
 import { useAdminAuth } from "@/components/AdminAuthContext";
 import { useLanguage } from "@/components/LanguageContext";
@@ -76,11 +77,41 @@ export default function Footer() {
             SIEM REAP BOOYOUNG C.C.&nbsp; Lolei Village, Bakong Commune, Prasat Bakong, Siem Reap, Cambodia
           </div>
           <div className="text-[13px] leading-[1.9] font-light">
-            CONTACT&nbsp; +855 63 967 101 / 114, FAX +855 63 967 133, M +855 12 365 712
+            CONTACT&nbsp; +855 92 635 765
           </div>
         </div>
 
-        <div className="sm:absolute sm:right-12 sm:top-1/2 sm:-translate-y-1/2">
+        <div className="flex items-center gap-4 sm:absolute sm:right-12 sm:top-1/2 sm:-translate-y-1/2">
+          <div className="flex items-center gap-2.5">
+            <span className="text-[15px] text-bg/70">{lang === "en" ? "Follow us" : "Follow us"}</span>
+            <a
+              href="https://www.facebook.com/siemreapbooyoungcountryclub"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+              className="flex items-center justify-center w-9 h-9 rounded-full overflow-hidden border border-white bg-white"
+            >
+              <Image src="/images/icons/facebook.png" alt="Facebook" width={40} height={40} className="w-[37px] h-[37px] object-contain" />
+            </a>
+            <a
+              href="https://www.youtube.com/@SiemReapBYCC"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="YouTube"
+              className="flex items-center justify-center w-9 h-9 rounded-full overflow-hidden border border-white bg-white"
+            >
+              <Image src="/images/icons/youtube.png" alt="YouTube" width={40} height={40} className="w-[37px] h-[37px] object-contain" />
+            </a>
+            <a
+              href="https://www.instagram.com/siemreapbooyoungcc/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              className="flex items-center justify-center w-9 h-9 rounded-full overflow-hidden border border-white bg-white"
+            >
+              <Image src="/images/icons/instagram.png" alt="Instagram" width={40} height={40} className="w-[37px] h-[37px] object-contain" />
+            </a>
+          </div>
           <select
             className="w-[220px] px-3 py-2 bg-transparent border border-bg/25 text-bg text-[13px] cursor-pointer"
             defaultValue=""
